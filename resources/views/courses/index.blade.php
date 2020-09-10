@@ -22,14 +22,30 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Details</th>
-            <th width="280px">Action</th>
+            <th>Cover</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Number Of People</th>
+            <th>period</th>
+            <th>menu</th>
+            <th>category</th>
+            <th>created_date</th>
+            <th>updated_date</th>
+            <th>Action</th>
         </tr>
         @foreach ($courses as $course)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $course->name }}</td>
-            <td>{{ $course->detail }}</td>
+            <td>{{ $course->cover }}</td>
+            <td>{{ $course->description }}</td>
+            <td>{{ $course->price }}</td>
+            <td>{{ $course->no_of_people }}</td>
+            <td>{{ $course->period }}</td>
+            <td>{{ $course->menu_id }}</td>
+            <td>{{ $course->cat_id }}</td>
+            <td>{{ $course->created_at }}</td>
+            <td>{{ $course->updated_at }}</td>
             <td>
                 <form action="{{ route('courses.destroy',$course->id) }}" method="POST">
    
