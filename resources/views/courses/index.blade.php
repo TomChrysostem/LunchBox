@@ -21,7 +21,7 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
+            <th>Course</th>
             <th>Cover</th>
             <th>Description</th>
             <th>Price</th>
@@ -36,7 +36,7 @@
         @foreach ($courses as $course)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $course->name }}</td>
+            <td>{{ $course->course }}</td>
             <td>{{ $course->cover }}</td>
             <td>{{ $course->description }}</td>
             <td>{{ $course->price }}</td>

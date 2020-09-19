@@ -38,14 +38,17 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-  
+        if ($request->hasFile('image')) {
+            if ($request->file('image')->isValid()) {
+                $validated = $request->validate([
+                    'image' => 'mimes:jpeg,png|max:1014',
+                ]);
+                $extension = $request->image->extension();
+                $request->image->storeAs('/public/assets/img',rand().".".$extension);
+            }
+        }
         Course::create($request->all());
-   
-        return redirect()->route('courses.index')
-                        ->with('success','Course created successfully.');
+        return redirect()->route('courses.index')->with('success','Course created successfully.');
     }
 
     /**
