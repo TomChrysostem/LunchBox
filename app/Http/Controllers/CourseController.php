@@ -38,16 +38,30 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
+        return $request;
         if ($request->hasFile('image')) {
             if ($request->file('image')->isValid()) {
                 $validated = $request->validate([
-                    'image' => 'mimes:jpeg,png|max:1014',
+                    'image' => 'mimes:jpeg,jpg,png|max:1014',
                 ]);
                 $extension = $request->image->extension();
-                $request->image->storeAs('/public/assets/img',rand().".".$extension);
+                $randomName = rand().".".$extension;
+                $request->image->storeAs('/public/img/',$randomName);
+                
             }
+            
         }
-        Course::create($request->all());
+        // $course = new Course();
+        // $course->course = $request->input('course');
+        // $course->description = $request->input('description');
+        // $course->price = $request->input('price');
+        // $course->no_of_people = $request->input('no_of_people');
+        // $course->period = $request->input('period');
+        // $course->menu_id = $request->input('menu_id');
+        // $course->cat_id = $request->input('cat_id');
+        // $course->image = $randomName;
+        // $course->save();
+        
         return redirect()->route('courses.index')->with('success','Course created successfully.');
     }
 

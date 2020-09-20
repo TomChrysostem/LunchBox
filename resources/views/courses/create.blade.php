@@ -37,7 +37,7 @@
             <div class="form-group">
                 <strong>Cover:</strong>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" name='image' id="inputGroupFile01">
+                    <input type="file" class="custom-file-input" name="image"/>
                 </div>
             </div>
         </div>
