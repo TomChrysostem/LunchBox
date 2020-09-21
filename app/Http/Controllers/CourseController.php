@@ -38,7 +38,7 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        //return $request;
         if ($request->hasFile('image')) {
             if ($request->file('image')->isValid()) {
                 $validated = $request->validate([
@@ -51,16 +51,16 @@ class CourseController extends Controller
             }
             
         }
-        // $course = new Course();
-        // $course->course = $request->input('course');
-        // $course->description = $request->input('description');
-        // $course->price = $request->input('price');
-        // $course->no_of_people = $request->input('no_of_people');
-        // $course->period = $request->input('period');
-        // $course->menu_id = $request->input('menu_id');
-        // $course->cat_id = $request->input('cat_id');
-        // $course->image = $randomName;
-        // $course->save();
+        $course = new Course();
+        $course->course = $request->input('course');
+        $course->description = $request->input('description');
+        $course->price = $request->input('price');
+        $course->no_of_people = $request->input('no_of_people');
+        $course->period = $request->input('period');
+        $course->menu_id = $request->input('menu_id');
+        $course->cat_id = $request->input('cat_id');
+        $course->image = $randomName;
+        $course->save();
         
         return redirect()->route('courses.index')->with('success','Course created successfully.');
     }

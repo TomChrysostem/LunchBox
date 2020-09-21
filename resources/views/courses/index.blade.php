@@ -37,7 +37,7 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $course->course }}</td>
-            <td><img src="public/img/{{$course->image}}"/></td>
+            <td><img src="{{ asset('storage/app/public/img/'.$course->image) }}"/></td>
             <td>{{ $course->description }}</td>
             <td>{{ $course->price }}</td>
             <td>{{ $course->no_of_people }}</td>
