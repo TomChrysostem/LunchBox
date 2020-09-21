@@ -21,7 +21,7 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
+            <th>Course</th>
             <th>Cover</th>
             <th>Description</th>
             <th>Price</th>
@@ -36,8 +36,8 @@
         @foreach ($courses as $course)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $course->name }}</td>
-            <td>{{ $course->cover }}</td>
+            <td>{{ $course->course }}</td>
+            <td><img src="{{ asset('storage/app/public/img/'.$course->image) }}"/></td>
             <td>{{ $course->description }}</td>
             <td>{{ $course->price }}</td>
             <td>{{ $course->no_of_people }}</td>
