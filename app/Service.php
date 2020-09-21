@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
-    protected $table = 'courses';
-    protected $primaryKey = 'id';
+    protected $table = 'services';
+    protected $fillable = ['service', 'description', 'price'];
 }

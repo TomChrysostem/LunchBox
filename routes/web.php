@@ -18,5 +18,4 @@ Route::get('/', function () {
 });
 Route::resource('admin','AdminController');
 Route::resource('courses','CourseController');
-Route::resource('services','ServiceController');
-
+Route::resource('services', 'ServiceController');
