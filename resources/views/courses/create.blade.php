@@ -29,15 +29,15 @@
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <strong>Course:</strong>
+                <input type="text" name="course" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Cover:</strong>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" name='cover' id="inputGroupFile01">
+                    <input type="file" class="custom-file-input" name="image"/>
                 </div>
             </div>
         </div>
