@@ -10,7 +10,7 @@ use Illuminate\Database\Migrations\Migration;
 
   
 
-class CreateProductsTable extends Migration
+class CreateServicesTable extends Migration
 
 {
 
@@ -28,12 +28,11 @@ class CreateProductsTable extends Migration
 
     {
 
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
 
             $table->id();
             $table->string('category');
             $table->text('description');
-            $table->string('price');
             $table->timestamps();
 
         });
@@ -56,7 +55,7 @@ class CreateProductsTable extends Migration
 
     {
 
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('services');
 
     }
 
