@@ -1,4 +1,4 @@
-@extends('courses.layout')
+@extends('admin.layout')
   
 @section('content')
 <div class="row">
@@ -37,7 +37,7 @@
             <div class="form-group">
                 <strong>Cover:</strong>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="image"/>
+                    <input type="file" class="file-input" name="image" id="inputGroupFile01"/>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Category:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="cat_id">
+                <select class="form-control" id="exampleFormControlSelect1" name="category_id">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

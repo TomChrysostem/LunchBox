@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -38,11 +38,11 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request;
+        return $request;
         if ($request->hasFile('image')) {
             if ($request->file('image')->isValid()) {
                 $validated = $request->validate([
-                    'image' => 'mimes:jpeg,jpg,png|max:1014',
+                    'image' => 'mimes:jpeg,jpg,png,gif|max:1014',
                 ]);
                 $extension = $request->image->extension();
                 $randomName = rand().".".$extension;
@@ -50,7 +50,7 @@ class CourseController extends Controller
                 
             }
             
-        }
+        
         $course = new Course();
         $course->course = $request->input('course');
         $course->description = $request->input('description');
@@ -58,10 +58,10 @@ class CourseController extends Controller
         $course->no_of_people = $request->input('no_of_people');
         $course->period = $request->input('period');
         $course->menu_id = $request->input('menu_id');
-        $course->cat_id = $request->input('cat_id');
+        $course->category_id = $request->input('category_id');
         $course->image = $randomName;
         $course->save();
-        
+        }
         return redirect()->route('courses.index')->with('success','Course created successfully.');
     }
 

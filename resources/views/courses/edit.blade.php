@@ -1,4 +1,4 @@
-@extends('courses.layout')
+@extends('admin.layout')
    
 @section('content')
     <div class="row">
@@ -37,7 +37,7 @@
             <div class="form-group">
                 <strong>Cover:</strong>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" name='cover' id="inputGroupFile01" value="{{$course->cover}}">
+                    <input type="file" class="file-input" name='cover' id="inputGroupFile01" />
                 </div>
             </div>
         </div>

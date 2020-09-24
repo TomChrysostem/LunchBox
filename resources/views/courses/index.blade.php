@@ -1,10 +1,10 @@
-@extends('courses.layout')
+@extends('admin.layout')
  
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Laravel 7 CRUD Example from scratch - ItSolutionStuff.com</h2>
+                <h2>----</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('courses.create') }}"> Create New course</a>
@@ -37,13 +37,13 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $course->course }}</td>
-            <td><img src="{{ asset('storage/app/public/img/'.$course->image) }}"/></td>
+            <td><img src="{{ url('storage/img/'.$course->image) }}" width="200" height="150"/></td>
             <td>{{ $course->description }}</td>
             <td>{{ $course->price }}</td>
             <td>{{ $course->no_of_people }}</td>
             <td>{{ $course->period }}</td>
             <td>{{ $course->menu_id }}</td>
-            <td>{{ $course->cat_id }}</td>
+            <td>{{ $course->category_id }}</td>
             <td>{{ $course->created_at }}</td>
             <td>{{ $course->updated_at }}</td>
             <td>
