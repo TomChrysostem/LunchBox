@@ -38,7 +38,7 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        //return $request;
         if ($request->hasFile('image')) {
             if ($request->file('image')->isValid()) {
                 $validated = $request->validate([
@@ -48,9 +48,7 @@ class CourseController extends Controller
                 $randomName = rand().".".$extension;
                 $request->image->storeAs('/public/img/',$randomName);
                 
-            }
-            
-        
+        }
         $course = new Course();
         $course->course = $request->input('course');
         $course->description = $request->input('description');
