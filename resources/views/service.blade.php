@@ -48,8 +48,9 @@
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="/" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#school-section" class="nav-link"><span>School Lunch</span></a></li>
-	          <li class="nav-item"><a href="#staff-section" class="nav-link"><span>Staff Lunch</span></a></li>
+	          <li class="nav-item"><a href="#staff-section" class="nav-link"><span>Lunchbox</span></a></li>
 	          <li class="nav-item"><a href="#event-section" class="nav-link"><span>Event food</span></a></li>
+            <li class="nav-item"><a href="#orderpay-section" class="nav-link"><span>Ordering and paying</span></a></li>
 	          
 	        </ul>
 	      </div>
@@ -105,7 +106,7 @@
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-9 text-center">
-						<h2 style="color: black">Lunchbox Services</h2>
+						<h2>Lunchbox Services</h2>
 					</div>
 				</div>
 			</div>
@@ -115,7 +116,7 @@
    
         <div class="row justify-content-center pt-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Lunchbox Services</h2>
+            <h2 class="mb-4">Our Menus</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
           </div>
         </div>
@@ -129,7 +130,7 @@
                 <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious. We always try for the students to be satisfy their school lunch.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="/service" class="btn btn-info px-4 py-3">Order Lunchbox</a></p>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
             </div>
 
         <!--lunchbox menu start-->
@@ -178,7 +179,7 @@
                 restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="/service" class="btn btn-info px-4 py-3">Order Lunchbox</a></p>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
 	</div>
 
     <!--lunchbox menu start-->
@@ -228,7 +229,7 @@
                 birthdays, charity events  and all sorts of special occasions.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="/service" class="btn btn-info px-4 py-3">Order Lunchbox</a></p>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
 	</div>
 
     <!--lunchbox menu start-->
@@ -265,6 +266,97 @@
         </div>
         </div>
     <!--lunchbox menu end-->
+
+     <!--model-->
+    
+     <div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                  <div class="modal-body">
+                <!-- Default form contact -->
+                    <form class="text-center border border-light p-3" action="#!" method="POST">
+                      <p class="h4 mb-4">Order Form</p>
+                    <!-- Name -->
+                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
+                    <!-- Email -->
+                        <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
+                    <!-- phone -->
+                    <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
+                     <!-- address -->
+                     <div class="form-group">
+                        <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
+                    </div>
+                     <!-- date -->
+                     <input type="text" name="date" class="form-control mb-4" placeholder="Date">
+
+                      <!-- no of orders -->
+                    <input type="text" name="quantity" class="form-control mb-4" placeholder="Numbers of orders">
+              
+                    <!-- Message -->
+                    <div class="form-group">
+                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message"></textarea>
+                    </div>
+                    <!-- Send button -->
+                    <button class="btn btn-success btn-block" type="submit">Order</button>
+                    </form>
+            <!-- Default form contact -->
+            </div>
+            <!--endmodel-->
+    </section>
+
+    <section class="pt-5 bg-light mt-3" id="orderpay-section">
+        <div class="container px-5 pb-5">
+          <h3 class="heading-section text-center ftco-animate"><b>Information for ordering and paying</b></h3>
+          <h4>1.How to order</h4>
+          <p>You can order by Mail (<b class="text-info">awa.yoko.hayami@gmail.com</b>) or by Contact Number (<b class="text-info">09792655994</b>) or by order form</p>
+          <p class="mb-4">***Please let us know your name, company name/organization name, contact number, address to deliver if you are the customer for the first time</p>
+           <h4>2.Order term</h4>
+           <h5>Thilawar Industry Zone</h5>
+           <p>Lunch: If the customer orders the day before ordered date, we will deliver to the address. 
+           If the customer orders on that day(ordered date), the driver of the customer needs to come and take the orders.</p>
+          <h5>Yangon area</h5>
+          <p>- Lunch: We deliver one day advance orders as well as the order on that day by 9:00 a.m. 
+          If the driver comes and takes the orders, we accept the orders at or after 9 : 00 p.m.</p>
+          <p>- Dinner: We deliver one day advance orders as well as the order on that day by 12: 00 p.m. 
+          If the driver comes and takes the orders, we accept the orders by 3 : 00 p.m.</p>
+          <p>- If the customer orders for meeting lunch(many people) by 3 : 00 p.m in one day advance, 
+          we will deliver in time. </p>
+          <p>- If the customer orders in one day advance, we accept lunch and dinner order even on Saturday. 
+          Sunday and National holidays do not accept the orders.</p>
+          <p class="mb-4">- We also give services for party, side dishes, drinking party. Please feel free to contact us.</p>
+
+          <h4>3.Price</h4>
+          <p>- Lunch : Daily Special Lunch (7,000 MMK) Dinner: Daily Lunch Set
+          (5,000 MMK- ***without rice)/(7,000 MMK *** with rice)</p>
+          <p class="mb-4">- We can adjust the price and setting according to the customers’ 
+          desire for Meeting lunchbox, Drinking party food, etc.</p>
+
+          <p>- When the customer has allergy, please let us know in advance.</p>
+           
+           <h4>4.Numbers of orders</h4>
+           <p>- We accept from only one order.</p>
+           <p class="mb-4">- We are happy to accept (1) order even from Thilawar Industrial Zone as experiential.</p>
+
+           <h4>5.Delivery fee</h4>
+           <h5>Thilawar Industrial Zone</h5>
+
+           <p>-	500 MMK per 1- lunchbox(1-9 Daily Special Lunches -> 7500 MMK, over 10 orders - > free delivery fee -> 7000 MMK per 1- lunchbox )</p>
+           <h5>Yangon area</h5>
+           <p>- Over 3 lunchboxes, delivery fee free. 1 or 2 orders, delivery fee will be 3000 MMK per one. (Therefore, for one order, it will be 10, 000 MMK / one, 
+           for two orders, it will be 8,500 MMK / one, over 3 orders, delivery fee is free and it will be 7000 MMK / one.)</p>
+           <p>- over 3 orders, delivery fee is free and it will be 7000 MMK / one.)</p>
+           <p>- Within Yangon city, if one order for Lunch, Dinner is over 20,000 MMK, delivery fee will be free.
+            But only the order is less than 20,000 MMK, delivery fee will be 3000 MMK.</p>
+            <p>- Pay on delivery</p>
+            <p>- The boxes of the lunch and food will be collected in the afternoon of that day or the next day.</p>
+
+        </div>
     </section>
 
 </div>
