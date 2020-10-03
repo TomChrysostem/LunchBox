@@ -12,15 +12,15 @@
                 </div>
             </div>
         </div>
-    </section>
+  </section>
 
 		
-		<section class="pt-5 bg-light" id="services-section">
+	<section class="pt-5 bg-light" id="services-section">
 			<div class="container">
 				<div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Our Food Catering Services</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h2 class="mb-4">Lunchbox Services</h2>
+            <p>We are always happy to offer the customers with our wonderful food</p>
           </div>
         </div>
         <div class="row">
@@ -53,57 +53,117 @@
               </div>
             </div>      
           </div>
-         
+
 			</div>
-      <div class="row justify-content-center py-4">
+        <div class="row justify-content-center py-4">
           <p class="mb-3 mx-3"><a href="/service" class="btn btn-info px-4 py-3">Detail Information</a></p>
-          <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3">Order Lunchbox</a></p>
-      </div>
+          <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
+        </div>
+
+        <!--model-->
+    
+     <div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                  <div class="modal-body">
+                <!-- Default form contact -->
+                    <form class="text-center border border-light p-3" action="#!" method="POST">
+                      <p class="h4 mb-4">Order Form</p>
+                    <!-- Name -->
+                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
+                    <!-- Email -->
+                        <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
+                    <!-- phone -->
+                    <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
+                     <!-- address -->
+                     <div class="form-group">
+                        <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
+                    </div>
+                     <!-- date -->
+                     <input type="text" name="date" class="form-control mb-4" placeholder="Date">
+
+                      <!-- no of orders -->
+                    <input type="text" name="quantity" class="form-control mb-4" placeholder="Numbers of orders">
+              
+                    <!-- Message -->
+                    <div class="form-group">
+                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message"></textarea>
+                    </div>
+                    <!-- Send button -->
+                    <button class="btn btn-success btn-block" type="submit">Order</button>
+                    </form>
+            <!-- Default form contact -->
+            </div>
+            <!--endmodel-->
       
-		</section>
+	</section>
 
 
 
-    <section class="ftco-intro img" id="about-section" style="background-image: url(images/wall3.jpg);">
+  <section class="ftco-intro img" id="about-section" style="background-image: url(images/wall3.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-md-9 text-center">
+					<div class="col-md-12 text-center">
 						<h2>Cooking Class</h2>
 						<h1 class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Cook together, stay together</h1>
-						<p class="mb-0"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Book Course</a></p>
+						<p class="mb-0"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>
 					</div>
 				</div>
 			</div>
 
       <!--model-->
   
-            <div class="modal fade" id="addBookCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           
+    <!--model-->
+  
+    <div class="modal fade" id="addBookCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Book Course</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
+                <div class="modal-header bg-info">
+                        <p class="text-justified">You can register by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                   <div class="modal-body">
                 <!-- Default form contact -->
                     <form class="text-center border border-light p-5" action="#!" method="POST">
-                      <p class="h4 mb-4">Booking Form</p>
+                      <p class="h4 mb-4">Register Form</p>
                     <!-- Name -->
                         <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
                     <!-- Email -->
                         <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
-                    <!-- Subject -->
-                        <label>Subject</label>
+                    <!-- ph no -->
+                        <input type="text" class="form-control mb-4" placeholder="Contact Number">
+                    <!-- courses -->
+                        <label>Course</label>
                           <select class="browser-default custom-select mb-4">
                             <option value="" disabled>Choose option</option>
-                            <option value="1" selected>Feedback</option>
-                            <option value="2">Report a bug</option>
-                            <option value="3">Feature request</option>
-                            <option value="4">Feature request</option>
+                            <option value="1" selected>Japanese dish</option>
+                            <option value="2">Myanmar dish</option>
+                            <option value="3">Italian dish</option>
                           </select>
+                    <!-- no of students -->
+                        <label>Numbers of people</label>
+                          <select class="browser-default custom-select mb-4">
+                            <option value="" disabled>Choose option</option>
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                          </select>
+                    <!-- date -->
+                          <input type="text" class="form-control mb-4" placeholder="Date">
                     <!-- Message -->
                     <div class="form-group">
                         <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message"></textarea>
@@ -156,10 +216,10 @@
           </div>
         </div>
 			</div>
+
       <div class="row justify-content-center">
           <p class="mx-3"><a href="/course" class="btn btn-info px-4 py-3">Detail Information</a></p>
           <p class="mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Book Course</a></p>
-          
       </div>
     </section>
     

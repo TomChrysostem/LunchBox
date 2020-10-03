@@ -68,7 +68,7 @@
                                         <div class="col-12"><span class="badge badge-info">Japanese</span></div>
                                     </div>
                                 </td>
-                                <td><img src="{{ url('storage/img/'.$course->image) }}" width="100" height="65"/></td>
+                                <td><img src="{{ asset('storage/img/'.$course->image) }}" width="100" height="65"/></td>
                                 <td>{{ $course->description }}</td>
                                 <td>{{ $course->price }}</td>
                                 <td>{{ $course->no_of_people }}</td>

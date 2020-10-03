@@ -47,7 +47,7 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Lunchbox Services</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>Cooking Classes</span></a></li>
 	          <li class="nav-item"><a href="#agent-section" class="nav-link"><span>About us</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
