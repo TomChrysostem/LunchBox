@@ -48,7 +48,7 @@
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="/" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#school-section" class="nav-link"><span>School Lunch</span></a></li>
-	          <li class="nav-item"><a href="#staff-section" class="nav-link"><span>Lunchbox</span></a></li>
+	          <li class="nav-item"><a href="#staff-section" class="nav-link"><span>Lunch and Dinner</span></a></li>
 	          <li class="nav-item"><a href="#event-section" class="nav-link"><span>Event food</span></a></li>
             <li class="nav-item"><a href="#orderpay-section" class="nav-link"><span>Ordering and paying</span></a></li>
 	          
@@ -117,7 +117,7 @@
         <div class="row justify-content-center pt-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
             <h2 class="mb-4">Our Menus</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            
           </div>
         </div>
     
@@ -130,7 +130,7 @@
                 <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious. We always try for the students to be satisfy their school lunch.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order</a></p>
             </div>
 
         <!--lunchbox menu start-->
@@ -170,52 +170,151 @@
 	</section>
 
  <section class="pt-5" id="staff-section">
- <div class="container">
-    <div class="row justify-content-center">
+  <div class="container">
+          <div class="row justify-content-center">
             <div class="align-self-stretch ftco-animate mx-3">
               <div class="media-body">
-              <h3 class="heading my-3">Saff Lunch</h3>
+              <h3 class="heading my-3">Saff Lunch and dinner</h3>
                 <p>We can help you design and deliver a successful meal program with a focus on healthy nutrition to revitalize your staff. Your customized meal plan will consist of diverse, 
                 restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
-	</div>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order</a></p>
+	        </div>
 
-    <!--lunchbox menu start-->
+    <!--lunch menu start-->
 	
     <div class="row justify-content-center py-3">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h3>School Lunchbox Menus</h3>
-                </div>
-            </div>
+        <h3>Lunch Menus for this month</h3>
+    </div>
+            <!--Table-->
+    <div class="row justify-content-center py-3">
+      <table class="table table-hover w-auto">
+        <!--Table head-->
+        <thead class="bg-dark">
+          <tr>
+            <th class="px-3">#</th>
+            <th class="px-3">Date</th>
+            <th class="px-3">Menu Name</th>
+            <th class="px-3">description</th>
+            <th class="px-3">Kcal</th>
+            <th class="px-3">Price</th>
+          </tr>
+        </thead>
+        <!--Table head-->
 
-        <div class="row">
-            <div class="col-md-3">
-                <!-- Card -->
-                <div class="card mb-4">
+        <!--Table body-->
+        <tbody>
+          <tr class="table-info">
+            <td class="px-3">1</td>
+            <td class="px-3">1/10/2020</td>
+            <td class="px-3">Torikaraage Lunch</td>
+            <td class="px-3">Rice + Torikaraage Lunch + Salad + Miso soup+ Torikaraage Lunch + Salad + Miso soup</td>
+            <td class="px-3">700 Kcal</td>
+            <td class="px-3">7000 - MMK</td>
+          </tr>
+          <tr>
+            <td class="px-3">2</td>
+            <td class="px-3">1/10/2020</td>
+            <td class="px-3">Torikaraage Lunch</td>
+            <td class="px-3">Rice + Torikaraage Lunch + Salad + Miso soup + Torikaraage Lunch + Salad + Miso soup</td>
+            <td class="px-3">700 Kcal</td>
+            <td class="px-3">7000 - MMK</td>
+          </tr>
+        </tbody>
+        <!--Table body-->
+      </table>
+    </div>
+        <!--table end-->
 
-                    <!--Card image-->
-                    <div class="view overlay">
-                        <img class="card-img-top" src="images/italian dishes/Ahijo.jpg" alt="Card image cap">
-                        <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
+   <!--dinner menu start-->
+	
+   <div class="row justify-content-center py-3">
+        <h3>Dinner Menus for this month</h3>
+    </div>
+                    <!--Table-->
+    <div class="row justify-content-center py-3">
+      <table class="table table-hover w-auto">
+        <!--Table head-->
+        <thead class="bg-dark">
+          <tr>
+            <th class="px-3">#</th>
+            <th class="px-3">Date</th>
+            <th class="px-3">Menu Name</th>
+            <th class="px-3">description</th>
+            <th class="px-3">Kcal</th>
+            <th class="px-3">Price</th>
+          </tr>
+        </thead>
+        <!--Table head-->
 
-                    <!--Card content-->
-                    <div class="card-body">
+        <!--Table body-->
+        <tbody>
+          <tr class="table-info">
+            <td class="px-3">1</td>
+            <td class="px-3">1/10/2020</td>
+            <td class="px-3">Torikaraage Lunch</td>
+            <td class="px-3">Rice + Torikaraage Lunch + Salad + Miso soup+ Torikaraage Lunch + Salad + Miso soup</td>
+            <td class="px-3">700 Kcal</td>
+            <td class="px-3">7000 - MMK</td>
+          </tr>
+          <tr>
+            <td class="px-3">2</td>
+            <td class="px-3">1/10/2020</td>
+            <td class="px-3">Torikaraage Lunch</td>
+            <td class="px-3">Rice + Torikaraage Lunch + Salad + Miso soup + Torikaraage Lunch + Salad + Miso soup</td>
+            <td class="px-3">700 Kcal</td>
+            <td class="px-3">7000 - MMK</td>
+          </tr>
+        </tbody>
+        <!--Table body-->
+      </table>
+    </div>
+        <!--table end-->
 
-                    <!--Title-->
-                    <h4 class="card-title">Ahijo</h4>
-                    <!--Text-->
-                    <p class="card-text" style="color: blue">5000 - MMK </p>
-                    </div>
-                </div>
-                <!-- Card -->
-            </div>
-        </div>
-        </div>
-    <!--lunchbox menu end-->
+        <!--side-dish menu start-->
+	
+   <div class="row justify-content-center py-3">
+        <h3>Side-Dish Menus for this month</h3>
+    </div>
+                    <!--Table-->
+    <div class="row justify-content-center py-3">
+      <table class="table table-hover w-auto">
+        <!--Table head-->
+        <thead class="bg-dark">
+          <tr>
+            <th class="px-3">#</th>
+            <th class="px-3">Menu Name</th>
+            <th class="px-3">description</th>
+            <th class="px-3">Kcal</th>
+            <th class="px-3">Price</th>
+          </tr>
+        </thead>
+        <!--Table head-->
+
+        <!--Table body-->
+        <tbody>
+          <tr class="table-info">
+            <td class="px-3">1</td>
+            <td class="px-3">Torikaraage Lunch</td>
+            <td class="px-3">Rice + Torikaraage Lunch + Salad + Miso soup+ Torikaraage Lunch + Salad + Miso soup</td>
+            <td class="px-3">700 Kcal</td>
+            <td class="px-3">7000 - MMK</td>
+          </tr>
+          <tr>
+            <td class="px-3">2</td>
+            <td class="px-3">Torikaraage Lunch</td>
+            <td class="px-3">Rice + Torikaraage Lunch + Salad + Miso soup + Torikaraage Lunch + Salad + Miso soup</td>
+            <td class="px-3">700 Kcal</td>
+            <td class="px-3">7000 - MMK</td>
+          </tr>
+        </tbody>
+        <!--Table body-->
+      </table>
+    </div>
+        <!--table end-->
+
+  </div>
 </section>
 
 
@@ -229,7 +328,7 @@
                 birthdays, charity events  and all sorts of special occasions.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order</a></p>
 	</div>
 
     <!--lunchbox menu start-->

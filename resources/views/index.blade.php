@@ -37,7 +37,7 @@
             <div class="media block-6 services text-center d-block mt-lg-5 pt-lg-4">
               <img src="images/staff lunch.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
               <div class="media-body">
-                <h3 class="heading my-3">Saff Lunch</h3>
+                <h3 class="heading my-3">Saff Lunch and dinner</h3>
                 <p>We can help you design and deliver a successful meal program with a focus on healthy nutrition to revitalize your staff. Your customized meal plan will consist of diverse, 
                 restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
               </div>
@@ -57,7 +57,7 @@
 			</div>
         <div class="row justify-content-center py-4">
           <p class="mb-3 mx-3"><a href="/service" class="btn btn-info px-4 py-3">Detail Information</a></p>
-          <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
+          <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order</a></p>
         </div>
 
         <!--model-->
@@ -234,11 +234,15 @@
             <div class="col-md-6 mt-5">
               <h3 class="h3-responsive font-weight-bold">About our school</h3>
                 <p class="text-xl-left">
-                    Whether you’re a kitchen novice or you already know some of the tricks of the trade, you’ll have a great time 
-                    at Food at 52. We offer hands-on tuition in an atmospheric and professional cookery school in the heart 
-                    of Clerkenwell, central London. Our classes are a fun chance to catch up with old friends and meet new ones 
-                    whilst learning to cook impressive dishes with delicious recipes you can cook again and again at home. 
+                We set up our school at Helden in 2015. We have cooking classes for adult group lessons, 
+                parent-child cooking classes, chef-training courses, courses aimed at preventing illnesses such as diabetic diets and hypertensive diets. 
+                We also have the classes for the tourists who can enjoy shopping at local market and cooking Myanmar dishes.
                 </p>
+                <p>
+                We always try to equip the students with food knowledge and food culture to be able to create safe and
+                 secure meals which protect the health of their family.
+                </p>
+          
             </div>
                   
             <div class="col-md-6 mt-5">
@@ -254,12 +258,13 @@
             <div class="col-md-6 mt-5">
                 <h3 class="h3-responsive font-weight-bold">Teacher and Food writer</h3>
                 <p class="text-xl-left">
-                My name is John Benbow and I have been cooking ever since I remember. 
-                For me, the essential ingredient for a good meal is the passion and conviction the food has been made with,
-                 be it a dinner party for 10 or a quick supper for the family.</p>
-                 <p class="text-xl-left"> After many years of running a film set building company I left behind the dust of the workshops 
-                 for the fragrant steam of the kitchen. Friends had been asking for a culinary crash course so in 
-                 2007 I launched Food at 52 to pass on my knowledge and enthusiasm to others.</p>
+                My name is Yoko Hayami. At Tokushima Bunri University, I specialized and studied in Home Economics, Registered Dietitian. Since 2015, I’ve set up cooking class in Yangon introducing recipes such as Japanese food, 
+                healthy arrangements of Myanmar food, Asian food, Italian food, etc. using the rich seasonal ingredients of Myanmar. </p>
+                 <p class="text-xl-left"> 
+                 I also write about recipe development and hygiene management for local magazines.
+                My mission is to educate and share the people how to make simple, nourishing and delicious food.
+
+                 </p>
             </div>
         </div>
 
@@ -267,12 +272,10 @@
             <div class="col-md-6 mt-5">
               <h3 class="h3-responsive font-weight-bold">Our school location</h3>
               <p class="text-xl-left">
-                    Being on Central Street in Clerkenwell means we’re located as the street name indicates: 
-                    in the heart of central London. As a result, we are very easy to access by public transport;
-                     surrounded by bus routes, ten minutes from Old Street, Barbican and Angel Underground stations 
-                    and near King's Cross, Farringdon and Liverpool Street rail stations. 
-                    There is short and longer term car parking near by and bicycle rails close too. 
-                    See below for a map for more detail.
+                  Our school is located near Hledan local market.
+                  Our school location is very easy to access even by 
+                  public transport: surrounded by bus routes, 5 - minute walk from Hledan Center. 
+                  See the map for more detail.
                 </p>
             </div>
               <!--Google map-->
@@ -301,22 +304,60 @@
         </div>
 
         <div class="row block-9">
+
           <div class="col-md-7 order-md-last d-flex ftco-animate">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
+            <form action="{{ route('contact.store') }}" class="bg-light p-4 p-md-5 contact-form" method="post">
+
+                          <!-- Success message -->
+                          @if(Session::has('success'))
+                  <div class="alert alert-success">
+                      {{Session::get('success')}}
+                  </div>
+              @endif
+             <!-- CROSS Site Request Forgery Protection -->
+             @csrf
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" id="name" placeholder="Your Name">
+              
+              <!-- Error -->
+                  @if ($errors->has('name'))
+                  <div class="error">
+                      {{ $errors->first('name') }}
+                  </div>
+                  @endif
+              </div>
+
+
+              <div class="form-group">
+                <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="Your Email">
+              
+                  @if ($errors->has('email'))
+                  <div class="error">
+                      {{ $errors->first('email') }}
+                  </div>
+                  @endif
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" name="subject" id="subject" placeholder="Subject">
+              
+                  @if ($errors->has('subject'))
+                  <div class="error">
+                      {{ $errors->first('subject') }}
+                  </div>
+                  @endif
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <textarea name="message" id="message" cols="30" rows="7" class="form-control {{ $errors->has('message') ? 'error' : '' }}" placeholder="Message"></textarea>
+              
+                  @if ($errors->has('message'))
+                  <div class="error">
+                      {{ $errors->first('message') }}
+                  </div>
+                  @endif
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                <input type="submit" name="send" value="Submit" class="btn btn-primary py-3 px-5">
               </div>
             </form>
           

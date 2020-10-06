@@ -29,3 +29,21 @@ Route::resource('courses','CourseController');
 Route::resource('services','ServiceController');
 Route::resource('menus','MenuController');
 Route::resource('categories', 'CategoryController');
+
+// fullcalendar
+Route::get('/booking','FullCalendarController@index');
+Route::post('/booking/create','FullCalendarController@create');
+Route::post('/booking/update','FullCalendarController@update');
+Route::post('/booking/delete','FullCalendarController@destroy');
+
+//contact form
+// Render in view
+Route::get('/contact', [
+    'uses' => 'ContactUsFormController@createForm'
+]);
+
+// Post form data
+Route::post('/contact', [
+    'uses' => 'ContactUsFormController@ContactUsForm',
+    'as' => 'contact.store'
+]);
