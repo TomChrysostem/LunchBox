@@ -16,7 +16,7 @@ class CourseController extends Controller
     {
         $courses = Course::latest()->paginate(5);
   
-        return view('courses.index',compact('courses'))
+        return view('admin.courses.index',compact('courses'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('courses.create');
+        return view('admin.courses.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class CourseController extends Controller
         $course->image = $randomName;
         $course->save();
         }
-        return redirect()->route('courses.index')->with('success','Course created successfully.');
+        return redirect()->route('admin.courses.index')->with('success','Course created successfully.');
     }
 
     /**
@@ -71,7 +71,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        return view('courses.show',compact('course'));
+        return view('admin.courses.show',compact('course'));
     }
 
     /**
@@ -82,7 +82,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('courses.edit',compact('course'));
+        return view('admin.courses.edit',compact('course'));
     }
 
     /**
@@ -100,7 +100,7 @@ class CourseController extends Controller
   
         $course->update($request->all());
   
-        return redirect()->route('courses.index')
+        return redirect()->route('admin.courses.index')
                         ->with('success','Course updated successfully');
     }
 
@@ -114,7 +114,7 @@ class CourseController extends Controller
     {
         $course->delete();
   
-        return redirect()->route('courses.index')
+        return redirect()->route('admin.courses.index')
                         ->with('success','Course deleted successfully');
     }
 }

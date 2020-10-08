@@ -32,8 +32,14 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                 </li>
             </ul>
@@ -54,6 +60,10 @@
                             <a class="nav-link" href="{{ route('services.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
                                  - Services
+                            </a>
+                            <a class="nav-link" href="{{ route('menus.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
+                                 - Menus
                             </a>
                             <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
                             <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -144,5 +154,8 @@
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="{{asset('assets/demo/datatables-demo.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
     </body>
 </html>

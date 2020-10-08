@@ -14,18 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('users.index');
 });
-Route::get('/service', function () {
-    return view('service');
-});
+// Route::get('/service', function () {
+//     return view('service');
+// });
 
-Route::get('/course', function () {
-    return view('course');
-});
+// Route::get('/course', function () {
+//     return view('course');
+// });
 
-Route::resource('admin','AdminController');
-Route::resource('courses','CourseController');
-Route::resource('services','ServiceController');
-Route::resource('menus','MenuController');
-Route::resource('categories', 'CategoryController');
+Route::resource('admin','AdminController')->middleware('auth');
+Route::resource('courses','CourseController')->middleware('auth');
+Route::resource('services','ServiceController')->middleware('auth');
+Route::resource('menus','MenuController')->middleware('auth');
+Route::resource('categories', 'CategoryController')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

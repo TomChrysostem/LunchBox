@@ -25,7 +25,7 @@ class ServiceController extends Controller
 
   
 
-        return view('services.index',compact('services'))
+        return view('admin.services.index',compact('services'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
@@ -47,7 +47,7 @@ class ServiceController extends Controller
 
     {
 
-        return view('services.create');
+        return view('admin.services.create');
 
     }
 
@@ -83,7 +83,7 @@ class ServiceController extends Controller
 
    
 
-        return redirect()->route('services.index')
+        return redirect()->route('admin.services.index')
 
                         ->with('success','Service created successfully.');
 
@@ -107,7 +107,7 @@ class ServiceController extends Controller
 
     {
 
-        return view('services.show',compact('service'));
+        return view('admin.services.show',compact('service'));
 
     }
 
@@ -129,7 +129,7 @@ class ServiceController extends Controller
 
     {
 
-        return view('services.edit',compact('service'));
+        return view('admin.services.edit',compact('service'));
 
     }
 
@@ -166,7 +166,7 @@ class ServiceController extends Controller
 
   
 
-        return redirect()->route('services.index')
+        return redirect()->route('admin.services.index')
 
                         ->with('success','Service updated successfully');
 
@@ -193,7 +193,7 @@ class ServiceController extends Controller
         $service->delete();
 
   
-        return redirect()->route('services.index')
+        return redirect()->route('admin.services.index')
                         ->with('success','Service  deleted successfully');
 
     }

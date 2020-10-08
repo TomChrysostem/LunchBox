@@ -16,7 +16,7 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::latest()->paginate(5);
-        return view('menus.index',compact('menus'))
+        return view('admin.menus.index',compact('menus'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menus.create');
+        //return $request;
+        return view('admin.menus.create');
     }
 
     /**
@@ -38,13 +39,29 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'menu' => 'required',
-            'description' => 'required',
-        ]);
-        Menu::create($request->all());
-        return redirect()->route('menus.index')
-                        ->with('success','Menu created successfully.');
+        if ($request->hasFile('image')) {
+            if ($request->file('image')->isValid()) {
+                $validated = $request->validate([
+                    'image' => 'mimes:jpeg,jpg,png,gif|max:1014',
+                ]);
+                $extension = $request->image->extension();
+                $randomName = rand().".".$extension;
+                $request->image->storeAs('/public/img/',$randomName);
+                
+        }
+        $menu = new Menu();
+        $menu->menu = $request->input('menu');
+        $menu->description = $request->input('description');
+        $menu->price = $request->input('price');
+        $menu->date = $request->input('date');
+        $menu->kcal = $request->input('kcal');
+        $menu->menu_type = $request->input('menu_type');
+        $menu->dish = $request->input('dish');
+        $menu->category_id = $request->input('category_id');
+        $menu->image = $randomName;
+        $menu->save();
+        }
+        return redirect()->route('menus.index')->with('success','Course created successfully.');
     }
 
     /**
@@ -55,7 +72,7 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        return view('menus.show',compact('menu'));
+        return view('admin.menus.show',compact('menu'));
     }
 
     /**
@@ -66,7 +83,7 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        return view('menus.edit',compact('menu'));
+        return view('admin.menus.edit',compact('menu'));
     }
 
     /**
@@ -96,7 +113,7 @@ class MenuController extends Controller
     public function destroy(Menu $menu)
     {
         $menu->delete();
-        return redirect()->route('menus.index')
+        return redirect()->route('admin.menus.index')
                         ->with('success','Menu deleted successfully');
     }
 }
