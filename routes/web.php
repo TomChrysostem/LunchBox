@@ -29,6 +29,7 @@ Route::resource('courses','CourseController')->middleware('auth');
 Route::resource('services','ServiceController')->middleware('auth');
 Route::resource('menus','MenuController')->middleware('auth');
 Route::resource('categories', 'CategoryController')->middleware('auth');
+Route::resource('orders', 'OrderController')->middleware('auth');
 
 Auth::routes();
 
