@@ -14,7 +14,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('orders.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('attendees.index') }}"> Back</a>
 
             </div>
 
@@ -27,63 +27,56 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>User Name:</strong>
-                {{ $order->user_name }}
+                {{ $attendee->user_name }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Phone:</strong>
-                {{ $order->phone }}
+                {{ $attendee->phone }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Email:</strong>
-                {{ $order->email }}
+                {{ $attendee->email }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Address:</strong>
-                {{ $order->address }}
+                {{ $attendee->address }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Date:</strong>
-                {{ $order->date }}
+                {{ $attendee->date }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Numbers of Order:</strong>
-                {{ $order->qty }}
+                <strong>Numbers of Students:</strong>
+                {{ $attendee->qty }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Order Item:</strong>
-                {{ $order->order_item_id }}
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Status:</strong>
-                {{ $order->status }}
+                <strong>Course:</strong>
+                {{ $attendee->course_id }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Message:</strong>
-                {{ $order->messages }}
+                {{ $attendee->messages }}
             </div>
         </div>
 

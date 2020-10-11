@@ -89,7 +89,7 @@
                     </div>
                      <!-- date -->
                      <!--<input type="text" name="date" id="datetimepicker" class="form-control mb-4" placeholder="Date">-->
-                     <input type="text" name="date" id="datetimepicker-default" class="form-control" placeholder="Date"/>
+                     <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
 
                       <!-- no of orders -->
                     <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
@@ -144,25 +144,26 @@
                     </div>
                   <div class="modal-body">
                 <!-- Default form contact -->
-                    <form class="text-center border border-light p-5" action="#!" method="POST">
+                <form class="text-center border border-light p-3" action="{{ route('attendees.store') }}" method="POST">
                       <p class="h4 mb-4">Register Form</p>
+                      @csrf
                     <!-- Name -->
-                        <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
                     <!-- Email -->
-                        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+                        <input type="text" name="phone" class="form-control mb-4" placeholder="Contact Number">
                     <!-- ph no -->
-                        <input type="text" class="form-control mb-4" placeholder="Contact Number">
-                    <!-- courses -->
-                        <label>Course</label>
-                          <select class="browser-default custom-select mb-4">
-                            <option value="" disabled>Choose option</option>
-                            <option value="1" selected>Japanese dish</option>
-                            <option value="2">Myanmar dish</option>
-                            <option value="3">Italian dish</option>
-                          </select>
+                        <input type="email" name="email" class="form-control mb-4" placeholder="Email">
+                        <!-- address -->
+                     <div class="form-group">
+                        <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
+                    </div>
+                     <!-- date -->
+                     <!--<input type="text" name="date" id="datetimepicker" class="form-control mb-4" placeholder="Date">-->
+                     <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
+
                     <!-- no of students -->
                         <label>Numbers of people</label>
-                          <select class="browser-default custom-select mb-4">
+                          <select class="browser-default custom-select mb-4" name="qty">
                             <option value="" disabled>Choose option</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -172,11 +173,18 @@
                             <option value="6">6</option>
                             <option value="7">7</option>
                           </select>
-                    <!-- date -->
-                          <input type="text" class="form-control mb-4" placeholder="Date">
+                          <!-- courses -->
+                        <label>Course</label>
+                          <select class="browser-default custom-select mb-4" name="course_id">
+                            <option value="" disabled>Choose option</option>
+                            <option value="1" selected>Japanese dish</option>
+                            <option value="2">Myanmar dish</option>
+                            <option value="3">Italian dish</option>
+                          </select>
+          
                     <!-- Message -->
                     <div class="form-group">
-                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message"></textarea>
+                        <textarea class="form-control rounded-0" name="messages" rows="4" placeholder="Message"></textarea>
                     </div>
                     <!-- Send button -->
                     <button class="btn btn-info btn-block" type="submit">Send</button>

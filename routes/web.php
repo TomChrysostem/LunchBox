@@ -30,6 +30,7 @@ Route::resource('services','ServiceController')->middleware('auth');
 Route::resource('menus','MenuController')->middleware('auth');
 Route::resource('categories', 'CategoryController')->middleware('auth');
 Route::resource('orders', 'OrderController')->middleware('auth');
+Route::resource('attendees', 'AttendeeController')->middleware('auth');
 
 Auth::routes();
 
