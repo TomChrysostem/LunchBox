@@ -73,32 +73,42 @@
                     </div>
                   <div class="modal-body">
                 <!-- Default form contact -->
-                    <form class="text-center border border-light p-3" action="#!" method="POST">
+                    <form class="text-center border border-light p-3" action="{{ route('orders.store') }}" method="POST">
                       <p class="h4 mb-4">Order Form</p>
+                      @csrf
                     <!-- Name -->
                         <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
+                    <!-- phone -->
+                        <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
                     <!-- Email -->
                         <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
-                    <!-- phone -->
-                    <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
+                    
                      <!-- address -->
                      <div class="form-group">
                         <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
                     </div>
                      <!-- date -->
-                     <input type="text" name="date" class="form-control mb-4" placeholder="Date">
+                     <!--<input type="text" name="date" id="datetimepicker" class="form-control mb-4" placeholder="Date">-->
+                     <input type="text" name="date" id="datetimepicker-default" class="form-control" placeholder="Date"/>
 
                       <!-- no of orders -->
-                    <input type="text" name="quantity" class="form-control mb-4" placeholder="Numbers of orders">
-              
+                    <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
+
+                    <!-- order item -->
+                    <input type="text" name="order_item_id" class="form-control mb-4" placeholder="Order Item">
+
+                    <!-- status -->
+                    <input type="text" name="status" class="form-control mb-4" placeholder="Status">
+
                     <!-- Message -->
                     <div class="form-group">
-                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message"></textarea>
+                        <textarea class="form-control rounded-0" name="messages" rows="4" placeholder="Message"></textarea>
                     </div>
                     <!-- Send button -->
                     <button class="btn btn-success btn-block" type="submit">Order</button>
                     </form>
             <!-- Default form contact -->
+
             </div>
             <!--endmodel-->
       
@@ -364,5 +374,5 @@
         </div>
       </div>
     </section>
-	
+
 @endsection

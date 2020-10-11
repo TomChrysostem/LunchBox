@@ -65,6 +65,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
                                  - Menus
                             </a>
+                            <a class="nav-link" href="{{ route('orders.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
+                                 - Orders
+                            </a>
                             <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
                             <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
