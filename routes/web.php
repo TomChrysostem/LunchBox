@@ -16,13 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('users.index');
 });
-// Route::get('/service', function () {
-//     return view('service');
-// });
+Route::get('/service', function () {
+    return view('users.service');
+});
 
-// Route::get('/course', function () {
-//     return view('course');
-// });
+Route::get('/course', function () {
+    return view('users.course');
+});
 
 Route::resource('admin','AdminController')->middleware('auth');
 Route::resource('courses','CourseController')->middleware('auth');
