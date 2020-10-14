@@ -57,59 +57,12 @@
 			</div>
         <div class="row justify-content-center py-4">
           <p class="mb-3 mx-3"><a href="/service" class="btn btn-info px-4 py-3">Detail Information</a></p>
-          <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
+          <p class="mb-3 mx-3"><a href="/order" class="btn btn-success px-4 py-3">Order Lunchbox</a></p>
         </div>
 
         <!--model-->
     
-     <div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark">
-                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                  <div class="modal-body">
-                <!-- Default form contact -->
-                    <form class="text-center border border-light p-3" action="{{ route('orders.store') }}" method="POST">
-                      <p class="h4 mb-4">Order Form</p>
-                      @csrf
-                    <!-- Name -->
-                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
-                    <!-- phone -->
-                        <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
-                    <!-- Email -->
-                        <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
-                    
-                     <!-- address -->
-                     <div class="form-group">
-                        <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
-                    </div>
-                     <!-- date -->
-                     <!--<input type="text" name="date" id="datetimepicker" class="form-control mb-4" placeholder="Date">-->
-                     <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
 
-                      <!-- no of orders -->
-                    <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
-
-                    <!-- order item -->
-                    <input type="text" name="order_item_id" class="form-control mb-4" placeholder="Order Item">
-
-                    <!-- status -->
-                    <input type="text" name="status" class="form-control mb-4" placeholder="Status">
-
-                    <!-- Message -->
-                    <div class="form-group">
-                        <textarea class="form-control rounded-0" name="messages" rows="4" placeholder="Message"></textarea>
-                    </div>
-                    <!-- Send button -->
-                    <button class="btn btn-success btn-block" type="submit">Order</button>
-                    </form>
-            <!-- Default form contact -->
-
-            </div>
             <!--endmodel-->
       
 	</section>
@@ -123,78 +76,10 @@
 					<div class="col-md-12 text-center">
 						<h2>Cooking Class</h2>
 						<h1 class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Cook together, stay together</h1>
-						<p class="mb-0"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>
 					</div>
 				</div>
 			</div>
-  
-           
-    <!--model-->
-  
-    <div class="modal fade" id="addBookCourse" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark">
-                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                  <div class="modal-body">
-                <!-- Default form contact -->
-                <form class="text-center border border-light p-3" action="{{ route('attendees.store') }}" method="POST">
-                      <p class="h4 mb-4">Register Form</p>
-                      @csrf
-                    <!-- Name -->
-                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
-                    <!-- Email -->
-                        <input type="text" name="phone" class="form-control mb-4" placeholder="Contact Number">
-                    <!-- ph no -->
-                        <input type="email" name="email" class="form-control mb-4" placeholder="Email">
-                        <!-- address -->
-                     <div class="form-group">
-                        <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
-                    </div>
-                     <!-- date -->
-                     <!--<input type="text" name="date" id="datetimepicker" class="form-control mb-4" placeholder="Date">-->
-                     <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
-
-                    <!-- no of students -->
-                        <label>Numbers of people</label>
-                          <select class="browser-default custom-select mb-4" name="qty">
-                            <option value="" disabled>Choose option</option>
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                          </select>
-                          <!-- courses -->
-                        <label>Course</label>
-                          <select class="browser-default custom-select mb-4" name="course_id">
-                            <option value="" disabled>Choose option</option>
-                            <option value="1" selected>Japanese dish</option>
-                            <option value="2">Myanmar dish</option>
-                            <option value="3">Italian dish</option>
-                          </select>
-          
-                    <!-- Message -->
-                    <div class="form-group">
-                        <textarea class="form-control rounded-0" name="messages" rows="4" placeholder="Message"></textarea>
-                    </div>
-                    <!-- Send button -->
-                    <button class="btn btn-info btn-block" type="submit">Send</button>
-                    </form>
-            <!-- Default form contact -->
-            </div>
-            <!--endmodel-->
-
 		</section>
-
-
-
 		
     <section class="ftco-section ftco-services-2 bg-light" id="workflow-section">
 			<div class="container">
@@ -235,7 +120,7 @@
 
       <div class="row justify-content-center">
           <p class="mx-3"><a href="/course" class="btn btn-info px-4 py-3">Detail Information</a></p>
-          <p class="mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Book Course</a></p>
+          <p class="mx-3"><a href="/apply_course" class="btn btn-success px-4 py-3">Book Course</a></p>
       </div>
     </section>
     

@@ -30,7 +30,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name" value="{{$course->name}}">
+                <input type="text" name="course" class="form-control" placeholder="Course Name" value="{{$course->course}}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -92,7 +92,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Category:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="cat_id" value="{{$course->category}}">
+                <select class="form-control" id="exampleFormControlSelect1" name="category_id" value="{{$course->category_id}}">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

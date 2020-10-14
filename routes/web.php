@@ -23,6 +23,13 @@ Route::get('/service', function () {
 Route::get('/course', function () {
     return view('users.course');
 });
+Route::get('/order', function () {
+    return view('users.order');
+});
+
+Route::get('/apply_course', function () {
+    return view('users.apply_course');
+});
 
 Route::resource('admin','AdminController')->middleware('auth');
 Route::resource('courses','CourseController')->middleware('auth');

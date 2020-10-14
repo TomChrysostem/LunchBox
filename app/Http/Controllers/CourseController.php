@@ -42,7 +42,7 @@ class CourseController extends Controller
         if ($request->hasFile('image')) {
             if ($request->file('image')->isValid()) {
                 $validated = $request->validate([
-                    'image' => 'mimes:jpeg,jpg,png,gif|max:1014',
+                    'image' => 'mimes:jpg,jpeg,png,gif|max:1014',
                 ]);
                 $extension = $request->image->extension();
                 $randomName = rand().".".$extension;
@@ -60,7 +60,7 @@ class CourseController extends Controller
         $course->image = $randomName;
         $course->save();
         }
-        return redirect()->route('admin.courses.index')->with('success','Course created successfully.');
+        return redirect()->route('courses.index')->with('success','Course created successfully.');
     }
 
     /**
@@ -95,12 +95,12 @@ class CourseController extends Controller
     public function update(Request $request, Course $course)
     {
         $request->validate([
-            'name' => 'required',
+            'course' => 'required',
         ]);
   
         $course->update($request->all());
   
-        return redirect()->route('admin.courses.index')
+        return redirect()->route('courses.index')
                         ->with('success','Course updated successfully');
     }
 
@@ -114,7 +114,7 @@ class CourseController extends Controller
     {
         $course->delete();
   
-        return redirect()->route('admin.courses.index')
+        return redirect()->route('courses.index')
                         ->with('success','Course deleted successfully');
     }
 }

@@ -41,8 +41,8 @@ class OrderController extends Controller
     {
         $request->validate([
             'user_name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email' => 'required|email',
             'address' => 'required',
             'date' => 'required',
             'qty' => 'required',
@@ -51,10 +51,9 @@ class OrderController extends Controller
             'messages' => 'required',
 
         ]);
-        Order::create($request->all());
-        //return redirect()->route('orders.index')
-                        //->with('success','Order created successfully.');
-                        return view('users.index');
+         //  Store data in database
+         Order::create($request->all());
+         return back()->with('success', 'Congratulation!!! Your order has been submitted.');
     }
 
     /**
@@ -90,8 +89,8 @@ class OrderController extends Controller
     {
         $request->validate([
             'user_name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email' => 'required|email',
             'address' => 'required',
             'date' => 'required',
             'qty' => 'required',

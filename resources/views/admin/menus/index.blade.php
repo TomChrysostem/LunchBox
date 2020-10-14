@@ -6,7 +6,6 @@
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
         <li class="breadcrumb-item active ">Menus</a></li>
-        <!-- <li class="breadcrumb-item active"><a href="{{ route('admin.index') }}">Services</a></li> -->
     </ol>
     <div class="card mb-4">
         <div class="card-body">
@@ -43,27 +42,18 @@
                                 <th>image</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                <th>Quantity</th>
                                 <th>Date</th>
+                                <th>Kcal</th>
+                                <th>Menu type</th>
+                                <th>Dish</th>
+                                <th>Category</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Menu</th>
-                                <th>image</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Date</th>
-                                <th>Action</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                         @foreach ($menus as $menu)
                             <tr>
-                                <td>{{ $menu->menu }}
-                                </td>
+                                <td>{{ $menu->menu }}</td>
                                 <td><img src="{{ asset('storage/img/'.$menu->image) }}" width="100" height="65"/></td>
                                 <td>{{ $menu->description }}</td>
                                 <td>{{ $menu->price }}</td>
