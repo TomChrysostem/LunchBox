@@ -4,7 +4,7 @@
 
     <div class="row">
 
-        <div class="col-lg-12 margin-tb">
+        <div class="col-lg-12 margin-tb pb-5">
 
             <div class="pull-left">
 
@@ -54,49 +54,49 @@
 
          <div class="row">
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Name:</strong>
                     <input type="text" name="user_name" value="{{ $attendee->user_name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Phone:</strong>
                     <input type="text" name="phone" value="{{ $attendee->phone }}" class="form-control" placeholder="Phone">
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Email:</strong>
                     <input type="text" name="email" value="{{ $attendee->email }}" class="form-control" placeholder="Email">
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Address:</strong>
                     <textarea class="form-control" style="height:100px" name="address" placeholder="Address">{{ $attendee->address }}</textarea>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Date:</label>
-                <div class="col-10">
+            <div class="col-xs-9 col-sm-9 col-md-9">
+                <div class="form-group">
+                <strong>Date:</strong>
                    <input type="text" name="date" class="form-control" id="datetimepicker" value="{{$attendee->date}}"/> 
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Quantity:</strong>
                     <input type="text" name="qty" value="{{ $attendee->qty }}" class="form-control" placeholder="Numbers of Students">
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Course item:</strong>
                     <select class="form-control" name="course_id" value="{{$attendee->course_id}}">
@@ -109,14 +109,14 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Message:</strong>
                     <textarea class="form-control" style="height:150px" name="messages" placeholder="Message">{{ $attendee->messages }}</textarea>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <div class="col-xs-9 col-sm-9 col-md-9 text-center">
 
               <button type="submit" class="btn btn-primary">Submit</button>
 

@@ -116,13 +116,14 @@
             </div>      
           </div>
         </div>
-			</div>
+			
 
       <div class="row justify-content-center">
           <p class="mx-3"><a href="/course" class="btn btn-info px-4 py-3">Detail Information</a></p>
           <p class="mx-3"><a href="/apply_course" class="btn btn-success px-4 py-3">Book Course</a></p>
       </div>
-    </section>
+      </div>
+    </section>-->
     
  <!--about us-->
 		<section class="pt-5" id="agent-section">
@@ -177,17 +178,17 @@
                 </p>
             </div>
               <!--Google map-->
-              <div class="col-md-6 mt-5 map-container">
+             <div class="col-md-6 mt-5 map-container">
                 <!--Google map-->
                      
-                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                           <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
                                  style="border:0" allowfullscreen></iframe>
                    
                 <!--Google Maps-->
-              </div>
+            </div>
               <!--Google Maps-->
             
-        </div>
+       </div>
            <!--about us-->
     	</div>
     </section>
