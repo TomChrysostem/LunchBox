@@ -26,7 +26,12 @@
             <div class="row form-group">
                 <label class="control-label col-2">Cover:</label>
                 <div class="col-10">
-                    <input type="file" class="file-input" name="image" id="inputGroupFile01"/>
+                    <div class="file-drop-area"> 
+                        <span class="choose-file-button">Choose Files</span> 
+                        <span class="file-message">or drag and drop files here</span> 
+                        <input type="file" class="file-input" name="image"> 
+                    </div>
+                    <div id="divImageMediaPreview"> </div>
                 </div>
             </div>
 
@@ -47,7 +52,7 @@
             <div class="row form-group">
                 <label class="control-label col-2">Quantity:</label>
                 <div class="col-10">
-                    <select class="form-control" id="exampleFormControlSelect1" name="no_of_people">
+                    <select class="form-control" id="exampleFormControlSelect1" name="qty">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -71,27 +76,12 @@
             </div>
 
             <div class="row form-group">
-                <label class="control-label col-2">Menu:</strong>
-                <div class="col-10">
-                    <select class="form-control" id="exampleFormControlSelect1" name="menu_id">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row form-group">
                 <label class="control-label col-2">Category:</strong>
                 <div class="col-10">
                     <select class="form-control" id="exampleFormControlSelect1" name="category_id">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->category}}</option>
+                    @endforeach
                     </select>
                 </div>
             </div>

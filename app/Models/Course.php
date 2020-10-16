@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['course', 'image', 'description','price','qty','period','category_id'];
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
+
 }

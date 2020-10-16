@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMenusTable extends Migration
+class CreateCoursesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,20 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('menu');
+            $table->string('course');
             $table->string('image');
             $table->text('description');
-            $table->double('price');
-            $table->string('date');
-            $table->string('kcal');
-            $table->string('menu_type');
-            $table->string('dish');
-            $table->integer('category_id');
+            $table->string('price');
+            $table->integer('qty');
+            $table->integer('period');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
-
+    // course_student_table 
     /**
      * Reverse the migrations.
      *
@@ -35,6 +34,6 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('courses');
     }
 }

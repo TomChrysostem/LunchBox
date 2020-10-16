@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Category;
+
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -14,10 +16,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::latest()->paginate(5);
-  
-        return view('admin.courses.index',compact('courses'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $courses = Course::with('category')->latest()->paginate(5);
+        //dd($courses->toArray());
+        //exit();
+        return view('admin.courses.index',compact('courses')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -27,7 +29,9 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('admin.courses.create');
+        $categories = Category::all();
+        //dd($category->toArray());
+        return view('admin.courses.create',compact('categories'));
     }
 
     /**
@@ -53,14 +57,13 @@ class CourseController extends Controller
         $course->course = $request->input('course');
         $course->description = $request->input('description');
         $course->price = $request->input('price');
-        $course->no_of_people = $request->input('no_of_people');
+        $course->qty = $request->input('qty');
         $course->period = $request->input('period');
-        $course->menu_id = $request->input('menu_id');
         $course->category_id = $request->input('category_id');
         $course->image = $randomName;
         $course->save();
         }
-        return redirect()->route('admin.courses.index')->with('success','Course created successfully.');
+        return redirect()->route('courses.index')->with('success','Course created successfully.');
     }
 
     /**
@@ -82,7 +85,8 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('admin.courses.edit',compact('course'));
+        $categories = Category::all();
+        return view('admin.courses.edit',compact('course','categories'));
     }
 
     /**
@@ -94,13 +98,19 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-  
-        $course->update($request->all());
-  
-        return redirect()->route('admin.courses.index')
+        if ($request->hasFile('image')) {
+            if ($request->file('image')->isValid()) {
+                $validated = $request->validate([
+                    'image' => 'mimes:jpeg,jpg,png,gif|max:1014',
+                ]);
+                $extension = $request->image->extension();
+                $randomName = rand().".".$extension;
+                $request->image->storeAs('/public/img/',$randomName);
+                $course->image = $randomName;
+            }
+        }
+        $course->update();
+        return redirect()->route('courses.index')
                         ->with('success','Course updated successfully');
     }
 
@@ -114,7 +124,7 @@ class CourseController extends Controller
     {
         $course->delete();
   
-        return redirect()->route('admin.courses.index')
+        return redirect()->route('courses.index')
                         ->with('success','Course deleted successfully');
     }
 }
