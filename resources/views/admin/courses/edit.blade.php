@@ -2,7 +2,7 @@
    
 @section('content')
     <div class="row">
-        <div class="col-lg-12 margin-tb">
+        <div class="col-lg-12 margin-tb pb-5">
             <div class="pull-left">
                 <h2>Edit course</h2>
             </div>
@@ -27,13 +27,13 @@
         @csrf
         @method('PUT')
      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name" value="{{$course->name}}">
+                <input type="text" name="course" class="form-control" placeholder="Course Name" value="{{$course->course}}">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Cover:</strong>
                 <div class="custom-file">
@@ -41,19 +41,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Description:</strong>
                 <input type="text" name="description" class="form-control" placeholder="Description" value="{{$course->description}}">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Price:</strong>
                 <input type="text" name="price" class="form-control" placeholder="Price" value="{{$course->price}}">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Number Of People:</strong>
                 <select class="form-control" id="exampleFormControlSelect1" name="no_of_people" value="{{$course->no_of_people}}">
@@ -65,7 +65,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Period:</strong>
                 <select class="form-control" id="exampleFormControlSelect1" name="period" value="{{$course->period}}">
@@ -77,7 +77,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Menu:</strong>
                 <select class="form-control" id="exampleFormControlSelect1" name="menu_id" value="{{$course->menu}}">
@@ -89,10 +89,10 @@
                 </select>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Category:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="cat_id" value="{{$course->category}}">
+                <select class="form-control" id="exampleFormControlSelect1" name="category_id" value="{{$course->category_id}}">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -101,7 +101,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-9 col-sm-9 col-md-9 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>

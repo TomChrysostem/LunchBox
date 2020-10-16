@@ -83,7 +83,7 @@ class ServiceController extends Controller
 
    
 
-        return redirect()->route('admin.services.index')
+        return redirect()->route('services.index')
 
                         ->with('success','Service created successfully.');
 
@@ -166,7 +166,7 @@ class ServiceController extends Controller
 
   
 
-        return redirect()->route('admin.services.index')
+        return redirect()->route('services.index')
 
                         ->with('success','Service updated successfully');
 
@@ -193,7 +193,7 @@ class ServiceController extends Controller
         $service->delete();
 
   
-        return redirect()->route('admin.services.index')
+        return redirect()->route('services.index')
                         ->with('success','Service  deleted successfully');
 
     }

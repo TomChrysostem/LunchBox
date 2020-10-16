@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-lg-12 margin-tb">
+    <div class="col-lg-12 margin-tb pb-5">
         <div class="pull-left">
             <h2>Add New menu</h2>
         </div>
@@ -26,45 +26,45 @@
 <form action="{{ route('menus.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <label class="control-label col-2">Menu:</label>
-            <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+            <label class="control-label">Menu:</label>
+            <div class="form-group">
                 <input type="text" name="menu" class="form-control" placeholder="Menu">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <label class="control-label col-2">Image:</label>
-            <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+            <label class="control-label">Image:</label>
+            <div class="form-group">
                 <input type="file" class="file-input" name="image" id="inputGroupFile01"/>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <label class="control-label col-2">Description:</label>
-            <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+            <label class="control-label">Description:</label>
+            <div class="form-group">
                 <textarea class="form-control" style="height:100px" name="description" placeholder="Description"></textarea>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <label class="control-label col-2">Price:</label>
-            <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+            <label class="control-label">Price:</label>
+            <div class="form-group">
                 <input type="text" name="price" class="form-control">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Date:</label>
-                <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+                <label class="control-label">Date:</label>
+                <div class="form-group">
                    <input type="text" name="date" class="form-control" id="datetimepicker"/> 
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Kcal:</label>
-                <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+                <label class="control-label">Kcal:</label>
+                <div class="form-group">
                     <input type="text" name="kcal" class="form-control">
                 </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Menu Type:</label>
-                <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+                <label class="control-label">Menu Type:</label>
+                <div class="form-group">
                     <select class="form-control" id="exampleFormControlSelect1" name="menu_type">
                         <option>School-Lunch</option>
                         <option>Company-Lunch</option>
@@ -73,25 +73,25 @@
                     </select>
                 </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Dish:</label>
-                <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+                <label class="control-label">Dish:</label>
+                <div class="form-group">
                     <select class="form-control" id="exampleFormControlSelect1" name="dish">
                         <option>main-dish</option>
                         <option>side-dish</option>
                     </select>
                 </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Category:</label>
-                <div class="col-10">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+                <label class="control-label">Category:</label>
+                <div class="form-group">
                     <select class="form-control" id="exampleFormControlSelect1" name="category_id">
                         <option>1</option>
                         <option>2</option>
                     </select>
                 </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-9 col-sm-9 col-md-9 text-center pt-3">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>

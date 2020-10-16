@@ -6,7 +6,7 @@
 
     <div class="row">
 
-        <div class="col-lg-12 margin-tb">
+        <div class="col-lg-12 margin-tb pb-5">
 
             <div class="pull-left">
 
@@ -58,7 +58,7 @@
 
          <div class="row">
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
 
                 <div class="form-group">
 
@@ -67,20 +67,20 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Description:</strong>
                     <textarea class="form-control" style="height:100px" name="description" placeholder="description">{{ $service->description }}</textarea>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-9 col-sm-9 col-md-9">
                 <div class="form-group">
                     <strong>Price:</strong>
                     <input type="text" name="price" value="{{ $service->price }}" class="form-control" placeholder="price">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <div class="col-xs-9 col-sm-9 col-md-9 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>

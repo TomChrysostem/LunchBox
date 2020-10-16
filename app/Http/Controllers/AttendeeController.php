@@ -40,8 +40,8 @@ class AttendeeController extends Controller
     {
         $request->validate([
             'user_name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email' => 'required|email',
             'address' => 'required',
             'date' => 'required',
             'qty' => 'required',
@@ -49,8 +49,10 @@ class AttendeeController extends Controller
             'messages' => 'required',
 
         ]);
+       
+        //  Store data in database
         Attendee::create($request->all());
-                        return view('users.index');
+        return back()->with('success', 'Congratulation!!! Your registration has been submitted.');
     }
 
     /**
@@ -86,8 +88,8 @@ class AttendeeController extends Controller
     {
         $request->validate([
             'user_name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email' => 'required|email',
             'address' => 'required',
             'date' => 'required',
             'qty' => 'required',
