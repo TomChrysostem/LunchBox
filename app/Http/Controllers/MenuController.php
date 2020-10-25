@@ -56,8 +56,7 @@ class MenuController extends Controller
         $menu->date = $request->input('date');
         $menu->kcal = $request->input('kcal');
         $menu->menu_type = $request->input('menu_type');
-        $menu->dish = $request->input('dish');
-        $menu->category_id = $request->input('category_id');
+        $menu->dish_type = $request->input('dish_type');
         $menu->image = $randomName;
         $menu->save();
         }
@@ -95,11 +94,26 @@ class MenuController extends Controller
      */
     public function update(Request $request, Menu $menu)
     {
-        $request->validate([
-            'menu' => 'required',
-            'description' => 'required',
-        ]);
-        $menu->update($request->all());
+        if ($request->hasFile('image')) {
+            if ($request->file('image')->isValid()) {
+                $validated = $request->validate([
+                    'image' => 'mimes:jpeg,jpg,png,gif|max:1014',
+                ]);
+                $extension = $request->image->extension();
+                $randomName = rand().".".$extension;
+                $request->image->storeAs('/public/img/',$randomName);
+                $menu->image = $randomName;
+                
+            }
+        }
+        $menu->menu = $request->input('menu');
+        $menu->description = $request->input('description');
+        $menu->price = $request->input('price');
+        $menu->date = $request->input('date');
+        $menu->kcal = $request->input('kcal');
+        $menu->menu_type = $request->input('menu_type');
+        $menu->dish_type = $request->input('dish_type');
+        $menu->save();
         return redirect()->route('menus.index')
                         ->with('success','Menu updated successfully');
     }

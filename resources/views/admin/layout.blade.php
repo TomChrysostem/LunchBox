@@ -58,9 +58,9 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-cloud-meatball"></i></div>
                                  - Courses
                             </a>
-                            <a class="nav-link" href="{{ route('services.index') }}">
+                            <a class="nav-link" href="{{ route('categories.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
-                                 - Services
+                                 - Categories
                             </a>
                             <a class="nav-link" href="{{ route('menus.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-concierge-bell"></i></div>

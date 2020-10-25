@@ -12,5 +12,8 @@ class Course extends Model
     {
         return $this->belongsTo('App\Models\Category');
     }
-
+    public function attendees()
+    {
+        return $this->belongsToMany('App\Models\Attendee');
+    }
 }

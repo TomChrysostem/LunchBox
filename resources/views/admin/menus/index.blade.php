@@ -43,8 +43,10 @@
                                 <th>image</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                <th>Quantity</th>
                                 <th>Date</th>
+                                <th>Kcal</th>
+                                <th>Menu_Type</th>
+                                <th>Dish_Type</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -54,8 +56,10 @@
                                 <th>image</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                <th>Quantity</th>
                                 <th>Date</th>
+                                <th>Kcal</th>
+                                <th>Menu_Type</th>
+                                <th>Dish_Type</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
@@ -70,8 +74,7 @@
                                 <td>{{ $menu->date }}</td>
                                 <td>{{ $menu->kcal }}</td>
                                 <td>{{ $menu->menu_type }}</td>
-                                <td>{{ $menu->dish }}</td>
-                                <td>{{ $menu->category_id }}</td>
+                                <td>{{ $menu->dish_type }}</td>
                                 <td>
                                     <form action="{{ route('menus.destroy',$menu->id) }}" method="POST">
                     

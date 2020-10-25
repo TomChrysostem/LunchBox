@@ -130,7 +130,6 @@
                 <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious. We always try for the students to be satisfy their school lunch.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
             </div>
 
         <!--lunchbox menu start-->
@@ -142,13 +141,14 @@
             </div>
 
         <div class="row">
+        @foreach ($menus as $menu)
             <div class="col-md-3">
                 <!-- Card -->
                 <div class="card mb-4">
 
                     <!--Card image-->
                     <div class="view overlay">
-                        <img class="card-img-top" src="images/italian dishes/Ahijo.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('storage/img/'.$menu->image) }}" alt="Card image cap">
                         <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
@@ -157,13 +157,16 @@
                     <div class="card-body">
 
                     <!--Title-->
-                    <h4 class="card-title">Ahijo</h4>
+                    <h4 class="card-title">{{ $menu->menu }}</h4>
                     <!--Text-->
-                    <p class="card-text" style="color: blue">5000 - MMK </p>
+                    <p class="card-text" style="color: blue">{{ $menu->price }}</p>
+                    <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
                     </div>
                 </div>
                 <!-- Card -->
             </div>
+          @endforeach
+        {!! $menus->links() !!}
         </div>
         </div>
     <!--lunchbox menu end-->
@@ -280,7 +283,8 @@
                     </div>
                   <div class="modal-body">
                 <!-- Default form contact -->
-                    <form class="text-center border border-light p-3" action="#!" method="POST">
+                    <form class="text-center border border-light p-3" action="{{route('users.order')}}" method="POST">
+                    @csrf
                       <p class="h4 mb-4">Order Form</p>
                     <!-- Name -->
                         <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
@@ -296,11 +300,13 @@
                      <input type="text" name="date" class="form-control mb-4" placeholder="Date">
 
                       <!-- no of orders -->
-                    <input type="text" name="quantity" class="form-control mb-4" placeholder="Numbers of orders">
-              
+                    <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
+
+                    <input type="text" name="menu_id" class="form-control mb-4" value="{{ $menu->id }}" hidden>
+                    <input type="text" name="status" class="form-control mb-4" value="1" hidden>
                     <!-- Message -->
                     <div class="form-group">
-                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message"></textarea>
+                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
                     </div>
                     <!-- Send button -->
                     <button class="btn btn-success btn-block" type="submit">Order</button>

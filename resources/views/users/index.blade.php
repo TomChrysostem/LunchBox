@@ -234,7 +234,7 @@
 			</div>
 
       <div class="row justify-content-center">
-          <p class="mx-3"><a href="/course" class="btn btn-info px-4 py-3">Detail Information</a></p>
+          <p class="mx-3"><a href="{{route('users.course')}}" class="btn btn-info px-4 py-3">Detail Information</a></p>
           <p class="mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Book Course</a></p>
       </div>
     </section>

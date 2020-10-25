@@ -32,11 +32,16 @@
                 <input type="text" name="menu" class="form-control" placeholder="Menu">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <label class="control-label col-2">Image:</label>
-            <div class="col-10">
-                <input type="file" class="file-input" name="image" id="inputGroupFile01"/>
-            </div>
+        <div class="row form-group">
+                <label class="control-label col-2">image:</label>
+                <div class="col-10">
+                    <div class="file-drop-area"> 
+                        <span class="choose-file-button">Choose Files</span> 
+                        <span class="file-message">or drag and drop files here</span> 
+                        <input type="file" class="file-input" name="image"> 
+                    </div>
+                    <div id="divImageMediaPreview"> </div>
+                </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <label class="control-label col-2">Description:</label>
@@ -76,18 +81,9 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
                 <label class="control-label col-2">Dish:</label>
                 <div class="col-10">
-                    <select class="form-control" id="exampleFormControlSelect1" name="dish">
+                    <select class="form-control" id="exampleFormControlSelect1" name="dish_type">
                         <option>main-dish</option>
                         <option>side-dish</option>
-                    </select>
-                </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Category:</label>
-                <div class="col-10">
-                    <select class="form-control" id="exampleFormControlSelect1" name="category_id">
-                        <option>1</option>
-                        <option>2</option>
                     </select>
                 </div>
         </div>

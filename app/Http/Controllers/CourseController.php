@@ -17,8 +17,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::with('category')->latest()->paginate(5);
-        //dd($courses->toArray());
-        //exit();
+        //dd($courses->toarray());
         return view('admin.courses.index',compact('courses')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -98,6 +97,7 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
+        //return $request;
         if ($request->hasFile('image')) {
             if ($request->file('image')->isValid()) {
                 $validated = $request->validate([
@@ -108,8 +108,15 @@ class CourseController extends Controller
                 $request->image->storeAs('/public/img/',$randomName);
                 $course->image = $randomName;
             }
+           
         }
-        $course->update();
+        $course->course = $request->input('course');
+        $course->description = $request->input('description');
+        $course->price = $request->input('price');
+        $course->qty = $request->input('qty');
+        $course->period = $request->input('period');
+        $course->category_id = $request->input('category_id');
+        $course->save();
         return redirect()->route('courses.index')
                         ->with('success','Course updated successfully');
     }

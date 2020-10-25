@@ -33,10 +33,15 @@
                     <input type="text" name="menu" class="form-control" value="{{$menu->menu}}">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Image:</label>
+            <div class="row form-group">
+                <label class="control-label col-2">image:</label>
                 <div class="col-10">
-                    <input type="file" class="file-input" name="image" id="inputGroupFile01" value="{{$menu->image}}"/>
+                    <div class="file-drop-area"> 
+                        <span class="choose-file-button">Choose Files</span> 
+                        <span class="file-message">or drag and drop files here</span> 
+                        <input type="file" class="file-input" name="image"> 
+                    </div>
+                    <div id="divImageMediaPreview"> </div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -75,22 +80,13 @@
                     </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
-                    <label class="control-label col-2">Dish:</label>
-                    <div class="col-10">
-                        <select class="form-control" id="exampleFormControlSelect1" name="dish" value="{{$menu->dish}}">
-                            <option>main-dish</option>
-                            <option>side-dish</option>
-                        </select>
-                    </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                    <label class="control-label col-2">Category:</label>
-                    <div class="col-10">
-                        <select class="form-control" id="exampleFormControlSelect1" name="category_id" value="{{$menu->category_id}}">
-                            <option>1</option>
-                            <option>2</option>
-                        </select>
-                    </div>
+                <label class="control-label col-2">Dish:</label>
+                <div class="col-10">
+                    <select class="form-control" id="exampleFormControlSelect1" name="dish_type" value="{{$menu->dish_type}}">
+                        <option>main-dish</option>
+                        <option>side-dish</option>
+                    </select>
+                </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -129,42 +129,46 @@
                 <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious. We always try for the students to be satisfy their school lunch.</p>
               </div> 
             </div>
-            <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>
+            <!-- <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p> -->
             </div>
 
         <!--lunchbox menu start-->
 	
     		<div class="row justify-content-center py-3">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h4>Available courses</h4>
-                </div>
-            </div>
+          <div class="col-md-12 heading-section text-center ftco-animate">
+              <h4>Available courses</h4>
+          </div>
+        </div>
 
         <div class="row">
+          @foreach ($courses as $course)
             <div class="col-md-3">
                 <!-- Card -->
                 <div class="card mb-4">
-
                     <!--Card image-->
                     <div class="view overlay">
-                        <img class="card-img-top" src="images/italian dishes/Ahijo.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('storage/img/'.$course->image) }}" alt="Card image cap">
                         <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
-
                     <!--Card content-->
                     <div class="card-body">
 
-                    <!--Title-->
-                    <h4 class="card-title">Ahijo</h4>
-                    <!--Text-->
-                    <p class="card-text" style="color: blue">5000 - MMK </p>
+                      <!--Title-->
+                      <h4 class="card-title">{{ $course->course }}</h4>
+                      <!--Text-->
+                      <p class="card-text">{{ $course->description }}</p>
+                      <p class="card-text" style="color: blue">{{ $course->price }} - MMK </p>
+                      <a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a>
+
                     </div>
                 </div>
                 <!-- Card -->
             </div>
+          @endforeach
+          {!! $courses->links() !!}
         </div>
-        </div>
+      </div>
     <!--lunchbox menu end-->
 	</section>
 
@@ -263,7 +267,7 @@
                 <!-- Card -->
             </div>
         </div>
-        </div>
+    </div>
     <!--lunchbox menu end-->
 
     <!--model-->
@@ -279,25 +283,22 @@
                     </div>
                   <div class="modal-body">
                 <!-- Default form contact -->
-                    <form class="text-center border border-light p-5" action="#!" method="POST">
-                      <p class="h4 mb-4">Booking Form</p>
+                  <form class="text-center border border-light p-5" action="{{ route('user.booking') }}" method="POST">
+                    @csrf
+                        <p class="h4 mb-4">Booking Form</p>
                     <!-- Name -->
-                        <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+                        <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="name" name="user_name">
                     <!-- Email -->
-                        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+                        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="email" name="email">
                     <!-- ph no -->
-                        <input type="text" class="form-control mb-4" placeholder="Contact Number">
+                        <input type="text" class="form-control mb-4" placeholder="Contact Number" name="phone">
                     <!-- courses -->
-                        <label>Course</label>
-                          <select class="browser-default custom-select mb-4">
-                            <option value="" disabled>Choose option</option>
-                            <option value="1" selected>Japanese food</option>
-                            <option value="2">Myanmar food</option>
-                            <option value="3">Italian food</option>
-                          </select>
+                        <div class="form-group">
+                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="address" name="address"></textarea>
+                        </div>
                     <!-- no of students -->
                         <label>Numbers of people</label>
-                          <select class="browser-default custom-select mb-4">
+                          <select class="browser-default custom-select mb-4" name="qty">
                             <option value="" disabled>Choose option</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -308,19 +309,18 @@
                             <option value="7">7</option>
                           </select>
                     <!-- date -->
-                          <input type="text" class="form-control mb-4" placeholder="Date">
+                          <input type="text" class="form-control mb-4" placeholder="Date" name="date">
+                          <!-- <input type="text" class="form-control mb-4" name="course_id" value ="{{ $course->id }}" hidden> -->
                     <!-- Message -->
-                    <div class="form-group">
-                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message"></textarea>
-                    </div>
+                      <div class="form-group">
+                          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
+                      </div>
                     <!-- Send button -->
-                    <button class="btn btn-info btn-block" type="submit">Send</button>
-                    </form>
+                      <button class="btn btn-info btn-block" type="submit">Send</button>
+                  </form>
             <!-- Default form contact -->
             </div>
             <!--endmodel-->
-
-            
     </section>
 
 </div>

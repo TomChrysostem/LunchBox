@@ -30,7 +30,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name" value="{{$course->course}}">
+                <input type="text" name="course" class="form-control" placeholder="Name" value="{{$course->course}}">
             </div>
         </div>
         <!-- <div class="col-xs-12 col-sm-12 col-md-12">
@@ -48,7 +48,7 @@
                 <div class="file-drop-area"> 
                     <span class="choose-file-button">Choose Files</span> 
                     <span class="file-message">or drag and drop files here</span> 
-                    <input type="file" class="file-input" name="image"> 
+                    <input type="file" class="file-input" name="image" value="{{$course->image}}"> 
                 </div>
                 <div id="divImageMediaPreview"></div>
             </div>
@@ -68,7 +68,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Number Of People:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="no_of_people" value="{{$course->no_of_people}}">
+                <select class="form-control" id="exampleFormControlSelect1" name="qty" value="{{$course->no_of_people}}">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

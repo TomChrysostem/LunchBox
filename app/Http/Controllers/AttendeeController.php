@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Attendee;
+use App\Models\Attendee;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -36,7 +36,7 @@ class AttendeeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Course $course)
     {
         $request->validate([
             'user_name' => 'required',
@@ -45,10 +45,12 @@ class AttendeeController extends Controller
             'address' => 'required',
             'date' => 'required',
             'qty' => 'required',
-            'course_id' => 'required',
             'messages' => 'required',
 
         ]);
+        $course = Course::find($course_id);
+        dd($course->toarray());
+        $course->attendees()->attach($attendee_id);
         Attendee::create($request->all());
                         return view('users.index');
     }
