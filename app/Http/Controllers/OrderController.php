@@ -16,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::latest()->paginate(5);
+        $orders = Order::with('menu')->latest()->paginate(5);
         return view('admin.orders.index',compact('orders'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }

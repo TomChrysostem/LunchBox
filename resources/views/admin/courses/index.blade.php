@@ -64,8 +64,7 @@
                             <tr>
                                 <td>{{ $course->course }}
                                     <div class="row">
-                                        <div class="col-12"><span class="badge badge-warning">Foods</span></div>
-                                        <div class="col-12"><span class="badge badge-info">Japanese</span></div>
+                                        <div class="col-12"><span class="badge badge-info">{{ $course->category->category }}</span></div>
                                     </div>
                                 </td>
                                 <td><img src="{{ asset('storage/img/'.$course->image) }}" width="100" height="65"/></td>

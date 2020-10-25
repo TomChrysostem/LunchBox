@@ -47,8 +47,8 @@
             <td>{{ $order->address }}</td>
             <td>{{ $order->date }}</td>
             <td>{{ $order->qty }}</td>
-            <td>{{ $order->order_item_id }}</td>
-            <td>{{ $order->status }}</td>
+            <td>{{ $order->menu->menu }}</td>
+            <td>order</td>
             <td>{{ $order->messages }}</td>
 
             <td>

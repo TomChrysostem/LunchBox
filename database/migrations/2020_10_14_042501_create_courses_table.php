@@ -19,14 +19,14 @@ class CreateCoursesTable extends Migration
             $table->string('image');
             $table->text('description');
             $table->string('price');
-            $table->integer('no_of_people');
+            $table->integer('qty');
             $table->integer('period');
-            $table->integer('menu_id');
-            $table->integer('category_id');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
-
+    // course_student_table 
     /**
      * Reverse the migrations.
      *

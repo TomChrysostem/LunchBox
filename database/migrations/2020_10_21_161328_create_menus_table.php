@@ -22,8 +22,7 @@ class CreateMenusTable extends Migration
             $table->string('date');
             $table->string('kcal');
             $table->string('menu_type');
-            $table->string('dish');
-            $table->integer('category_id');
+            $table->string('dish_type');
             $table->timestamps();
         });
     }

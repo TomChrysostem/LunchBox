@@ -130,7 +130,6 @@
                 <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious. We always try for the students to be satisfy their school lunch.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="{{asset('order')}}" class="btn btn-success px-4 py-3">Order Lunchbox</a></p>
             </div>
 
         <!--lunchbox menu start-->
@@ -142,13 +141,14 @@
             </div>
 
         <div class="row">
+        @foreach ($menus as $menu)
             <div class="col-md-3">
                 <!-- Card -->
                 <div class="card mb-4">
 
                     <!--Card image-->
                     <div class="view overlay">
-                        <img class="card-img-top" src="images/italian dishes/Ahijo.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('storage/img/'.$menu->image) }}" alt="Card image cap">
                         <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
@@ -157,13 +157,16 @@
                     <div class="card-body">
 
                     <!--Title-->
-                    <h4 class="card-title">Ahijo</h4>
+                    <h4 class="card-title">{{ $menu->menu }}</h4>
                     <!--Text-->
-                    <p class="card-text" style="color: blue">5000 - MMK </p>
+                    <p class="card-text" style="color: blue">{{ $menu->price }}</p>
+                    <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
                     </div>
                 </div>
                 <!-- Card -->
             </div>
+          @endforeach
+        {!! $menus->links() !!}
         </div>
         </div>
     <!--lunchbox menu end-->
@@ -179,7 +182,7 @@
                 restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="{{asset('order')}}" class="btn btn-success px-4 py-3">Order Lunchbox</a></p>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
 	</div>
 
     <!--lunchbox menu start-->
@@ -229,7 +232,7 @@
                 birthdays, charity events  and all sorts of special occasions.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="{{asset('order')}}" class="btn btn-success px-4 py-3">Order Lunchbox</a></p>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
 	</div>
 
     <!--lunchbox menu start-->
@@ -267,6 +270,50 @@
         </div>
     <!--lunchbox menu end-->
 
+     <!--model-->
+    
+     <div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                  <div class="modal-body">
+                <!-- Default form contact -->
+                    <form class="text-center border border-light p-3" action="{{route('users.order')}}" method="POST">
+                    @csrf
+                      <p class="h4 mb-4">Order Form</p>
+                    <!-- Name -->
+                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
+                    <!-- Email -->
+                        <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
+                    <!-- phone -->
+                    <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
+                     <!-- address -->
+                     <div class="form-group">
+                        <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
+                    </div>
+                     <!-- date -->
+                     <input type="text" name="date" class="form-control mb-4" placeholder="Date">
+
+                      <!-- no of orders -->
+                    <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
+
+                    <input type="text" name="menu_id" class="form-control mb-4" value="{{ $menu->id }}" hidden>
+                    <input type="text" name="status" class="form-control mb-4" value="1" hidden>
+                    <!-- Message -->
+                    <div class="form-group">
+                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
+                    </div>
+                    <!-- Send button -->
+                    <button class="btn btn-success btn-block" type="submit">Order</button>
+                    </form>
+            <!-- Default form contact -->
+            </div>
+            <!--endmodel-->
     </section>
 
     <section class="pt-5 bg-light mt-3" id="orderpay-section">

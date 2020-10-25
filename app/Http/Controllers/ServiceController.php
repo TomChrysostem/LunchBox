@@ -22,9 +22,6 @@ class ServiceController extends Controller
     {
 
         $services= Service::latest()->paginate(5);
-
-  
-
         return view('admin.services.index',compact('services'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -81,9 +78,7 @@ class ServiceController extends Controller
 
         Service::create($request->all());
 
-   
-
-        return redirect()->route('services.index')
+        return redirect()->route('admin.services.index')
 
                         ->with('success','Service created successfully.');
 

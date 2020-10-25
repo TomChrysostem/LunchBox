@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAttendeesTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateAttendeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('attendees', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('user_name');
             $table->string('phone');
             $table->string('email');
             $table->string('address');
-            $table->dateTime('date',0);
+            $table->string('date');
             $table->integer('qty');
-            $table->integer('course_id');
+            $table->unsignedBigInteger('menu_id');
+            $table->foreign('menu_id')->references('id')->on('menus');
+            $table->integer('status');
             $table->text('messages');
             $table->timestamps();
         });
@@ -34,6 +36,6 @@ class CreateAttendeesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendees');
+        Schema::dropIfExists('orders');
     }
 }

@@ -129,42 +129,46 @@
                 <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious. We always try for the students to be satisfy their school lunch.</p>
               </div> 
             </div>
-            <p class="mb-0"><a href="/apply_course" class="btn btn-info px-4 py-3">Booking Course</a></p>
+            <!-- <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p> -->
             </div>
 
         <!--lunchbox menu start-->
 	
     		<div class="row justify-content-center py-3">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h4>Available courses</h4>
-                </div>
-            </div>
+          <div class="col-md-12 heading-section text-center ftco-animate">
+              <h4>Available courses</h4>
+          </div>
+        </div>
 
         <div class="row">
+          @foreach ($courses as $course)
             <div class="col-md-3">
                 <!-- Card -->
                 <div class="card mb-4">
-
                     <!--Card image-->
                     <div class="view overlay">
-                        <img class="card-img-top" src="images/italian dishes/Ahijo.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('storage/img/'.$course->image) }}" alt="Card image cap">
                         <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
-
                     <!--Card content-->
                     <div class="card-body">
 
-                    <!--Title-->
-                    <h4 class="card-title">Ahijo</h4>
-                    <!--Text-->
-                    <p class="card-text" style="color: blue">5000 - MMK </p>
+                      <!--Title-->
+                      <h4 class="card-title">{{ $course->course }}</h4>
+                      <!--Text-->
+                      <p class="card-text">{{ $course->description }}</p>
+                      <p class="card-text" style="color: blue">{{ $course->price }} - MMK </p>
+                      <a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a>
+
                     </div>
                 </div>
                 <!-- Card -->
             </div>
+          @endforeach
+          {!! $courses->links() !!}
         </div>
-        </div>
+      </div>
     <!--lunchbox menu end-->
 	</section>
 
@@ -178,7 +182,7 @@
                 restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
               </div> 
             </div>
-            <p class="mb-0"><a href="/apply_course" class="btn btn-info px-4 py-3">Booking Course</a></p>
+            <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>
 	</div>
 
     <!--lunchbox menu start-->
@@ -228,7 +232,7 @@
                 birthdays, charity events  and all sorts of special occasions.</p>
               </div> 
             </div>
-            <p class="mb-0"><a href="/apply_course" class="btn btn-info px-4 py-3">Booking Course</a></p>
+            <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>
 	</div>
 
     <!--lunchbox menu start-->
@@ -263,8 +267,60 @@
                 <!-- Card -->
             </div>
         </div>
-        </div>
-    <!--lunchbox menu end-->    
+    </div>
+    <!--lunchbox menu end-->
+
+    <!--model-->
+  
+    <div class="modal fade" id="addBookCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                        <p class="text-justified">You can register by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                  <div class="modal-body">
+                <!-- Default form contact -->
+                  <form class="text-center border border-light p-5" action="{{ route('user.booking') }}" method="POST">
+                    @csrf
+                        <p class="h4 mb-4">Booking Form</p>
+                    <!-- Name -->
+                        <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="name" name="user_name">
+                    <!-- Email -->
+                        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="email" name="email">
+                    <!-- ph no -->
+                        <input type="text" class="form-control mb-4" placeholder="Contact Number" name="phone">
+                    <!-- courses -->
+                        <div class="form-group">
+                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="address" name="address"></textarea>
+                        </div>
+                    <!-- no of students -->
+                        <label>Numbers of people</label>
+                          <select class="browser-default custom-select mb-4" name="qty">
+                            <option value="" disabled>Choose option</option>
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                          </select>
+                    <!-- date -->
+                          <input type="text" class="form-control mb-4" placeholder="Date" name="date">
+                          <!-- <input type="text" class="form-control mb-4" name="course_id" value ="{{ $course->id }}" hidden> -->
+                    <!-- Message -->
+                      <div class="form-group">
+                          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
+                      </div>
+                    <!-- Send button -->
+                      <button class="btn btn-info btn-block" type="submit">Send</button>
+                  </form>
+            <!-- Default form contact -->
+            </div>
+            <!--endmodel-->
     </section>
 
 </div>

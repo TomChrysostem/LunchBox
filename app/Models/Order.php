@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['user_name', 'phone', 'email','address','date','qty','menu_id','messages','status'];
+
+    public function menu()
+    {
+        return $this->belongsTo('App\Models\Menu');
+    }
+
 }

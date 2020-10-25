@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['menu', 'image', 'description','price','date','kcal','menu_type','dish','category_id'];
+
+    public function course()
+    {
+        return $this->hasMany('App\Models\Course');
+    }
+    public function order()
+    {
+        return $this->hasMany('App\Models\Order');
+    }
 }

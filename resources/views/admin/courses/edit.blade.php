@@ -2,7 +2,7 @@
    
 @section('content')
     <div class="row">
-        <div class="col-lg-12 margin-tb pb-5">
+        <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Edit course</h2>
             </div>
@@ -27,36 +27,48 @@
         @csrf
         @method('PUT')
      <div class="row">
-        <div class="col-xs-9 col-sm-9 col-md-9">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="course" class="form-control" placeholder="Course Name" value="{{$course->course}}">
+                <input type="text" name="course" class="form-control" placeholder="Name" value="{{$course->course}}">
             </div>
         </div>
-        <div class="col-xs-9 col-sm-9 col-md-9">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Cover:</strong>
                 <div class="custom-file">
-                    <input type="file" class="file-input" name='cover' id="inputGroupFile01" />
+                    <img src="{{ asset('storage/img/'.$course->image) }}" width="100" height="65"/>
+                    <input type="file" class="file-input" name='cover' id="inputGroupFile01" value="{{$course->image}}"/>
                 </div>
             </div>
+        </div> -->
+        <div class="row form-group">
+            <label class="control-label col-2">Cover:</label>
+            <div class="col-10">
+                <div class="file-drop-area"> 
+                    <span class="choose-file-button">Choose Files</span> 
+                    <span class="file-message">or drag and drop files here</span> 
+                    <input type="file" class="file-input" name="image" value="{{$course->image}}"> 
+                </div>
+                <div id="divImageMediaPreview"></div>
+            </div>
         </div>
-        <div class="col-xs-9 col-sm-9 col-md-9">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
                 <input type="text" name="description" class="form-control" placeholder="Description" value="{{$course->description}}">
             </div>
         </div>
-        <div class="col-xs-9 col-sm-9 col-md-9">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
                 <input type="text" name="price" class="form-control" placeholder="Price" value="{{$course->price}}">
             </div>
         </div>
-        <div class="col-xs-9 col-sm-9 col-md-9">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Number Of People:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="no_of_people" value="{{$course->no_of_people}}">
+                <select class="form-control" id="exampleFormControlSelect1" name="qty" value="{{$course->no_of_people}}">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -65,7 +77,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-xs-9 col-sm-9 col-md-9">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Period:</strong>
                 <select class="form-control" id="exampleFormControlSelect1" name="period" value="{{$course->period}}">
@@ -77,31 +89,18 @@
                 </select>
             </div>
         </div>
-        <div class="col-xs-9 col-sm-9 col-md-9">
-            <div class="form-group">
-                <strong>Menu:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="menu_id" value="{{$course->menu}}">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-9 col-sm-9 col-md-9">
+       
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Category:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="category_id" value="{{$course->category_id}}">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                <select class="form-control" id="exampleFormControlSelect1" name="category_id" value="{{$course->category->category}}">
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->category}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
-        <div class="col-xs-9 col-sm-9 col-md-9 text-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
