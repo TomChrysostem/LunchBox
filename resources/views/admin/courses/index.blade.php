@@ -48,7 +48,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tfoot>
+                        <!--<tfoot>
                             <tr>
                                 <th>Course</th>
                                 <th>Cover</th>
@@ -58,7 +58,7 @@
                                 <th>period</th>
                                 <th>Action</th>
                             </tr>
-                        </tfoot>
+                        </tfoot>-->
                         <tbody>
                         @foreach ($courses as $course)
                             <tr>

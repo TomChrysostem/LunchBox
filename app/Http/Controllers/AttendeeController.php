@@ -40,19 +40,17 @@ class AttendeeController extends Controller
     {
         $request->validate([
             'user_name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email' => 'required|email',
             'address' => 'required',
             'date' => 'required',
             'qty' => 'required',
             'messages' => 'required',
 
         ]);
-        $course = Course::find($course_id);
-        dd($course->toarray());
-        $course->attendees()->attach($attendee_id);
+
         Attendee::create($request->all());
-                        return view('users.index');
+        return back()->with('success', 'Congratulation!!! Your registration has been submitted.');
     }
 
     /**
@@ -88,8 +86,8 @@ class AttendeeController extends Controller
     {
         $request->validate([
             'user_name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email' => 'required|email',
             'address' => 'required',
             'date' => 'required',
             'qty' => 'required',

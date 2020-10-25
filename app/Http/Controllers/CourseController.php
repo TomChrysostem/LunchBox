@@ -45,7 +45,7 @@ class CourseController extends Controller
         if ($request->hasFile('image')) {
             if ($request->file('image')->isValid()) {
                 $validated = $request->validate([
-                    'image' => 'mimes:jpeg,jpg,png,gif|max:1014',
+                    'image' => 'mimes:jpg,jpeg,png,gif|max:1014',
                 ]);
                 $extension = $request->image->extension();
                 $randomName = rand().".".$extension;

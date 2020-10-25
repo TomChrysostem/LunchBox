@@ -33,6 +33,13 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
     Route::resource('orders', 'OrderController');
     Route::resource('attendees', 'AttendeeController');
 });
+Route::get('/order', function () {
+    return view('users.order');
+});
+
+Route::get('/apply_course', function () {
+    return view('users.apply_course');
+});
 
 Route::resource('admin','AdminController')->middleware('auth');
 
