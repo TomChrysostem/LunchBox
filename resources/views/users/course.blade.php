@@ -283,7 +283,7 @@
                     </div>
                   <div class="modal-body">
                 <!-- Default form contact -->
-                  <form class="text-center border border-light p-5" action="{{ route('user.booking') }}" method="POST">
+                  <form class="text-center border border-light p-5" action="{{ route('users.booking') }}" method="POST">
                     @csrf
                         <p class="h4 mb-4">Booking Form</p>
                     <!-- Name -->
