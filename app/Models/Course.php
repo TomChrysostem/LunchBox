@@ -14,6 +14,6 @@ class Course extends Model
     }
     public function attendees()
     {
-        return $this->belongsToMany('App\Models\Attendee');
+        return $this->belongsToMany('App\Models\Attendee')->withTimestamps();
     }
 }

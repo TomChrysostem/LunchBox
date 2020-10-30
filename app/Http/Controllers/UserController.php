@@ -33,7 +33,7 @@ class UserController extends Controller
         $attendee = new Attendee();
 
         $course_id = $request->input('course_id');
-        $attendee->courses()->attach($course_id);
+        //dd($course_id);
         
         $attendee->user_name = $request->input('user_name');
         $attendee->phone = $request->input('phone');
@@ -43,6 +43,7 @@ class UserController extends Controller
         $attendee->qty = $request->input('qty');
         $attendee->messages = $request->input('messages');
         $attendee->save();
+        $attendee->courses()->attach($course_id);
 
         return redirect('/course');
     }

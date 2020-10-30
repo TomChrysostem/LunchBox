@@ -310,7 +310,7 @@
                           </select>
                     <!-- date -->
                           <input type="text" class="form-control mb-4" placeholder="Date" name="date">
-                          <!-- <input type="text" class="form-control mb-4" name="course_id" value ="{{ $course->id }}" hidden> -->
+                          <input type="text" class="form-control mb-4" name="course_id" value ="{{ $course->id }}" hidden/>
                     <!-- Message -->
                       <div class="form-group">
                           <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
