@@ -15,108 +15,63 @@
   </section>
 
 		
-	<section class="pt-5 bg-light" id="services-section">
-			<div class="container">
-				<div class="row justify-content-center">
-          <div class="col-md-12 heading-section text-center ftco-animate">
+<section class="pt-5 bg-light" id="services-section">
+  <div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-12 heading-section text-center ftco-animate">
             <h2 class="mb-4">Lunchbox Services</h2>
             <p>We are always happy to offer the customers with our wonderful food</p>
-          </div>
         </div>
-        <div class="row">
-        	<div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services text-center d-block">
+    </div>
+
+    <div class="row">
+        <div class="col-md d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services text-center d-block">
               <img src="images/school-lunch.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
               <div class="media-body">
-                <h3 class="heading my-3">School Lunch</h3>
-                <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious and satisfying school lunch.</p>
+                  <h3 class="heading my-3">School Lunch</h3>
+                  <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious and satisfying school lunch.</p>
               </div>
-            </div>      
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services text-center d-block mt-lg-5 pt-lg-4">
-              <img src="images/staff lunch.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
-              <div class="media-body">
-                <h3 class="heading my-3">Saff Lunch</h3>
-                <p>We can help you design and deliver a successful meal program with a focus on healthy nutrition to revitalize your staff. Your customized meal plan will consist of diverse, 
-                restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services text-center d-block">
-              <img src="images/event food.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
-              <div class="media-body">
-                <h3 class="heading my-3">Event & Party Food</h3>
-                <p>Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, 
-                birthdays, charity events  and all sorts of special occasions.</p>
-              </div>
-            </div>      
-          </div>
-
-			</div>
-        <div class="row justify-content-center py-4">
-          <p class="mb-3 mx-3"><a href="/service" class="btn btn-info px-4 py-3">Detail Information</a></p>
-          <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
+          </div>      
         </div>
-
-        <!--model-->
-    
-     <div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark">
-                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                  <div class="modal-body">
-                <!-- Default form contact -->
-                    <form class="text-center border border-light p-3" action="{{ route('orders.store') }}" method="POST">
-                      <p class="h4 mb-4">Order Form</p>
-                      @csrf
-                    <!-- Name -->
-                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
-                    <!-- phone -->
-                        <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
-                    <!-- Email -->
-                        <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
-                    
-                     <!-- address -->
-                     <div class="form-group">
-                        <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
-                    </div>
-                     <!-- date -->
-                     <!--<input type="text" name="date" id="datetimepicker" class="form-control mb-4" placeholder="Date">-->
-                     <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
-
-                      <!-- no of orders -->
-                    <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
-
-                    <!-- order item -->
-                    <input type="text" name="order_item_id" class="form-control mb-4" placeholder="Order Item">
-
-                    <!-- status -->
-                    <input type="text" name="status" class="form-control mb-4" placeholder="Status">
-
-                    <!-- Message -->
-                    <div class="form-group">
-                        <textarea class="form-control rounded-0" name="messages" rows="4" placeholder="Message"></textarea>
-                    </div>
-                    <!-- Send button -->
-                    <button class="btn btn-success btn-block" type="submit">Order</button>
-                    </form>
-            <!-- Default form contact -->
-
+        <div class="col-md d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services text-center d-block mt-lg-5 pt-lg-4">
+            <img src="images/staff lunch.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
+            <div class="media-body">
+              <h3 class="heading my-3">Saff Lunch</h3>
+              <p>We can help you design and deliver a successful meal program with a focus on healthy nutrition to revitalize your staff. Your customized meal plan will consist of diverse, 
+              restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
             </div>
-            <!--endmodel-->
-      
-	</section>
+          </div>      
+        </div>
+        <div class="col-md d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services text-center d-block">
+            <img src="images/event food.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
+            <div class="media-body">
+              <h3 class="heading my-3">Event & Party Food</h3>
+              <p>Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, 
+              birthdays, charity events  and all sorts of special occasions.</p>
+            </div>
+          </div>      
+        </div>
+    </div>
+
+    <div class="row justify-content-center py-4">
+          <p class="mb-3 mx-3"><a href="/service" class="btn btn-info px-4 py-3">Detail Information</a></p>
+    </div>
+
+  <!--model-->
+
+
+  <!--endmodel-->
+
+  </div>   
+</section>
 
 
 
-  <section class="ftco-intro img" id="about-section" style="background-image: url(images/wall3.jpg);">
+<section class="ftco-intro img" id="about-section" style="background-image: url(images/wall3.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row justify-content-center">
@@ -196,28 +151,29 @@
 
 
 		
-    <section class="ftco-section ftco-services-2 bg-light" id="workflow-section">
-			<div class="container">
-				<div class="row">
+<section class="ftco-section ftco-services-2 bg-light" id="workflow-section">
+	<div class="container">
+			<div class="row">
+
           <div class="col-md-4 heading-section ftco-animate">
-          <h2 class="mb-5">Class Types</h2>
+              <h2 class="mb-5">Class Types</h2>
             <div class="media block-6 services text-center d-block pt-md-5 mt-md-5">
               <img src="images/one-class.jpg" class="img-fluid" alt="Colorlib Template">
-              <div class="media-body p-md-3">
-                <h3 class="heading mb-3">Individual Class</h3>
-                <p class="mb-5">All Chefparade cooking classes are lead by the best chefs who love what they do and love to teach you that​.</p>
-                <hr>
-              </div>
+                  <div class="media-body p-md-3">
+                      <h3 class="heading mb-3">Individual Class</h3>
+                        <p class="mb-5">All Chefparade cooking classes are lead by the best chefs who love what they do and love to teach you that​.</p>
+                      <hr>
+                  </div>
             </div>
           </div>
           <div class="col-md-4 d-flex align-self-stretch ftco-animate mt-lg-5">
             <div class="media block-6 services text-center d-block mt-lg-5 pt-md-5 pt-lg-4">
               <img src="images/group-class.jpg" class="img-fluid" alt="Colorlib Template">
-              <div class="media-body p-md-3">
-                <h3 class="heading mb-3">Group Class</h3>
-                <p class="mb-5">Private Group Cooking Classes offer a unique experience full of fun, laughter, good food and good wine. Book for one of the private group cooking classes.</p>
-                <hr>
-              </div>
+                <div class="media-body p-md-3">
+                    <h3 class="heading mb-3">Group Class</h3>
+                      <p class="mb-5">Private Group Cooking Classes offer a unique experience full of fun, laughter, good food and good wine. Book for one of the private group cooking classes.</p>
+                    <hr>
+                </div>
             </div>      
           </div>
           <div class="col-md-4 d-flex align-self-stretch ftco-animate">
@@ -225,19 +181,20 @@
               <img src="images/cookingtraining.jpg" class="img-fluid" alt="Colorlib Template">
               <div class="media-body p-md-3">
                 <h3 class="heading mb-3">Cheft-training Class</h3>
-                <p class="mb-5">A student interested in culinary arts can take a broad or narrow approach, learning about all types of cooking or a specific area, such as baking or regional cuisine. Continue reading to learn about education and career options in this field.</p>
+                    <p class="mb-5">A student interested in culinary arts can take a broad or narrow approach, learning about all types of cooking or a specific area, such as baking or regional cuisine. Continue reading to learn about education and career options in this field.</p>
                 <hr>
               </div>
             </div>      
           </div>
-        </div>
+        
 			</div>
 
       <div class="row justify-content-center">
-          <p class="mx-3"><a href="{{route('users.course')}}" class="btn btn-info px-4 py-3">Detail Information</a></p>
-          <p class="mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Book Course</a></p>
+            <p class="mx-3"><a href="{{route('users.course')}}" class="btn btn-info px-4 py-3">Detail Information</a></p>
+            <p class="mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Book Course</a></p>
       </div>
-    </section>
+ 
+</section>
     
  <!--about us-->
 		<section class="pt-5" id="agent-section">
