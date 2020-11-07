@@ -46,10 +46,10 @@
 	      
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="/" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#japan-section" class="nav-link"><span>Japanese dishes</span></a></li>
-	          <li class="nav-item"><a href="#myanmar-section" class="nav-link"><span>Myanmar dishes</span></a></li>
-	          <li class="nav-item"><a href="#italian-section" class="nav-link"><span>Italian dishes</span></a></li>
+	          <li class="nav-item"><a href="/" class="nav-link"><span>ホーム</span></a></li>
+	          <li class="nav-item"><a href="#japan-section" class="nav-link"><span>日本料理</span></a></li>
+	          <li class="nav-item"><a href="#myanmar-section" class="nav-link"><span>ミャンマー料理</span></a></li>
+	          <li class="nav-item"><a href="#italian-section" class="nav-link"><span>イタリア料理</span></a></li>
 	          
 	        </ul>
 	      </div>
@@ -115,8 +115,8 @@
    
         <div class="row justify-content-center pt-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Courses</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h2 class="mb-4">コース</h2>
+            <p>もしあなたは経験豊富な教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
           </div>
         </div>
     
@@ -125,8 +125,8 @@
         <div class="row justify-content-center">
             <div class="align-self-stretch ftco-animate mx-3">
               <div class="media-body">
-              <h3 class="heading my-3">Japanese dishes</h3>
-                <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious. We always try for the students to be satisfy their school lunch.</p>
+              <h3 class="heading my-3">日本料理</h3>
+                <p>もしあなたは経験豊富な教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
               </div> 
             </div>
             <!-- <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p> -->
