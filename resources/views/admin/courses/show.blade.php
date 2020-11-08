@@ -1,65 +1,35 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show course</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('courses.index') }}"> Back</a>
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Course Detail</h4>
+    </div>
+    <div class="card-body row">
+        <div class="col-7">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Name : </span>{{ $course->course }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Category :</span>{{ $course->category->category }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Price  :</span> {{ $course->price }} </li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Description :</span> {{ $course->description }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Number Of Students  :</span> {{ $course->qty }} persons</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Period  :</span> {{ $course->period }} Times</li>
+            </ul>
+        </div>
+        <div class="col-5">
+            <!--Mask with wave-->
+            <div class="view overlay">
+                <img src="{{ asset('storage/img/'.$course->image) }}" class="img-fluid" alt="Sample image with waves effect.">
+                <a>
+                <div class="mask waves-effect waves-light rgba-white-slight"></div>
+                </a>
             </div>
         </div>
     </div>
-   
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                {{ $course->course }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Cover:</strong>
-                {{ $course->cover }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Description:</strong>
-                {{ $course->description }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Price:</strong>
-                {{ $course->price }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Number Of People:</strong>
-                {{ $course->no_of_people }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Period:</strong>
-                {{ $course->period }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Menu:</strong>
-                {{ $course->menu_id }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Catrgory:</strong>
-                {{ $course->cat_id }}
-            </div>
+        <div class="col-12 text-center p-3">
+            <a type="button" class="btn btn-success btn-fill" href="{{ route('courses.index') }}">Back</a>
         </div>
     </div>
+</div>
 @endsection

@@ -1,108 +1,109 @@
 @extends('admin.layout')
-   
-@section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit course</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('courses.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
-   
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
   
+@section('content')
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Add New Courses</h4>
+    </div>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <form action="{{ route('courses.update',$course->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="course" class="form-control" placeholder="Name" value="{{$course->course}}">
-            </div>
-        </div>
-        <!-- <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Cover:</strong>
-                <div class="custom-file">
-                    <img src="{{ asset('storage/img/'.$course->image) }}" width="100" height="65"/>
-                    <input type="file" class="file-input" name='cover' id="inputGroupFile01" value="{{$course->image}}"/>
+        <div class="card-body row">
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mb-0">
+                            <label>Course (Course Name)</label>
+                            <input type="text" class="form-control" placeholder="Company" name="course" value="{{$course->course}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-0">
+                            <label>Category</label>
+                            <select class="form-control" name="category_id" value="{{$course->category->category}}">
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->category}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-0">
+                            <label>Price</label>
+                            <input type="email" class="form-control" placeholder="price of course" name="price" value="{{$course->price}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mb-0">
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Description about course" name="description">{{$course->description}}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-0">
+                            <label>Quantity</label>
+                            <select class="form-control" name="qty" value="{{$course->qty}}">
+                                <option value="1">1 person</option>
+                                <option value="2">2 person</option>
+                                <option value="3">3 person</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-0">
+                            <label>Period</label>
+                            <select class="form-control" name="period" value="{{$course->period}}">
+                                <option value="1">1 period</option>
+                                <option value="2">2 period</option>
+                                <option value="3">3 period</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div> -->
-        <div class="row form-group">
-            <label class="control-label col-2">Cover:</label>
-            <div class="col-10">
-                <div class="file-drop-area"> 
-                    <span class="choose-file-button">Choose Files</span> 
-                    <span class="file-message">or drag and drop files here</span> 
-                    <input type="file" class="file-input" name="image" value="{{$course->image}}"> 
+            <div class="col-5">
+                <!--Mask with wave-->
+                <div class="view overlay pt-3 pr-3">
+                    <div class="image-upload-wrap">
+                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image" />
+                        <div class="drag-text">
+                            <div class="align-middle">
+                                <!-- <h5>Drag and drop a file or select add Image</h5> -->
+                                <button class="btn btn-secondary btn-fill" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file-upload-content">
+                        <img class="file-upload-image rounded" src="#" alt="your image" />
+                        <div class="image-title-wrap">
+                            <button type="button" onclick="removeUpload()" class="btn btn-danger">remove</button>
+                        </div>
+                    </div>
                 </div>
-                <div id="divImageMediaPreview"></div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Description:</strong>
-                <input type="text" name="description" class="form-control" placeholder="Description" value="{{$course->description}}">
+        <div class="row">
+            <div class="col-12 text-center p-3">
+                <a type="button" class="btn btn-success btn-fill" href="{{ route('courses.index') }}">Back</a>
+                <button type="submit" class="btn btn-info btn-fill">Update Course</button>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Price:</strong>
-                <input type="text" name="price" class="form-control" placeholder="Price" value="{{$course->price}}">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Number Of People:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="qty" value="{{$course->no_of_people}}">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Period:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="period" value="{{$course->period}}">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-        </div>
-       
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Category:</strong>
-                <select class="form-control" id="exampleFormControlSelect1" name="category_id" value="{{$course->category->category}}">
-                    @foreach ($categories as $category)
-                        <option value="{{$category->id}}">{{$category->category}}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
 @endsection

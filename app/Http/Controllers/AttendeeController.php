@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Course;
 use App\Models\Attendee;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,7 +15,9 @@ class AttendeeController extends Controller
      */
     public function index()
     {
-        $attendees = Attendee::latest()->paginate(5);
+        //$attendees = Attendee::latest()->paginate(5);
+        $attendees = Course::find(1)->attendees()->latest()->paginate(5);
+        //dd($attendees->toarray());
         return view('admin.attendees.index',compact('attendees'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -61,7 +63,8 @@ class AttendeeController extends Controller
      */
     public function show(Attendee $attendee)
     {
-        return view('admin.attendees.show',compact('attendee'));
+        $book_attendee = Course::find(1)->attendees()->find($attendee);
+        return view('admin.attendees.show',compact('book_attendee'));
     }
 
     /**

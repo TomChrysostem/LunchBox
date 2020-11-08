@@ -1,29 +1,22 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show Category</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('categories.index') }}"> Back</a>
-            </div>
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Category Detail</h4>
+    </div>
+    <div class="card-body row">
+        <div class="col-7">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Category : </span> {{ $category->category }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Description :</span>{{ $category->description }}</li> 
+            </ul>
         </div>
     </div>
-
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Category:</strong>
-                {{ $category->category }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Descrition:</strong>
-                {{ $category->description }}
-            </div>
+        <div class="col-12 text-center p-3">
+            <a type="button" class="btn btn-success btn-fill"  href="{{ route('categories.index') }}">Back</a>
         </div>
     </div>
+</div>
 @endsection
