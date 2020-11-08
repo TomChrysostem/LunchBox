@@ -46,11 +46,11 @@
 	      
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="/" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#school-section" class="nav-link"><span>School Lunch</span></a></li>
-	          <li class="nav-item"><a href="#staff-section" class="nav-link"><span>Lunchbox</span></a></li>
-	          <li class="nav-item"><a href="#event-section" class="nav-link"><span>Event food</span></a></li>
-            <li class="nav-item"><a href="#orderpay-section" class="nav-link"><span>Ordering and paying</span></a></li>
+	          <li class="nav-item"><a href="/" class="nav-link"><span>ホーム</span></a></li>
+	          <li class="nav-item"><a href="#school-section" class="nav-link"><span>給食</span></a></li>
+	          <li class="nav-item"><a href="#staff-section" class="nav-link"><span>スタッフのお弁当</span></a></li>
+	          <li class="nav-item"><a href="#event-section" class="nav-link"><span>イベント＆パーティーフード</span></a></li>
+            <li class="nav-item"><a href="#orderpay-section" class="nav-link"><span>ご注文方法</span></a></li>
 	          
 	        </ul>
 	      </div>
@@ -116,8 +116,8 @@
    
         <div class="row justify-content-center pt-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Our Menus</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h2 class="mb-4">我々のメニュー</h2>
+            <p>お客様に素晴らしい料理を提供させていただきます</p>
           </div>
         </div>
     
@@ -457,49 +457,58 @@
 
     <section class="pt-5 bg-light mt-3" id="orderpay-section">
         <div class="container px-5 pb-5">
-          <h3 class="heading-section text-center ftco-animate"><b>Information for ordering and paying</b></h3>
-          <h4>1.How to order</h4>
-          <p>You can order by Mail (<b class="text-info">awa.yoko.hayami@gmail.com</b>) or by Contact Number (<b class="text-info">09792655994</b>) or by order form</p>
-          <p class="mb-4">***Please let us know your name, company name/organization name, contact number, address to deliver if you are the customer for the first time</p>
-           <h4>2.Order term</h4>
-           <h5>Thilawar Industry Zone</h5>
-           <p>Lunch: If the customer orders the day before ordered date, we will deliver to the address. 
-           If the customer orders on that day(ordered date), the driver of the customer needs to come and take the orders.</p>
-          <h5>Yangon area</h5>
-          <p>- Lunch: We deliver one day advance orders as well as the order on that day by 9:00 a.m. 
-          If the driver comes and takes the orders, we accept the orders at or after 9 : 00 p.m.</p>
-          <p>- Dinner: We deliver one day advance orders as well as the order on that day by 12: 00 p.m. 
-          If the driver comes and takes the orders, we accept the orders by 3 : 00 p.m.</p>
-          <p>- If the customer orders for meeting lunch(many people) by 3 : 00 p.m in one day advance, 
-          we will deliver in time. </p>
-          <p>- If the customer orders in one day advance, we accept lunch and dinner order even on Saturday. 
-          Sunday and National holidays do not accept the orders.</p>
-          <p class="mb-4">- We also give services for party, side dishes, drinking party. Please feel free to contact us.</p>
+          <h3 class="heading-section text-center ftco-animate"><b>お弁当、ご夕食ご案内</b></h3>
+          <h4>1.ご注文方法</h4>
+          <p>メール (<b class="text-info">（awa.yoko.hayami@gmail.com） </b>) 電話(<b class="text-info">09792655994</b>) または
+          <b class="text-info">注文フォーム</b>ででお願いいたします。</p>
+          <p class="mb-4"><b class="text-info">***</b>最初の注文時は、氏名、会社・所属名、電話番号、配達先住所（配達する場所）
+              をご連絡お願いいたします。できるだけわかりやすく、また、必要に応じて目立つ建物
+              等らの位置関係等加えていただけますと助かります。</p>
+           <h4>2.ご注文期限</h4>
+           <h5>＜ティラワ工業団地＞</h5>
+           <p>ランチ ： 前日までにご注文の場合、配達いたします。当日ご注文の場合、
+              ドライバーに取りにいただく前提でご準備いたします。</p>
+          <h5>＜ヤンゴン市内＞</h5>
+          <p>- ランチ ： 前日まで、及び当日 9 時までのご注文の場合、配達いたします。
+              ドライバーに取りにきていただく場合、午後 9 時以降のご注文もお受けいたします。</p>
+          <p>- ディナー ： 前日まで、及び当日昼 12 時までにご注文の場合、配達いたします。
+              ドライバーに取りにきていただく場合、午後 3 時までご注文をお受けい
+              たします。</p>
+          <p>➢ 個数の多い会議弁当の場合は、前日午後 3 時までにご注文いただければ、指定時間
+              までにお届けするようにいたします。 </p>
+          <p>➢ 前日までのご注文の場合は、土曜日も、ランチ、ディナーご注文をお受けいたしま
+                す。日・祭日は休業しております。</p>
+          <p class="mb-4">➢ パーティー・メニュー、総菜、飲み会メニュー等も適宜対応させていただきますの
+              で、お気軽にご相談ください。</p>
 
-          <h4>3.Price</h4>
-          <p>- Lunch : Daily Special Lunch (7,000 MMK) Dinner: Daily Lunch Set
-          (5,000 MMK- ***without rice)/(7,000 MMK *** with rice)</p>
-          <p class="mb-4">- We can adjust the price and setting according to the customers’ 
-          desire for Meeting lunchbox, Drinking party food, etc.</p>
+          <h4>3.お値段</h4>
+          <p>ランチ ： 日替わり弁当（7,000KS. ） </p>
+          <p>夕食 ： 日替わりセット（5,000KS. 、ごはんなし）
+              ＊ ご飯ありのお弁当形式の場合は（7,000KS. ）になります。</p>
+          <p class="mb-4">➢ 会議弁当、飲み会料理、等は、内容、お値段に関し、適宜ご相談ベース
+              で対応させていただきます。</p>
 
-          <p>- When the customer has allergy, please let us know in advance.</p>
+          <p>➢ アレルギー等がございます場合は、事前にご連絡ください。</p>
            
-           <h4>4.Numbers of orders</h4>
-           <p>- We accept from only one order.</p>
-           <p class="mb-4">- We are happy to accept (1) order even from Thilawar Industrial Zone as experiential.</p>
+           <h4>4.最低ご注文数</h4>
+           <p>最低注文数は 1 個とさせていただきます。</p>
+           <p class="mb-4">➢ ティラワ工業団地に関しても当面 1 個で試験的やらせていただきます。</p>
 
-           <h4>5.Delivery fee</h4>
-           <h5>Thilawar Industrial Zone</h5>
+           <h4>5.配送料</h4>
+           <h5>＜ティラワ工業団地＞</h5>
 
-           <p>-	500 MMK per 1- lunchbox(1-9 Daily Special Lunches -> 7500 MMK, over 10 orders - > free delivery fee -> 7000 MMK per 1- lunchbox )</p>
-           <h5>Yangon area</h5>
-           <p>- Over 3 lunchboxes, delivery fee free. 1 or 2 orders, delivery fee will be 3000 MMK per one. (Therefore, for one order, it will be 10, 000 MMK / one, 
-           for two orders, it will be 8,500 MMK / one, over 3 orders, delivery fee is free and it will be 7000 MMK / one.)</p>
-           <p>- over 3 orders, delivery fee is free and it will be 7000 MMK / one.)</p>
-           <p>- Within Yangon city, if one order for Lunch, Dinner is over 20,000 MMK, delivery fee will be free.
-            But only the order is less than 20,000 MMK, delivery fee will be 3000 MMK.</p>
-            <p>- Pay on delivery</p>
-            <p>- The boxes of the lunch and food will be collected in the afternoon of that day or the next day.</p>
+           <p>お弁当一個につきまして配送料５００KS.（従い、お昼の日替わり弁当は 1-9 個の場
+              合、7,500KS./個、10 個以上の場合配送料は無料で、日替わりお弁当 7,000KS./個。）</p>
+           <h5>＜ヤンゴン市内＞</h5>
+           <p>お弁当３個以上は配送料無料、1 個、2 個の場合は配送料 3,000KS．（従い、お昼の日
+                替わり弁当は 1 個の場合は、10,000KS./個、2 個の場合は 8,500KS/個、
+                </p>
+           <p>3 個以上の場合は配送料無料で、日替わりお弁当は 7,000KS./個）</p>
+           <p>➢ ヤンゴン市内で、昼食、夕食、お惣菜、等一回のご注文合計 20,000KS.以上ご注
+                文の場合は配送料無料。20,000KS.未満の場合は、配送料として 3,000．KS.
+                を別途いただきます。</p>
+            <p>➢ お代金は、デリバリー時にデリバリー員に現金でお渡しください。</p>
+            <p>➢ 昼食弁当箱は、状況に応じて、当日午後、あるいは翌日回収させていただきます。</p>
 
         </div>
     </section>

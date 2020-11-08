@@ -1,45 +1,52 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Categories</h2>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card strpied-tabled-with-hover">
+            <div class="card-header ">
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+                @endif
+                <div class="float-left">
+                    <h4 class="card-title">Category Lists</h4>
+                </div>
+                <div class="float-right">
+                    <a type="button" class="btn btn-warning btn-fill" href="{{ route('categories.create') }}">Add</a>
+                </div>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('categories.create') }}"> Create New Category</a>
+            <div class="card-body table-full-width table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody>
+                    @foreach ($categories as $category)
+                        <tr>
+                            <td>{{ ++$i }}</td>
+                            <td>{{ $category->category }}</td>
+                            <td>{{ $category->description }}</td>
+                            <td>
+                            <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
+                                <a class="btn btn-success btn-fill mr-1" href="{{ route('categories.show',$category->id) }}"><i class="fas fa-eye"></i></a>
+                                <a class="btn btn-primary btn-fill mr-1" href="{{ route('categories.edit',$category->id) }}"><i class="fas fa-edit"></i></a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-fill"><i class="fas fa-trash-alt"></i></a>
+                            </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    {!! $categories->links() !!}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
-    <table class="table table-bordered">
-        <tr>
-            <th>No</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th width="280px">Action</th>
-        </tr>
-        @foreach ($categories as $category)
-        <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $category->category }}</td>
-            <td>{{ $category->description }}</td>
-            <td>
-                <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('categories.show',$category->id) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">Edit</a>
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
-
-    {!! $categories->links() !!}
+</div>
 @endsection

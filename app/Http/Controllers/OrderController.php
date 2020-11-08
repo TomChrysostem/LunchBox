@@ -64,6 +64,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        // $order_item = Order::with('menu')->find($order);
+        //dd($order_item->toarray());
         return view('admin.orders.show',compact('order'));
     }
 

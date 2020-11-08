@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AWA-Co.,ltd</title>
+    <title>AWA FOOD SERVICE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
@@ -42,15 +42,15 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">AWA-Co.,ltd</a>
+	      <a class="navbar-brand" href="index.html">AWA FOOD SERVICE</a>
 	      
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Lunchbox Services</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>Cooking Classes</span></a></li>
-	          <li class="nav-item"><a href="#agent-section" class="nav-link"><span>About us</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>ホーム</span></a></li>
+	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>お弁当サービス</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>料理コース</span></a></li>
+	          <li class="nav-item"><a href="#agent-section" class="nav-link"><span>ご案内</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>問い合わせ</span></a></li>
 	        </ul>
 	      </div>
 	    </div>

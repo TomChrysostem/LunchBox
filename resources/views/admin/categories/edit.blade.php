@@ -1,49 +1,49 @@
 @extends('admin.layout')
 
 @section('content')
-
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Category</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('categories.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
-
+<div class="card">
     @if($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
-
+    <div class="card-header">
+        <h4 class="card-title">Edit Category</h4>
+    </div>
     <form action="{{ route('categories.update',$category->id) }}" method="POST">
         @csrf
         @method('PUT')
-
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Category:</strong>
-                    <input type="text" name="category" value="{{ $category->category }}" class="form-control" placeholder="Category Name">
+        <div class="card-body row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mb-0">
+                            <label>Category ( Category Name ) </label>
+                            <input type="text" class="form-control" placeholder="Company" name="category" value="{{ $category->category }}" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mb-0">
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Category Description" name="description">{{ $category->description }}</textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Description:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Description">{{ $category->description }}</textarea>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center p-3">
+                <a type="button" class="btn btn-success btn-fill" href="{{ route('categories.index') }}">Back</a>
+                <button type="submit" class="btn btn-info btn-fill">Update</button>
             </div>
         </div>
     </form>
+</div>
 @endsection
