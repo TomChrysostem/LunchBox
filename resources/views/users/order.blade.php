@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" name="date" class="form-control" id="datetimepicker" placeholder="Date"/> 
+                    <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/> 
                       @if ($errors->has('date'))
                       <div class="error text-danger">
                           {{ $errors->first('date') }}
@@ -133,7 +133,7 @@
                 </div>
 
                 <div class="form-group">               
-                    <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
+                    <input type="text" name="qty" id="qty" class="form-control mb-4" placeholder="Numbers of orders">
                       @if ($errors->has('qty'))
                       <div class="error text-danger">
                           {{ $errors->first('qty') }}
@@ -143,12 +143,12 @@
 
                 <!-- order item -->
                 <div class="form-group">
-                    <input type="text" name="order_item_id" class="form-control" placeholder="Order item" value="">
+                    <input type="text" name="order_item_id" id="order_item_id" class="form-control" placeholder="Order item" value="">
                 </div>
 
                     <!-- status -->
                 <div class="form-group">
-                    <input type="text" name="status" class="form-control" placeholder="status" value="">
+                    <input type="text" name="status" id="status" class="form-control" placeholder="status" value="">
                 </div>
 
                 <div class="form-group">
@@ -233,7 +233,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
 <script type="text/javascript">

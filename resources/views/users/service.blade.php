@@ -160,7 +160,7 @@
                     <h4 class="card-title">{{ $menu->menu }}</h4>
                     <!--Text-->
                     <p class="card-text" style="color: blue">{{ $menu->price }}</p>
-                    <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
+                    <p class="mb-3 mx-3"><a href="" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
                     </div>
                 </div>
                 <!-- Card -->
@@ -271,49 +271,188 @@
     <!--lunchbox menu end-->
 
      <!--model-->
-    
-     <div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                  <div class="modal-body">
-                <!-- Default form contact -->
-                    <form class="text-center border border-light p-3" action="{{route('users.order')}}" method="POST">
-                    @csrf
-                      <p class="h4 mb-4">Order Form</p>
-                    <!-- Name -->
-                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
-                    <!-- Email -->
-                        <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
-                    <!-- phone -->
-                    <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
-                     <!-- address -->
-                     <div class="form-group">
-                        <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
-                    </div>
-                     <!-- date -->
-                     <input type="text" name="date" class="form-control mb-4" placeholder="Date">
+            <div class="modal fade px-5 py-5" id="Orderlunchbox" aria-hidden="true">
 
-                      <!-- no of orders -->
-                    <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
+                <div class="modal-header modal-dialog d-flex p-2">
+                          <h3 class="font-weight-bold text-white">Thank you for your order</h3>
+                            <button type="button" class="btn btn-warning px-3 float-right">
+                                  <span aria-hidden="true">&times;</span>
+                            </button>
+                </div>
 
-                    <input type="text" name="menu_id" class="form-control mb-4" value="{{ $menu->id }}" hidden>
-                    <input type="text" name="status" class="form-control mb-4" value="1" hidden>
-                    <!-- Message -->
-                    <div class="form-group">
-                        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
+                <div class="row block-12 px-5">
+                    <div class="col-md-7 order-last">
+                    
+                      <form action="{{route('users.order')}}" method="POST" class="bg-light p-4">
+                                          <!-- Success message -->
+                        @if(Session::has('success'))
+                            <div class="alert alert-success">
+                                {{Session::get('success')}}
+                            </div>
+                        @endif
+
+                        <h3 class="text-center pb-2">Order Form</h3>
+
+                        @csrf
+                          <div class="form-group">
+                          <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="Full Name">
+                              <!-- Error -->
+                              @if ($errors->has('user_name'))
+                                <div class="error text-danger">
+                                    {{ $errors->first('user_name') }}
+                                </div>
+                                @endif
+                          </div>
+
+
+                          <div class="form-group">
+                              <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="Email">
+                                  @if ($errors->has('email'))
+                                  <div class="error text-danger">
+                                      {{ $errors->first('email') }}
+                                  </div>
+                                  @endif
+                            </div>
+
+                            <div class="form-group">
+                              <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="Contact Number">
+                                @if ($errors->has('phone'))
+                                <div class="error text-danger">
+                                    {{ $errors->first('phone') }}
+                                </div>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="Address to deliever"></textarea>
+                                  @if ($errors->has('address'))
+                                  <div class="error text-danger">
+                                      {{ $errors->first('address') }}
+                                  </div>
+                                  @endif
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/> 
+                                  @if ($errors->has('date'))
+                                  <div class="error text-danger">
+                                      {{ $errors->first('date') }}
+                                  </div>
+                                  @endif
+                            </div>
+
+                            <div class="form-group">               
+                                <input type="text" name="qty" id="qty" class="form-control mb-4" placeholder="Numbers of orders">
+                                  @if ($errors->has('qty'))
+                                  <div class="error text-danger">
+                                      {{ $errors->first('qty') }}
+                                  </div>
+                                  @endif
+                            </div>
+
+                            <!-- order item -->
+                            
+                              <input type="text" name="menu_id" class="form-control mb-4"  value="{{ $menu->id }}" hidden>
+                        
+
+                                <!-- status -->
+                            
+                              <input type="text" name="status" class="form-control mb-4" value="1" hidden>  
+            
+
+                            <div class="form-group">
+                              <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="messages" id="messages"
+                              cols="30" rows="7" placeholder="Message"></textarea>
+                                  @if ($errors->has('messages'))
+                                  <div class="error text-danger">
+                                      {{ $errors->first('messages') }}
+                                  </div>
+                                  @endif
+                            </div>
+
+                            <!-- Send button -->
+                            <button type="submit" class="btn btn-primary py-3 px-5">Order</button>
+                      </form>
+                  
                     </div>
-                    <!-- Send button -->
-                    <button class="btn btn-success btn-block" type="submit">Order</button>
-                    </form>
-            <!-- Default form contact -->
+
+                  <div class="col-md-5 d-flex">
+          	        <div class="row d-flex contact-info mb-5">
+                      
+                      <div class="col-md-12 ftco-animate">
+                        <div class="box p-2 px-3 bg-light d-flex">
+                          <div>
+                            <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
+                            <p  class="text-danger">If you want to order with side_dish or if you have food allergy, please write it in message box.Thanks.</p>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-12 ftco-animate">
+                        <div class="box p-2 px-3 bg-light d-flex">
+                          <div class="icon mr-3">
+                            <span class="icon-phone2"></span>
+                          </div>
+                          <div>
+                            <h3 class="mb-3">Office Hour</h3>
+                            <p><a href="#">Mon to Fri- 9:00 - 5:00</a></p>
+                            <p><a href="#">Sat - 9: 00 - 12:00</a></p>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
             </div>
-            <!--endmodel-->
+
+            <!--old model-->
+            <!--<div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                      <div class="modal-body">
+                    <!-- Default form contact -->
+                      <!--<form class="text-center border border-light p-3" action="{{route('users.order')}}" method="POST">
+                        @csrf
+                          <p class="h4 mb-4">Order Form</p>
+                        <!-- Name -->
+                        <!--  <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
+                        <!-- Email -->
+                        <!--  <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
+                        <!-- phone -->
+                     <!-- <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
+                          <!-- address -->
+                        <!--<div class="form-group">
+                            <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
+                        </div>
+                          <!-- date -->
+                     <!-- <input type="text" name="date" class="form-control mb-4" placeholder="Date">
+
+                          <!-- no of orders -->
+                      <!--<input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
+
+                        <input type="text" name="menu_id" class="form-control mb-4" value="{{ $menu->id }}" hidden>
+                        <input type="text" name="status" class="form-control mb-4" value="1" hidden>
+                        <!-- Message -->
+                      <!--<div class="form-group">
+                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
+                        </div>
+                        <!-- Send button -->
+                       <!-- <button class="btn btn-success btn-block" type="submit">Order</button>
+                        </form>
+                <!-- Default form contact -->
+                
+               <!-- </div>
+            <!--old model end-->
+    <!--endmodel-->
+
     </section>
 
     <section class="pt-5 bg-light mt-3" id="orderpay-section">

@@ -46,7 +46,7 @@ class OrderController extends Controller
             'address' => 'required',
             'date' => 'required',
             'qty' => 'required',
-            'order_item_id' => 'required',
+            'menu_id' => 'required',
             'status' => 'required',
             'messages' => 'required',
 

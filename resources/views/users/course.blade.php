@@ -32,9 +32,9 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">youremail@email.com</span>
 					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+					    <!--<div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
 						    <p class="mb-0 register-link"><a href="#" class="mr-3">Sign Up</a> <a href="#" class="mr-3" data-toggle="modal" data-target="#SigninForm">Sign In</a></p>
-					    </div>
+					    </div> -->
 				    </div>
 			    </div>
 		    </div>
@@ -59,7 +59,7 @@
 	 <main>
 
     <!--sign in form-->
-    <div class="modal fade" id="SigninForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true">
+    <!--<div class="modal fade" id="SigninForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
@@ -72,28 +72,28 @@
       <form class="text-center border border-light p-5" action="#" method="">
       <div class="modal-body mx-3">
         <!-- Email -->
-          <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+          <!--<input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
 
         <!-- Password -->
-          <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+         <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
 
       </div>
       <div class="d-flex justify-content-around">
         <div>
             <!-- Remember me -->
-            <div class="custom-control custom-checkbox">
+           <!-- <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
                 <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
             </div>
         </div>
         <div>
             <!-- Forgot password -->
-            <a href="">Forgot password?</a>
+          <!--  <a href="">Forgot password?</a>
         </div>
     </div>
 
     <!-- Sign in button -->
-    <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+   <!-- <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
 
     </div>
     </form>
@@ -271,8 +271,151 @@
     <!--lunchbox menu end-->
 
     <!--model-->
+
+    <div class="modal fade px-5 py-5" id="addBookCourse" aria-hidden="true">
+
+            <div class="modal-header modal-dialog d-flex p-2">
+                      <h3 class="font-weight-bold text-white">Thank you for your register</h3>
+                        <button type="button" class="btn btn-warning px-3 float-right">
+                              <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+
+            <div class="row block-12 px-5">
+                <div class="col-md-7 order-last">
+                    <form action="{{ route('users.booking') }}" method="POST" class="bg-light p-4">
+
+                      <!-- Success message -->
+                      @if(Session::has('success'))
+                      <div class="alert alert-success">
+                      {{Session::get('success')}}
+                      </div>
+                      @endif 
+
+                      <h3 class="text-center pb-2">Register Form</h3>
+
+                      @csrf
+                      <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="Full Name">
+                        <!-- Error -->
+                          @if ($errors->has('user_name'))
+                          <div class="error text-danger">
+                              {{ $errors->first('user_name') }}
+                          </div>
+                          @endif
+                      </div>
+
+                      <div class="form-group">
+                          <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="Email">
+                          @if ($errors->has('email'))
+                          <div class="error text-danger">
+                              {{ $errors->first('email') }}
+                          </div>
+                          @endif
+                      </div>
+
+                      <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="Contact Number">
+                          @if ($errors->has('phone'))
+                          <div class="error text-danger">
+                              {{ $errors->first('phone') }}
+                          </div>
+                          @endif
+                      </div>
+
+
+                      <div class="form-group">
+                          <textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="Address to deliever"></textarea>
+                          @if ($errors->has('address'))
+                          <div class="error text-danger">
+                              {{ $errors->first('address') }}
+                          </div>
+                          @endif
+                      </div>
+
+
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Numbers student</label>
+                            <select class="form-control" name="qty">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </select>
+                          @if ($errors->has('qty'))
+                          <div class="error text-danger">
+                              {{ $errors->first('qty') }}
+                          </div>
+                          @endif
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name="date" class="form-control" id="datetimepicker" placeholder="Date"/> 
+                          @if ($errors->has('date'))
+                              <div class="error text-danger">
+                          {{ $errors->first('date') }}
+                          </div>
+                          @endif
+                      </div>
+
+                      
+                      <!--course id -->
+
+                      <input type="text" class="form-control mb-4" name="course_id" value ="{{ $course->id }}" hidden/>
+
+
+                      <div class="form-group">
+                          <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="messages" id="messages"
+                          cols="30" rows="7" placeholder="Message"></textarea>
+                          @if ($errors->has('messages'))
+                          <div class="error text-danger">
+                             {{ $errors->first('messages') }}
+                          </div>
+                          @endif
+                      </div>
+
+                      <!-- Send button -->
+                      <button type="submit" class="btn btn-primary py-3 px-5">Register</button>
+                      </form>
+                </div>
+
+              <div class="col-md-5 d-flex">
+                <div class="row d-flex">
+                  
+                  <div class="col-md-12 ftco-animate">
+                    <div class="box p-2 px-3 bg-light d-flex">
+                      <div>
+                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
+                        <p  class="text-danger">If you want to order with side_dish or if you have food allergy, please write it in message box.Thanks.</p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-12 ftco-animate">
+                    <div class="box p-2 px-3 bg-light d-flex">
+                      <div class="icon mr-3">
+                        <span class="icon-phone2"></span>
+                      </div>
+                      <div>
+                        <h3 class="mb-3">Office Hour</h3>
+                        <p><a href="#">Mon to Fri- 9:00 - 5:00</a></p>
+                        <p><a href="#">Sat - 9: 00 - 12:00</a></p>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+            </div>
+            <!--endmodel-->
+
+
   
-    <div class="modal fade" id="addBookCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--<div class="modal fade" id="addBookCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -282,21 +425,21 @@
                         </button>
                     </div>
                   <div class="modal-body">
-                <!-- Default form contact -->
+                <!-- Default form contact --
                   <form class="text-center border border-light p-5" action="{{ route('users.booking') }}" method="POST">
                     @csrf
                         <p class="h4 mb-4">Booking Form</p>
-                    <!-- Name -->
+                    <!-- Name --
                         <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="name" name="user_name">
-                    <!-- Email -->
+                    <!-- Email --
                         <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="email" name="email">
                     <!-- ph no -->
                         <input type="text" class="form-control mb-4" placeholder="Contact Number" name="phone">
-                    <!-- courses -->
+                    <!-- courses --
                         <div class="form-group">
                             <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="address" name="address"></textarea>
                         </div>
-                    <!-- no of students -->
+                    <!-- no of students --
                         <label>Numbers of people</label>
                           <select class="browser-default custom-select mb-4" name="qty">
                             <option value="" disabled>Choose option</option>
@@ -308,19 +451,15 @@
                             <option value="6">6</option>
                             <option value="7">7</option>
                           </select>
-                    <!-- date -->
                           <input type="text" class="form-control mb-4" placeholder="Date" name="date">
-                          <input type="text" class="form-control mb-4" name="course_id" value ="{{ $course->id }}"/>
-                    <!-- Message -->
-                      <div class="form-group">
-                          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
-                      </div>
-                    <!-- Send button -->
+                          <input type="text" class="form-control mb-4" name="course_id" value ="{{ $course->id }}" hidden/>
+                          <div class="form-group">
+                              <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
+                          </div>
                       <button class="btn btn-info btn-block" type="submit">Send</button>
                   </form>
-            <!-- Default form contact -->
-            </div>
-            <!--endmodel-->
+            <!-- Default form contact --
+            </div>-->
     </section>
 
 </div>

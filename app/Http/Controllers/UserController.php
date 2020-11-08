@@ -54,6 +54,11 @@ class UserController extends Controller
         return view('users.service',compact('menus')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    //public function orderMenus(Request $request) {
+       // Order::create($request->all());
+       // return view('users.order');
+   // }
+
     public function bookMenus(Request $request) {
          
         Order::create($request->all());
