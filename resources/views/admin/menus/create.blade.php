@@ -1,100 +1,107 @@
 @extends('admin.layout')
 
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New menu</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('menus.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
-
 @if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+<div class="alert alert-danger">
+    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
 @endif
-
-<form action="{{ route('menus.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <label class="control-label col-2">Menu:</label>
-            <div class="col-10">
-                <input type="text" name="menu" class="form-control" placeholder="Menu">
-            </div>
-        </div>
-        <div class="row form-group">
-                <label class="control-label col-2">image:</label>
-                <div class="col-10">
-                    <div class="file-drop-area"> 
-                        <span class="choose-file-button">Choose Files</span> 
-                        <span class="file-message">or drag and drop files here</span> 
-                        <input type="file" class="file-input" name="image"> 
-                    </div>
-                    <div id="divImageMediaPreview"> </div>
-                </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <label class="control-label col-2">Description:</label>
-            <div class="col-10">
-                <textarea class="form-control" style="height:100px" name="description" placeholder="Description"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <label class="control-label col-2">Price:</label>
-            <div class="col-10">
-                <input type="text" name="price" class="form-control">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Date:</label>
-                <div class="col-10">
-                   <input type="text" name="date" class="form-control" id="datetimepicker"/> 
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Kcal:</label>
-                <div class="col-10">
-                    <input type="text" name="kcal" class="form-control">
-                </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Menu Type:</label>
-                <div class="col-10">
-                    <select class="form-control" id="exampleFormControlSelect1" name="menu_type">
-                        <option>School-Lunch</option>
-                        <option>Company-Lunch</option>
-                        <option>Company-Dinner</option>
-                        <option>Event</option>
-                    </select>
-                </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-                <label class="control-label col-2">Dish:</label>
-                <div class="col-10">
-                    <select class="form-control" id="exampleFormControlSelect1" name="dish_type">
-                        <option>main-dish</option>
-                        <option>side-dish</option>
-                    </select>
-                </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Add New Menus</h4>
     </div>
-</form>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
+    <form action="{{ route('menus.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+        <div class="card-body row">
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-md-5 pr-1">
+                        <div class="form-group mb-0">
+                            <label>Menu (Menu Name)</label>
+                            <input type="text" class="form-control" name="menu" placeholder="Menu">
+                        </div>
+                    </div>
+                    <div class="col-md-3 px-1">
+                        <label>Date</label>
+                        <input type="text" name="date" class="form-control" placeholder="day/month/year"> 
+                    </div>
+                    <div class="col-md-4 pl-1">
+                        <div class="form-group mb-0">
+                            <label>Price</label>
+                            <input type="text" class="form-control" placeholder="price of menu" name="price">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mb-0">
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Menu Description" name="description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Kcal</label>
+                        <input type="text" class="form-control" name="kcal" placeholder="Kcal">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-0">
+                            <label>Menu type</label>
+                            <select class="form-control" name="menu_type">
+                                <option>School lunch</option>
+                                <option>Company lunch</option>
+                                <option>Events</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-0">
+                            <label>Dish type</label>
+                            <select class="form-control" name="dish_type">
+                                <option>Main dish</option>
+                                <option>Side dish</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <!--Mask with wave-->
+                <div class="view overlay pt-3 pr-3">
+                    <div class="image-upload-wrap">
+                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image"/>
+                        <div class="drag-text">
+                            <div class="align-middle">
+                                <button class="btn btn-secondary btn-fill" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file-upload-content">
+                        <img class="file-upload-image rounded" src="#" alt="your image" />
+                        <div class="image-title-wrap">
+                            <button type="button" onclick="removeUpload()" class="btn btn-danger">remove</button>
+                        </div>
+                    </div>
+                    <!-- <div class="button-container mr-auto ml-auto">
+                        <button class="btn btn-secondary btn-fill mt-1" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center p-3">
+                <a type="button" class="btn btn-success btn-fill" href="{{ route('menus.index') }}">Back</a>
+                <button type="submit" class="btn btn-info btn-fill">Add Menu</button>
+            </div>
+        </div>
+    </form>
+</div>
 <script type="text/javascript">
     $(function () {
         $('#datetimepicker').datepicker();
