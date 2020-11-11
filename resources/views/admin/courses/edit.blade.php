@@ -42,7 +42,7 @@
                     <div class="col-md-6">
                         <div class="form-group mb-0">
                             <label>Price</label>
-                            <input type="email" class="form-control" placeholder="price of course" name="price" value="{{$course->price}}">
+                            <input type="text" class="form-control" placeholder="price of course" name="price" value="{{$course->price}}">
                         </div>
                     </div>
                 </div>

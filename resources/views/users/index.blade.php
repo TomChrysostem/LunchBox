@@ -60,7 +60,7 @@
 
         <!--model-->
     
-     <div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <!--<div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header bg-dark">
@@ -71,43 +71,43 @@
                     </div>
                   <div class="modal-body">
                 <!-- Default form contact -->
-                    <form class="text-center border border-light p-3" action="{{ route('orders.store') }}" method="POST">
+                    <!--<form class="text-center border border-light p-3" action="{{ route('orders.store') }}" method="POST">
                       <p class="h4 mb-4">Order Form</p>
                       @csrf
                     <!-- Name -->
-                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
+                        <!--<input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
                     <!-- phone -->
-                        <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
+                        <!--<input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
                     <!-- Email -->
-                        <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
+                        <!--<input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
                     
                      <!-- address -->
-                     <div class="form-group">
+                     <!--<div class="form-group">
                         <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
                     </div>
                      <!-- date -->
                      <!--<input type="text" name="date" id="datetimepicker" class="form-control mb-4" placeholder="Date">-->
-                     <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
+                     <!--<input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
 
                       <!-- no of orders -->
-                    <input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
+                    <!--<input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
 
                     <!-- order item -->
-                    <input type="text" name="order_item_id" class="form-control mb-4" placeholder="Order Item">
+                    <!--<input type="text" name="order_item_id" class="form-control mb-4" placeholder="Order Item">
 
                     <!-- status -->
-                    <input type="text" name="status" class="form-control mb-4" placeholder="Status">
+                   <!-- <input type="text" name="status" class="form-control mb-4" placeholder="Status">
 
                     <!-- Message -->
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <textarea class="form-control rounded-0" name="messages" rows="4" placeholder="Message"></textarea>
                     </div>
                     <!-- Send button -->
-                    <button class="btn btn-success btn-block" type="submit">Order</button>
+                    <!--<button class="btn btn-success btn-block" type="submit">Order</button>
                     </form>
             <!-- Default form contact -->
 
-            </div>
+            <!--</div>
             <!--endmodel-->
       
 	</section>
@@ -121,7 +121,7 @@
 					<div class="col-md-12 text-center">
 						<h2>Cooking Class</h2>
 						<h1 class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Cook together, stay together</h1>
-						<p class="mb-0"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>
+						<!--<p class="mb-0"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>-->
 					</div>
 				</div>
 			</div>
@@ -129,7 +129,7 @@
            
     <!--model-->
   
-    <div class="modal fade" id="addBookCourse" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--<div class="modal fade" id="addBookCourse" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header bg-dark">
@@ -140,25 +140,25 @@
                     </div>
                   <div class="modal-body">
                 <!-- Default form contact -->
-                <form class="text-center border border-light p-3" action="{{ route('attendees.store') }}" method="POST">
+                <!--<form class="text-center border border-light p-3" action="{{ route('attendees.store') }}" method="POST">
                       <p class="h4 mb-4">Register Form</p>
                       @csrf
                     <!-- Name -->
-                        <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
+                       <!-- <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
                     <!-- Email -->
-                        <input type="text" name="phone" class="form-control mb-4" placeholder="Contact Number">
+                       <!-- <input type="text" name="phone" class="form-control mb-4" placeholder="Contact Number">
                     <!-- ph no -->
-                        <input type="email" name="email" class="form-control mb-4" placeholder="Email">
+                        <!--<input type="email" name="email" class="form-control mb-4" placeholder="Email">
                         <!-- address -->
-                     <div class="form-group">
+                     <!--<div class="form-group">
                         <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
                     </div>
                      <!-- date -->
                      <!--<input type="text" name="date" id="datetimepicker" class="form-control mb-4" placeholder="Date">-->
-                     <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
+                    <!-- <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/>
 
                     <!-- no of students -->
-                        <label>Numbers of people</label>
+                       <!-- <label>Numbers of people</label>
                           <select class="browser-default custom-select mb-4" name="qty">
                             <option value="" disabled>Choose option</option>
                             <option value="1" selected>1</option>
@@ -170,7 +170,7 @@
                             <option value="7">7</option>
                           </select>
                           <!-- courses -->
-                        <label>Course</label>
+                        <!--<label>Course</label>
                           <select class="browser-default custom-select mb-4" name="course_id">
                             <option value="" disabled>Choose option</option>
                             <option value="1" selected>Japanese dish</option>
@@ -179,14 +179,14 @@
                           </select>
           
                     <!-- Message -->
-                    <div class="form-group">
+                   <!-- <div class="form-group">
                         <textarea class="form-control rounded-0" name="messages" rows="4" placeholder="Message"></textarea>
                     </div>
                     <!-- Send button -->
-                    <button class="btn btn-info btn-block" type="submit">Send</button>
+                   <!-- <button class="btn btn-info btn-block" type="submit">Send</button>
                     </form>
             <!-- Default form contact -->
-            </div>
+            <!--</div>
             <!--endmodel-->
 
 		</section>
@@ -316,7 +316,7 @@
           <div class="col-md-7 order-md-last d-flex ftco-animate">
             <form action="#" class="bg-light p-4 p-md-5 contact-form">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="名前">
+                <input type="text" class="form-control" placeholder="氏名">
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="メール">
