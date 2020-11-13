@@ -44,10 +44,10 @@
                             <td>
                             <form action="{{ route('orders.destroy',$order->id) }}" method="POST">
                                 <a class="btn btn-success btn-fill mr-1" href="{{ route('orders.show',$order->id) }}"><i class="fas fa-eye"></i></a>
-                                <a class="btn btn-danger btn-fill" href="{{ route('orders.edit',$order->id) }}"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-danger btn-fill" href="{{ route('orders.edit',$order->id) }}"><i class="fas fa-edit"></i></a>
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button class="btn btn-danger btn-fill" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>
                             </td>
                         </tr>

@@ -47,7 +47,7 @@
                                 <a class="btn btn-primary btn-fill mr-1" href="{{ route('menus.edit',$menu->id) }}"><i class="fas fa-edit"></i></a>
                                 @csrf
                                 @method('DELETE')
-                                <a class="btn btn-danger btn-fill" href="#"><i class="fas fa-trash-alt"></i></a>
+                                <button class="btn btn-danger btn-fill" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>
                             </td>
                         </tr>

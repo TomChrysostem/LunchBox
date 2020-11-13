@@ -434,7 +434,7 @@
                     <!-- Email --
                         <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="email" name="email">
                     <!-- ph no -->
-                        <input type="text" class="form-control mb-4" placeholder="Contact Number" name="phone">
+                        <!--<input type="text" class="form-control mb-4" placeholder="Contact Number" name="phone">
                     <!-- courses --
                         <div class="form-group">
                             <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="address" name="address"></textarea>
