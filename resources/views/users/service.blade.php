@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AWA-Co.,ltd</title>
+    <title>AWA　FOOD SERVICE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
@@ -32,9 +32,9 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">youremail@email.com</span>
 					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+					    <!--<div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
 						    <p class="mb-0 register-link"><a href="#" class="mr-3">Sign Up</a> <a href="#" class="mr-3" data-toggle="modal" data-target="#SigninForm">Sign In</a></p>
-					    </div>
+					    </div>-->
 				    </div>
 			    </div>
 		    </div>
@@ -42,14 +42,15 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">AWA-Co.,ltd</a>
+	      <a class="navbar-brand" href="index.html">AWA  FOOD  SERVICE</a>
 	      
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="/" class="nav-link"><span>ホーム</span></a></li>
-	          <li class="nav-item"><a href="#school-section" class="nav-link"><span>給食</span></a></li>
-	          <li class="nav-item"><a href="#staff-section" class="nav-link"><span>スタッフのお弁当</span></a></li>
-	          <li class="nav-item"><a href="#event-section" class="nav-link"><span>イベント＆パーティーフード</span></a></li>
+	          <li class="nav-item"><a href="#lunchbox-section" class="nav-link"><span>Lunchbox</span></a></li>
+	          <li class="nav-item"><a href="#side-section" class="nav-link"><span>Side-dish</span></a></li>
+            <li class="nav-item"><a href="#school-section" class="nav-link"><span>School Lunch</span></a></li>
+	          <li class="nav-item"><a href="#event-section" class="nav-link"><span>Event Food</span></a></li>
             <li class="nav-item"><a href="#orderpay-section" class="nav-link"><span>ご注文方法</span></a></li>
 	          
 	        </ul>
@@ -121,13 +122,13 @@
           </div>
         </div>
     
-    <section class="pt-5 bg-light" id="school-section">
+    <section class="pt-5 bg-light" id="lunchbox-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="align-self-stretch ftco-animate mx-3">
               <div class="media-body">
-              <h3 class="heading my-3">School Lunch</h3>
-                <p>We provide school meals which are freshly prepared each day with the best ingredients for a nutritious. We always try for the students to be satisfy their school lunch.</p>
+              
+                <h5>毎日栄養価の高い最高の食材を使用して常にお客様がお食事を満足できるよう作っております。</h5>
               </div> 
             </div>
             </div>
@@ -136,35 +137,80 @@
 	
     		<div class="row justify-content-center py-3">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h3>School Lunchbox Menus</h3>
+                    <h3>今月のお弁当メニュー</h3>
                 </div>
             </div>
 
-        <div class="row">
+
+<!--lunchbox menu start　new-->
+      <div class="col-md-12">
+            <!--Table-->
+<table class="table table-hover table-fixed justify-content-center">
+
+<!--Table head-->
+<thead>
+  <tr>
+    <th scope="row" class="px-2">Date</th>
+    <th class="px-2">Name</th>
+    <th class="px-2">Description</th>
+    <th class="px-2">Price</th>
+    <th class="px-2">Kcal</th>
+    <th class="px-2">Action</th>
+  </tr>
+</thead>
+<!--Table head-->
+
+<!--Table body-->
+<tbody>
+@foreach ($menus as $menu)
+  <tr>
+    <th scope="row" class="px-2">{{ $menu->date }}</th>
+    <td class="px-2">{{ $menu->menu }}</td>
+    <td class="px-2">{{ $menu->description }}</td>
+    <td class="px-2">{{ $menu->price }}-MMK</td>
+    <td class="px-2">{{ $menu->kcal }}-Kcal</td>
+    <td class="px-2">
+          <button type="button" class="btn btn-success btn-sm my-2" data-toggle="modal" data-target="#Orderlunchbox">order</button>
+    </td>
+    
+  </tr>
+  @endforeach
+        {!! $menus->links() !!}
+</tbody>
+<!--Table body-->
+
+</table>
+<!--Table-->
+      </div>
+<!--lunchbox menu start new end-->
+
+
+
+        <!--<div class="row">
         @foreach ($menus as $menu)
             <div class="col-md-3">
                 <!-- Card -->
-                <div class="card mb-4">
+                 <!--<div class="card mb-4">
 
                     <!--Card image-->
-                    <div class="view overlay">
+                    <!-- <div class="view overlay">
                         <img class="card-img-top" src="{{ asset('storage/img/'.$menu->image) }}" alt="Card image cap">
                         <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
 
                     <!--Card content-->
-                    <div class="card-body">
+                    <!-- <div class="card-body">
 
                     <!--Title-->
-                    <h4 class="card-title">{{ $menu->menu }}</h4>
+                    <!-- <h4 class="card-title">{{ $menu->menu }}</h4>
                     <!--Text-->
-                    <p class="card-text" style="color: blue">{{ $menu->price }}</p>
+                     <!--<p class="card-text" style="color: blue">{{ $menu->price }}</p>
                     <p class="mb-3 mx-3"><a href="" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
                     </div>
                 </div>
                 <!-- Card -->
-            </div>
+            <!-- </div>
           @endforeach
         {!! $menus->links() !!}
         </div>
@@ -172,26 +218,18 @@
     <!--lunchbox menu end-->
 	</section>
 
- <section class="pt-5" id="staff-section">
- <div class="container">
+<section class="pt-5" id="side-section">
+<div class="container">
     <div class="row justify-content-center">
             <div class="align-self-stretch ftco-animate mx-3">
               <div class="media-body">
-              <h3 class="heading my-3">Saff Lunch</h3>
+              <h3 class="heading my-3">Side-dish</h3>
                 <p>We can help you design and deliver a successful meal program with a focus on healthy nutrition to revitalize your staff. Your customized meal plan will consist of diverse, 
                 restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
               </div> 
             </div>
-            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
-	</div>
+	  </div>
 
-    <!--lunchbox menu start-->
-	
-    <div class="row justify-content-center py-3">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h3>School Lunchbox Menus</h3>
-                </div>
-            </div>
 
         <div class="row">
             <div class="col-md-3">
@@ -218,30 +256,64 @@
             </div>
         </div>
         </div>
-    <!--lunchbox menu end-->
 </section>
 
 
-<section class="pt-5 bg-light" id="event-section">
+
+<section class="pt-5 bg-light" id="school-section">
 <div class="container">
     <div class="row justify-content-center">
             <div class="align-self-stretch ftco-animate mx-3">
               <div class="media-body">
-                <h3 class="heading my-3">Event & Party Food</h3>
+                <h3 class="heading my-3">School Lunch</h3>
                 <p>Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, 
                 birthdays, charity events  and all sorts of special occasions.</p>
               </div> 
             </div>
             <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
-	</div>
+	  </div>
 
-    <!--lunchbox menu start-->
-	
-    <div class="row justify-content-center py-3">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h3>School Lunchbox Menus</h3>
+
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Card -->
+                <div class="card mb-4">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img class="card-img-top" src="images/italian dishes/Ahijo.jpg" alt="Card image cap">
+                        <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                    <!--Title-->
+                    <h4 class="card-title">Ahijo</h4>
+                    <!--Text-->
+                    <p class="card-text" style="color: blue">5000 - MMK </p>
+                    </div>
                 </div>
+                <!-- Card -->
             </div>
+        </div>
+        </div>
+</section>
+
+<section class="pt-5 mt-3 bg-light" id="event-section">
+<div class="container">
+    <div class="row justify-content-center">
+            <div class="align-self-stretch ftco-animate mx-3">
+              <div class="media-body">
+                <h3 class="heading my-3">Event</h3>
+                <p>Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, 
+                birthdays, charity events  and all sorts of special occasions.</p>
+              </div> 
+            </div>
+            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
+	  </div>
+
 
         <div class="row">
             <div class="col-md-3">
@@ -274,7 +346,7 @@
             <div class="modal fade px-5 py-5" id="Orderlunchbox" aria-hidden="true">
 
                 <div class="modal-header modal-dialog d-flex p-2">
-                          <h3 class="font-weight-bold text-white">Thank you for your order</h3>
+                          <h4 class="font-weight-bold text-white">ご注文ありがとうございます。</h4>
                             <button type="button" class="btn btn-warning px-3 float-right">
                                   <span aria-hidden="true">&times;</span>
                             </button>
@@ -291,11 +363,11 @@
                             </div>
                         @endif
 
-                        <h3 class="text-center pb-2">Order Form</h3>
+                        <h3 class="text-center pb-2">注文フォーム</h3>
 
                         @csrf
                           <div class="form-group">
-                          <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="Full Name">
+                          <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="氏名">
                               <!-- Error -->
                               @if ($errors->has('user_name'))
                                 <div class="error text-danger">
@@ -306,7 +378,7 @@
 
 
                           <div class="form-group">
-                              <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="Email">
+                              <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="メール">
                                   @if ($errors->has('email'))
                                   <div class="error text-danger">
                                       {{ $errors->first('email') }}
@@ -315,7 +387,7 @@
                             </div>
 
                             <div class="form-group">
-                              <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="Contact Number">
+                              <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="連絡先番号">
                                 @if ($errors->has('phone'))
                                 <div class="error text-danger">
                                     {{ $errors->first('phone') }}
@@ -324,7 +396,7 @@
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="Address to deliever"></textarea>
+                                <textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="配達先の住所"></textarea>
                                   @if ($errors->has('address'))
                                   <div class="error text-danger">
                                       {{ $errors->first('address') }}
@@ -333,7 +405,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="Date"/> 
+                                <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="配達して欲しい日にち"/> 
                                   @if ($errors->has('date'))
                                   <div class="error text-danger">
                                       {{ $errors->first('date') }}
@@ -342,7 +414,7 @@
                             </div>
 
                             <div class="form-group">               
-                                <input type="text" name="qty" id="qty" class="form-control mb-4" placeholder="Numbers of orders">
+                                <input type="text" name="qty" id="qty" class="form-control mb-4" placeholder="注文数">
                                   @if ($errors->has('qty'))
                                   <div class="error text-danger">
                                       {{ $errors->first('qty') }}
@@ -362,7 +434,7 @@
 
                             <div class="form-group">
                               <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="messages" id="messages"
-                              cols="30" rows="7" placeholder="Message"></textarea>
+                              cols="30" rows="7" placeholder="メッセージボックス"></textarea>
                                   @if ($errors->has('messages'))
                                   <div class="error text-danger">
                                       {{ $errors->first('messages') }}
@@ -371,7 +443,7 @@
                             </div>
 
                             <!-- Send button -->
-                            <button type="submit" class="btn btn-primary py-3 px-5">Order</button>
+                            <button type="submit" class="btn btn-primary py-3 px-5">予約する</button>
                       </form>
                   
                     </div>
@@ -382,8 +454,17 @@
                       <div class="col-md-12 ftco-animate">
                         <div class="box p-2 px-3 bg-light d-flex">
                           <div>
-                            <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
-                            <p  class="text-danger">If you want to order with side_dish or if you have food allergy, please write it in message box.Thanks.</p>
+                            <p class="text-justified">ご注文は メールで: <a class="text-info">awa.yoko.hayami@gmail.com</a> または電話で: <a class="text-info">09792655994</a> または<a class="text-info"> 注文フォームで</a>お願い申し上げます。</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12 ftco-animate">
+                        <div class="box p-2 px-3 bg-light d-flex">
+                          <div>
+                            
+                            <p  class="text-danger">＊＊＊副食も注文したい場合、または食物アレルギーがある場合は、メッセージボックスに記入してください。ありがとうございます。</p>
                           </div>
                         </div>
                       </div>
@@ -395,9 +476,9 @@
                             <span class="icon-phone2"></span>
                           </div>
                           <div>
-                            <h3 class="mb-3">Office Hour</h3>
-                            <p><a href="#">Mon to Fri- 9:00 - 5:00</a></p>
-                            <p><a href="#">Sat - 9: 00 - 12:00</a></p>
+                            <h3 class="mb-3">お問い合わせ先. 営業時間：</h3>
+                            <p><a href="#">月曜日～金曜日- 9:00 - 5:00</a></p>
+                            <p><a href="#">土曜日 - 9: 00 - 12:00</a></p>
                           </div>
                         </div>
                       </div>

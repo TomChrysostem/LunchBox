@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AWA-Co.,ltd</title>
+    <title>AWA FOOD SERVICE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
@@ -42,7 +42,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">AWA-Co.,ltd</a>
+	      <a class="navbar-brand" href="index.html">AWA FOOD SERVICE</a>
 	      
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
@@ -122,11 +122,11 @@
     
     <section class="pt-5 bg-light" id="japan-section">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="align-self-stretch ftco-animate mx-3">
               <div class="media-body">
               <h3 class="heading my-3">日本料理</h3>
-                <p>もしあなたは経験豊富な教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+                <p>もしあなたは経験豊富な和食教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
               </div> 
             </div>
             <!-- <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p> -->
@@ -136,7 +136,7 @@
 	
     		<div class="row justify-content-center py-3">
           <div class="col-md-12 heading-section text-center ftco-animate">
-              <h4>Available courses</h4>
+              <h4>利用可能なコース</h4>
           </div>
         </div>
 
@@ -157,9 +157,9 @@
                       <!--Title-->
                       <h4 class="card-title">{{ $course->course }}</h4>
                       <!--Text-->
-                      <p class="card-text">{{ $course->description }}</p>
+                       <!--<p class="card-text">{{ $course->description }}</p>-->
                       <p class="card-text" style="color: blue">{{ $course->price }} - MMK </p>
-                      <a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a>
+                      <a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">コース予約</a>
 
                     </div>
                 </div>
@@ -174,22 +174,20 @@
 
  <section class="pt-5" id="myanmar-section">
  <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
             <div class="align-self-stretch ftco-animate mx-3">
               <div class="media-body">
-              <h3 class="heading my-3">Myanmar Dishes</h3>
-                <p>We can help you design and deliver a successful meal program with a focus on healthy nutrition to revitalize your staff. Your customized meal plan will consist of diverse, 
-                restaurant-quality menus tailored to your budget, dietary restrictions, and unique needs.</p>
+              <h3 class="heading my-3">ミャンマー料理</h3>
+              <p>もしあなたは経験豊富なミャンマー料理教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
               </div> 
             </div>
-            <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>
 	</div>
 
     <!--lunchbox menu start-->
 	
     <div class="row justify-content-center py-3">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                <h4>Available Courses</h4>
+                <h4>利用可能なコース</h4>
                 </div>
             </div>
 
@@ -224,22 +222,20 @@
 
 <section class="pt-5 bg-light" id="italian-section">
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
             <div class="align-self-stretch ftco-animate mx-3">
               <div class="media-body">
-                <h3 class="heading my-3">Italian Dishes</h3>
-                <p>Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, 
-                birthdays, charity events  and all sorts of special occasions.</p>
+              <h3 class="heading my-3">イタリア料理</h3>
+                <p>もしあなたは経験豊富なイタリア料理教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
               </div> 
             </div>
-            <p class="mb-0"><a href="#" class="btn btn-info px-4 py-3" data-toggle="modal" data-target="#addBookCourse">Booking Course</a></p>
 	</div>
 
     <!--lunchbox menu start-->
 	
     <div class="row justify-content-center py-3">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h4>Available Courses</h4>
+                    <h4>利用可能なコース</h4>
                 </div>
             </div>
 
@@ -275,7 +271,7 @@
     <div class="modal fade px-5 py-5" id="addBookCourse" aria-hidden="true">
 
             <div class="modal-header modal-dialog d-flex p-2">
-                      <h3 class="font-weight-bold text-white">Thank you for your register</h3>
+                      <h4 class="font-weight-bold text-white">ご予約いただきありがとうございます。</h4>
                         <button type="button" class="btn btn-warning px-3 float-right">
                               <span aria-hidden="true">&times;</span>
                         </button>
@@ -292,11 +288,11 @@
                       </div>
                       @endif 
 
-                      <h3 class="text-center pb-2">Register Form</h3>
+                      <h3 class="text-center pb-2">予約フォーム</h3>
 
                       @csrf
                       <div class="form-group">
-                        <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="Full Name">
+                        <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="氏名">
                         <!-- Error -->
                           @if ($errors->has('user_name'))
                           <div class="error text-danger">
@@ -306,7 +302,7 @@
                       </div>
 
                       <div class="form-group">
-                          <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="Email">
+                          <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="メール">
                           @if ($errors->has('email'))
                           <div class="error text-danger">
                               {{ $errors->first('email') }}
@@ -315,7 +311,7 @@
                       </div>
 
                       <div class="form-group">
-                        <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="Contact Number">
+                        <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="連絡先番号">
                           @if ($errors->has('phone'))
                           <div class="error text-danger">
                               {{ $errors->first('phone') }}
@@ -325,7 +321,7 @@
 
 
                       <div class="form-group">
-                          <textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="Address to deliever"></textarea>
+                          <textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="住所"></textarea>
                           @if ($errors->has('address'))
                           <div class="error text-danger">
                               {{ $errors->first('address') }}
@@ -335,7 +331,7 @@
 
 
                       <div class="form-group">
-                          <label for="exampleFormControlSelect1">Numbers student</label>
+                          <label for="exampleFormControlSelect1">参加者人数</label>
                             <select class="form-control" name="qty">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -353,7 +349,7 @@
                       </div>
 
                       <div class="form-group">
-                          <input type="text" name="date" class="form-control" id="datetimepicker" placeholder="Date"/> 
+                          <input type="text" name="date" class="form-control" id="datetimepicker" placeholder="日にち"/> 
                           @if ($errors->has('date'))
                               <div class="error text-danger">
                           {{ $errors->first('date') }}
@@ -369,7 +365,7 @@
 
                       <div class="form-group">
                           <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="messages" id="messages"
-                          cols="30" rows="7" placeholder="Message"></textarea>
+                          cols="30" rows="7" placeholder="メッセージボックス"></textarea>
                           @if ($errors->has('messages'))
                           <div class="error text-danger">
                              {{ $errors->first('messages') }}
@@ -378,7 +374,7 @@
                       </div>
 
                       <!-- Send button -->
-                      <button type="submit" class="btn btn-primary py-3 px-5">Register</button>
+                      <button type="submit" class="btn btn-primary py-3 px-5">予約する</button>
                       </form>
                 </div>
 
@@ -388,12 +384,19 @@
                   <div class="col-md-12 ftco-animate">
                     <div class="box p-2 px-3 bg-light d-flex">
                       <div>
-                        <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
-                        <p  class="text-danger">If you want to order with side_dish or if you have food allergy, please write it in message box.Thanks.</p>
+                      <p class="text-justified">ご注文は メールで: <a class="text-info">awa.yoko.hayami@gmail.com</a> または電話で: <a class="text-info">09792655994</a> または<a class="text-info"> 注文フォームで</a>お願い申し上げます。</p>
                       </div>
                     </div>
                   </div>
 
+                  <div class="col-md-12 ftco-animate">
+                    <div class="box p-2 px-3 bg-light d-flex">
+                      <div>
+                      <p  class="text-danger">＊＊＊副食も注文したい場合、または食物アレルギーがある場合は、メッセージボックスに記入してください。ありがとうございます。</p>
+                      </div>
+                    </div>
+                  </div>
+                  
 
                   <div class="col-md-12 ftco-animate">
                     <div class="box p-2 px-3 bg-light d-flex">
@@ -401,9 +404,9 @@
                         <span class="icon-phone2"></span>
                       </div>
                       <div>
-                        <h3 class="mb-3">Office Hour</h3>
-                        <p><a href="#">Mon to Fri- 9:00 - 5:00</a></p>
-                        <p><a href="#">Sat - 9: 00 - 12:00</a></p>
+                        <h3 class="mb-3">お問い合わせ先. 営業時間：</h3>
+                        <p><a href="#">月曜日～金曜日- 9:00 - 5:00</a></p>
+                        <p><a href="#">土曜日 - 9: 00 - 12:00</a></p>
                       </div>
                     </div>
                   </div>
