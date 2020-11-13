@@ -22,7 +22,7 @@
             <div class="view overlay">
                 <img src="{{ asset('storage/img/'.$menu->image) }}" class="img-fluid" alt="Sample image with waves effect.">
                 <a>
-                <div class="mask waves-effect waves-light rgba-white-slight"></div>
+                    <div class="mask waves-effect waves-light rgba-white-slight"></div>
                 </a>
             </div>
         </div>
