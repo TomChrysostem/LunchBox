@@ -50,7 +50,6 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-fill"><i class="fas fa-trash-alt"></i></button>
-                                
                             </form>
                             </td>
                          </tr>
