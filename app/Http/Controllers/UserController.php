@@ -33,7 +33,7 @@ class UserController extends Controller
         $attendee = new Attendee();
 
         $course_id = $request->input('course_id');
-        dd($course_id);
+        //dd($course_id);
         
         $attendee->user_name = $request->input('user_name');
         $attendee->phone = $request->input('phone');
