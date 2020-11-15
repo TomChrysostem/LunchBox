@@ -38,7 +38,9 @@
                             <td>{{ $attendee->address }}</td>
                             <td>{{ $attendee->date }}</td>
                             <td>{{ $attendee->qty }}</td>
-                            <td>{{ $attendee->pivot->course_id}}</td>
+                            @foreach ($attendee->courses as $course)
+                            <td>{{ $course->course}}</td>
+                            @endforeach               
                             <td>{{ $attendee->messages }}</td>
                             <td>
                             <form action="{{ route('attendees.destroy',$attendee->id) }}" method="POST">
@@ -51,8 +53,9 @@
                         </tr>   
                     @endforeach                     
                     </tbody>
-                    {!! $attendees->links() !!}
+                   
                 </table>
+                {!! $attendees->links() !!}
             </div>
         </div>
     </div>

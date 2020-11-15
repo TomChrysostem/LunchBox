@@ -16,9 +16,9 @@ class CreateAttendeeCourseTable extends Migration
         Schema::create('attendee_course', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('course_id');
-            $table->foreign('course_id')->references('id')->on('courses');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->unsignedBigInteger('attendee_id');
-            $table->foreign('attendee_id')->references('id')->on('attendees');
+            $table->foreign('attendee_id')->references('id')->on('attendees')->onDelete('cascade');
             $table->timestamps();
         });
     }
