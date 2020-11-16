@@ -114,7 +114,7 @@
 
 
 
-  <section class="ftco-intro img" id="about-section" style="background-image: url(images/wall3.jpg);">
+  <section class="ftco-intro img" id="school-section" style="background-image: url(images/wall3.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row justify-content-center">
@@ -241,7 +241,7 @@
     </section>
     
  <!--about us-->
-		<section class="pt-5" id="agent-section">
+		<section class="pt-5" id="information-section">
     	<div class="container">
           <div class="col-md-12 heading-section text-center ftco-animate">
             <h2 class="mb-2">ご案内</h2>

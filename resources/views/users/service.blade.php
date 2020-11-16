@@ -938,284 +938,7 @@
             </div>
       </div>
 
-<!--</section>-->
-
-
-<!--<section class="pt-5 bg-light" id="school-section">
-<div class="container">
-    <div class="row justify-content-center">
-            <div class="align-self-stretch ftco-animate mx-3">
-              <div class="media-body">
-           
-                <p>Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, 
-                birthdays, charity events  and all sorts of special occasions.</p>
-              </div> 
-            </div>
-            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
-	  </div>
-
-
-        <div class="row">
-            <div class="col-md-3">
-                <!-- Card -->
-                <!--<div class="card mb-4">
-
-                    <!--Card image-->
-                    <!--<div class="view overlay">
-                        <img class="card-img-top" src="images/italian dishes/Ahijo.jpg" alt="Card image cap">
-                        <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!--Card content-->
-                    <!--<div class="card-body">
-
-                    <!--Title-->
-                    <!--<h4 class="card-title">Ahijo</h4>
-                    <!--Text-->
-                    <!--<p class="card-text" style="color: blue">5000 - MMK </p>
-                    </div>
-                </div>
-                <!-- Card -->
-            <!--</div>
-        </div>
-        </div>
 </section>
-
-<section class="pt-5 mt-3 bg-light" id="event-section">
-<div class="container">
-    <div class="row justify-content-center">
-            <div class="align-self-stretch ftco-animate mx-3">
-              <div class="media-body">
-                <h3 class="heading my-3">Event</h3>
-                <p>Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, 
-                birthdays, charity events  and all sorts of special occasions.</p>
-              </div> 
-            </div>
-            <p class="mb-3 mx-3"><a href="#" class="btn btn-success px-4 py-3" data-toggle="modal" data-target="#Orderlunchbox">Order Lunchbox</a></p>
-	  </div>
-
-
-        <div class="row">
-            <div class="col-md-3">
-                <!-- Card -->
-                <!--<div class="card mb-4">
-
-                    <!--Card image-->
-                    <!--<div class="view overlay">
-                        <img class="card-img-top" src="images/italian dishes/Ahijo.jpg" alt="Card image cap">
-                        <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!--Card content-->
-                    <!--<div class="card-body">
-
-                    <!--Title-->
-                    <!--<h4 class="card-title">Ahijo</h4>
-                    <!--Text-->
-                    <!--<p class="card-text" style="color: blue">5000 - MMK </p>
-                    </div>
-                </div>
-                <!-- Card -->
-            <!--</div>
-        </div>
-        </div>-->
-    <!--lunchbox menu end-->
-
-     <!--model-->
-            <div class="modal fade px-5 py-5" id="Orderlunchbox" aria-hidden="true">
-
-                <div class="modal-header modal-dialog d-flex p-2">
-                          <h4 class="font-weight-bold text-white">ご注文ありがとうございます。</h4>
-                            <button type="button" class="btn btn-warning px-3 float-right">
-                                  <span aria-hidden="true">&times;</span>
-                            </button>
-                </div>
-
-                <div class="row block-12 px-5">
-                    <div class="col-md-7 order-last">
-                    
-                      <form action="{{route('users.order')}}" method="POST" class="bg-light p-4">
-                                          <!-- Success message -->
-                        @if(Session::has('success'))
-                            <div class="alert alert-success">
-                                {{Session::get('success')}}
-                            </div>
-                        @endif
-
-                        <h3 class="text-center pb-2">注文フォーム</h3>
-
-                        @csrf
-                          <div class="form-group">
-                          <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="氏名">
-                              <!-- Error -->
-                              @if ($errors->has('user_name'))
-                                <div class="error text-danger">
-                                    {{ $errors->first('user_name') }}
-                                </div>
-                                @endif
-                          </div>
-
-
-                          <div class="form-group">
-                              <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="メール">
-                                  @if ($errors->has('email'))
-                                  <div class="error text-danger">
-                                      {{ $errors->first('email') }}
-                                  </div>
-                                  @endif
-                            </div>
-
-                            <div class="form-group">
-                              <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="連絡先番号">
-                                @if ($errors->has('phone'))
-                                <div class="error text-danger">
-                                    {{ $errors->first('phone') }}
-                                </div>
-                                @endif
-                            </div>
-
-                            <div class="form-group">
-                                <textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="配達先の住所"></textarea>
-                                  @if ($errors->has('address'))
-                                  <div class="error text-danger">
-                                      {{ $errors->first('address') }}
-                                  </div>
-                                  @endif
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="配達して欲しい日にち"/> 
-                                  @if ($errors->has('date'))
-                                  <div class="error text-danger">
-                                      {{ $errors->first('date') }}
-                                  </div>
-                                  @endif
-                            </div>
-
-                            <div class="form-group">               
-                                <input type="text" name="qty" id="qty" class="form-control mb-4" placeholder="注文数">
-                                  @if ($errors->has('qty'))
-                                  <div class="error text-danger">
-                                      {{ $errors->first('qty') }}
-                                  </div>
-                                  @endif
-                            </div>
-
-                            <!-- order item -->
-                            
-                              <input type="text" name="menu_id" class="form-control mb-4"  value="{{ $menu->id }}" hidden>
-                        
-
-                                <!-- status -->
-                            
-                              <input type="text" name="status" class="form-control mb-4" value="1" hidden>  
-            
-
-                            <div class="form-group">
-                              <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="messages" id="messages"
-                              cols="30" rows="7" placeholder="メッセージボックス"></textarea>
-                                  @if ($errors->has('messages'))
-                                  <div class="error text-danger">
-                                      {{ $errors->first('messages') }}
-                                  </div>
-                                  @endif
-                            </div>
-
-                            <!-- Send button -->
-                            <button type="submit" class="btn btn-primary py-3 px-5">予約する</button>
-                      </form>
-                  
-                    </div>
-
-                  <div class="col-md-5 d-flex">
-          	        <div class="row d-flex contact-info mb-5">
-                      
-                      <div class="col-md-12 ftco-animate">
-                        <div class="box p-2 px-3 bg-light d-flex">
-                          <div>
-                            <p class="text-justified">ご注文は メールで: <a class="text-info">awa.yoko.hayami@gmail.com</a> または電話で: <a class="text-info">09792655994</a> または<a class="text-info"> 注文フォームで</a>お願い申し上げます。</p>
-                            
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-md-12 ftco-animate">
-                        <div class="box p-2 px-3 bg-light d-flex">
-                          <div>
-                            
-                            <p  class="text-danger">＊＊＊副食も注文したい場合、または食物アレルギーがある場合は、メッセージボックスに記入してください。ありがとうございます。</p>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="col-md-12 ftco-animate">
-                        <div class="box p-2 px-3 bg-light d-flex">
-                          <div class="icon mr-3">
-                            <span class="icon-phone2"></span>
-                          </div>
-                          <div>
-                            <h3 class="mb-3">お問い合わせ先. 営業時間：</h3>
-                            <p><a href="#">月曜日～金曜日- 9:00 - 5:00</a></p>
-                            <p><a href="#">土曜日 - 9: 00 - 12:00</a></p>
-                          </div>
-                        </div>
-                      </div>
-
-                  </div>
-                </div>
-            </div>
-
-            <!--old model-->
-            <!--<div class="modal fade" id="Orderlunchbox" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <p class="text-justified">You can order by Mail: <a class="text-info">awa.yoko.hayami@gmail.com</a> or by Contact Number: <a class="text-info">09792655994</a> or by<a class="text-info"> order form</a></p>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                      <div class="modal-body">
-                    <!-- Default form contact -->
-                      <!--<form class="text-center border border-light p-3" action="{{route('users.order')}}" method="POST">
-                        @csrf
-                          <p class="h4 mb-4">Order Form</p>
-                        <!-- Name -->
-                        <!--  <input type="text" name="user_name" class="form-control mb-4" placeholder="Name">
-                        <!-- Email -->
-                        <!--  <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
-                        <!-- phone -->
-                     <!-- <input type="text" name="phone" class="form-control mb-4" placeholder="Contact number">
-                          <!-- address -->
-                        <!--<div class="form-group">
-                            <textarea class="form-control rounded-0" name="address" rows="3" placeholder="Address"></textarea>
-                        </div>
-                          <!-- date -->
-                     <!-- <input type="text" name="date" class="form-control mb-4" placeholder="Date">
-
-                          <!-- no of orders -->
-                      <!--<input type="text" name="qty" class="form-control mb-4" placeholder="Numbers of orders">
-
-                        <input type="text" name="menu_id" class="form-control mb-4" value="{{ $menu->id }}" hidden>
-                        <input type="text" name="status" class="form-control mb-4" value="1" hidden>
-                        <!-- Message -->
-                      <!--<div class="form-group">
-                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4" placeholder="Message" name="messages"></textarea>
-                        </div>
-                        <!-- Send button -->
-                       <!-- <button class="btn btn-success btn-block" type="submit">Order</button>
-                        </form>
-                <!-- Default form contact -->
-                
-               <!-- </div>
-            <!--old model end-->
-    <!--endmodel-->
-
-    </section>
 
     <section class="pt-5 bg-light mt-3" id="orderpay-section">
         <div class="container px-5 pb-5">
@@ -1274,6 +997,154 @@
 
         </div>
     </section>
+
+
+    
+     <!--model-->
+     <div class="modal fade px-5 py-5" id="Orderlunchbox" aria-hidden="true">
+
+<div class="modal-header modal-dialog d-flex p-2">
+          <h4 class="font-weight-bold text-white">ご注文ありがとうございます。</h4>
+            <button type="button" class="btn btn-warning px-3 float-right">
+                  <span aria-hidden="true">&times;</span>
+            </button>
+</div>
+
+<div class="row block-12 px-5">
+    <div class="col-md-7 order-last">
+    
+      <form action="{{route('users.order')}}" method="POST" class="bg-light p-4">
+                          <!-- Success message -->
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{Session::get('success')}}
+            </div>
+        @endif
+
+        <h3 class="text-center pb-2">注文フォーム</h3>
+
+        @csrf
+          <div class="form-group">
+          <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="氏名">
+              <!-- Error -->
+              @if ($errors->has('user_name'))
+                <div class="error text-danger">
+                    {{ $errors->first('user_name') }}
+                </div>
+                @endif
+          </div>
+
+
+          <div class="form-group">
+              <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="メール">
+                  @if ($errors->has('email'))
+                  <div class="error text-danger">
+                      {{ $errors->first('email') }}
+                  </div>
+                  @endif
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="連絡先番号">
+                @if ($errors->has('phone'))
+                <div class="error text-danger">
+                    {{ $errors->first('phone') }}
+                </div>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="配達先の住所"></textarea>
+                  @if ($errors->has('address'))
+                  <div class="error text-danger">
+                      {{ $errors->first('address') }}
+                  </div>
+                  @endif
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="date" id="datetimepicker" class="form-control" placeholder="配達して欲しい日にち"/> 
+                  @if ($errors->has('date'))
+                  <div class="error text-danger">
+                      {{ $errors->first('date') }}
+                  </div>
+                  @endif
+            </div>
+
+            <div class="form-group">               
+                <input type="text" name="qty" id="qty" class="form-control mb-4" placeholder="注文数">
+                  @if ($errors->has('qty'))
+                  <div class="error text-danger">
+                      {{ $errors->first('qty') }}
+                  </div>
+                  @endif
+            </div>
+
+            <!-- order item -->
+            
+              <input type="text" name="menu_id" class="form-control mb-4"  value="{{ $menu->id }}" hidden>
+        
+
+                <!-- status -->
+            
+              <input type="text" name="status" class="form-control mb-4" value="1" hidden>  
+
+
+            <div class="form-group">
+              <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="messages" id="messages"
+              cols="30" rows="7" placeholder="メッセージボックス"></textarea>
+                  @if ($errors->has('messages'))
+                  <div class="error text-danger">
+                      {{ $errors->first('messages') }}
+                  </div>
+                  @endif
+            </div>
+
+            <!-- Send button -->
+            <button type="submit" class="btn btn-primary py-3 px-5">予約する</button>
+      </form>
+  
+    </div>
+
+  <div class="col-md-5 d-flex">
+      <div class="row d-flex contact-info mb-5">
+      
+      <div class="col-md-12 ftco-animate">
+        <div class="box p-2 px-3 bg-light d-flex">
+          <div>
+            <p class="text-justified">ご注文は メールで: <a class="text-info">awa.yoko.hayami@gmail.com</a> または電話で: <a class="text-info">09792655994</a> または<a class="text-info"> 注文フォームで</a>お願い申し上げます。</p>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 ftco-animate">
+        <div class="box p-2 px-3 bg-light d-flex">
+          <div>
+            
+            <p  class="text-danger">＊＊＊副食も注文したい場合、または食物アレルギーがある場合は、メッセージボックスに記入してください。ありがとうございます。</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 ftco-animate">
+        <div class="box p-2 px-3 bg-light d-flex">
+          <div class="icon mr-3">
+            <span class="icon-phone2"></span>
+          </div>
+          <div>
+            <h3 class="mb-3">お問い合わせ先. 営業時間：</h3>
+            <p><a href="#">月曜日～金曜日- 9:00 - 5:00</a></p>
+            <p><a href="#">土曜日 - 9: 00 - 12:00</a></p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+</div>
+<!--end model-->
 
 </div>
 

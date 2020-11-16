@@ -48,9 +48,9 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">youremail@email.com</span>
 					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+					    <!--<div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
 						    <p class="mb-0 register-link"><a href="#" class="mr-3">Sign Up</a> <a href="#" class="mr-3" data-toggle="modal" data-target="#SigninForm">Sign In</a></p>
-					    </div>
+					    </div>-->
 				    </div>
 			    </div>
 		    </div>
@@ -64,8 +64,8 @@
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>ホーム</span></a></li>
 	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>お弁当サービス</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>料理コース</span></a></li>
-	          <li class="nav-item"><a href="#agent-section" class="nav-link"><span>ご案内</span></a></li>
+	          <li class="nav-item"><a href="#school-section" class="nav-link"><span>料理コース</span></a></li>
+	          <li class="nav-item"><a href="#information-section" class="nav-link"><span>ご案内</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>問い合わせ</span></a></li>
 	        </ul>
 	      </div>
