@@ -288,12 +288,16 @@
                 </p>
             </div>
               <!--Google map-->
-              <div class="col-md-6 mt-5 map-container">
+              <div class="col-md-6 mt-5">
                 <!--Google map-->
                      
-                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                                 style="border:0" allowfullscreen></iframe>
-                   
+                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 400px">
+                  <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    style="border:0" allowfullscreen></iframe>
+                </div>
+
+                <!--Google Maps-->
+                          
                 <!--Google Maps-->
               </div>
               <!--Google Maps-->
@@ -377,4 +381,15 @@
       </div>
     </section>
 
+<script>
+    function myMap() {
+    var mapProp= {
+      center:new google.maps.LatLng(51.508742,-0.120850),
+      zoom:5,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
 @endsection
