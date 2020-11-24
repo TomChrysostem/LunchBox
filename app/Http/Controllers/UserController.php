@@ -19,16 +19,42 @@ class UserController extends Controller
     public function courses()
     {
         $courses = Course::with('category')->latest()->paginate(5);
+        //dd($courses->toarray());
+        // $myanmarCourses = Course::with(['category' => function ($query) {
+        //     $query->where('category', 'like', '%Burmese%');
+        // }])->get();
+        // $italyCourses = Course::with(array('category' => function($query) 
+        // {
+        //     $query->where('category.category', 'Italian');
+        // }))->latest()->paginate(3);
+        // $japanesCourses = Course::with(array('category' => function($query) 
+        // {
+        //     $query->where('category.category', 'Japanese');
+        // }))->latest()->paginate(3);
+        //dd($myanmarCourses->toarray());
         return view('users.course',compact('courses')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+    /**
+     * Display the apply form.
+     *
+     * @param  \App\Course  $course
+     * @return \Illuminate\Http\Response
+     */
+    public function applyCourse(Request $request, Course $course)
+    {
+        $course_id = $request->route('id');
+        $course =  Course::find($course_id );
+        return view('users.apply',compact('course'));
 
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function bookCourse(Request $request, Course $course) {
+    public function bookCourse(Request $request, Course $course) 
+    {
         
         $attendee = new Attendee();
 
@@ -48,18 +74,30 @@ class UserController extends Controller
         return redirect('/course');
     }
 
-    public function menus()
+    public function menus() 
     {
-        $menus = Menu::latest()->paginate(5);
-        return view('users.service',compact('menus')) ->with('i', (request()->input('page', 1) - 1) * 5);
+        $sideDishs = Menu::where('dish_type','Side dish')->orderBy('date', 'asc')->latest()->paginate(3);
+        $mainDishs = Menu::where('dish_type','Main dish')->orderBy('date', 'asc')->latest()->paginate(3);
+        $schoolLunchs = Menu::where('menu_type','School lunch')->orderBy('date', 'asc')->latest()->paginate(3);
+        $companyLunchs = Menu::where('menu_type','Company lunch')->orderBy('date', 'asc')->latest()->paginate(3);
+        $events = Menu::where('menu_type','Events')->orderBy('date', 'asc')->latest()->paginate(3);
+        //dd($sideDishs->toarray());
+        //$menus = Menu::latest()->paginate(5);
+        //dd($mainDishs->toarray());
+        return view('users.service',compact('sideDishs','mainDishs','schoolLunchs','companyLunchs','events')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    //public function orderMenus(Request $request) {
-       // Order::create($request->all());
-       // return view('users.order');
-   // }
+    public function orderMenu(Request $request, Menu $menu) 
+    {
+        $menuid = $request->route('id');
+        $menu = Menu::find($menuid );
+        //dd($menu->toarray());
+        return view('users.order',compact('menu'));
+    }
 
-    public function bookMenus(Request $request) {
+    public function bookMenu(Request $request) 
+    {
+        //return $request;
          
         Order::create($request->all());
         return redirect('/service');

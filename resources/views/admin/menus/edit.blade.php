@@ -22,28 +22,29 @@
         <div class="card-body row">
             <div class="col-7">
                 <div class="row">
-                    <div class="col-md-5 pr-1">
+                    <div class="col-md-6 pr-1">
                         <div class="form-group mb-0">
                             <label>Menu (Menu Name)</label>
                             <input type="text" class="form-control" placeholder="Menu" name="menu" value="{{$menu->menu}}">
                         </div>
                     </div>
-                    <div class="col-md-3 px-1">
+                    <div class="col-md-6">
                         <label>Date</label>
-                        <input type="text" name="date" class="form-control" placeholder="day/month/year" id="datetimepicker" value="{{$menu->date}}"> 
+                        <input type="date" name="date" class="form-control" placeholder="day/month/year" id="datetimepicker" value="{{$menu->date}}"> 
                     </div>
-                    <div class="col-md-4 pl-1">
+                   
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-0">
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Home Address" name="description" rows="3">{{$menu->description}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
                         <div class="form-group mb-0">
                             <label>Price</label>
                             <input type="text" class="form-control" placeholder="price of menu" name="price" value="{{$menu->price}}">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group mb-0">
-                            <label>Description</label>
-                            <textarea class="form-control" placeholder="Home Address" name="description">{{$menu->description}}</textarea>
                         </div>
                     </div>
                 </div>

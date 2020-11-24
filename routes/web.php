@@ -16,13 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('users.index');
 });
-Route::get('/service', function () {
-    return view('users.service');
-});
 
-// Route::get('/course', function () {
-//     return view('users.course');
-// });
+
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
@@ -33,19 +28,13 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
     Route::resource('orders', 'OrderController');
     Route::resource('attendees', 'AttendeeController');
 });
-Route::get('/order', function () {
-    return view('users.order');
-});
-
-Route::get('/apply_course', function () {
-    return view('users.apply_course');
-});
-
 Route::resource('admin','AdminController')->middleware('auth');
-
 Auth::routes();
-Route::get('/course', 'UserController@courses')->name('users.course');
-Route::get('/service', 'UserController@menus')->name('users.service');
-Route::post('/booking', 'UserController@bookCourse')->name('users.booking');
-Route::post('/order', 'UserController@bookMenus')->name('users.order');
+
+Route::get('/course', 'UserController@courses')->name('user.course');
+Route::get('/service', 'UserController@menus')->name('user.service');
+Route::get('/apply/{id}', 'UserController@applyCourse')->name('user.apply');
+Route::post('/booking', 'UserController@bookCourse')->name('user.booking');
+Route::get('/order/{id}', 'UserController@orderMenu')->name('user.order');
+Route::post('/serve', 'UserController@bookMenu')->name('user.serve');
 Route::get('/home', 'HomeController@index')->name('home');
