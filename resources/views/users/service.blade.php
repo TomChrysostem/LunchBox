@@ -65,21 +65,28 @@
 				<!-- side dish menu display -->
 				<section>
 					<div class="jumbotron bg-light">
-						<div class="card-columns">
+						<div class="row pb-4">
 							@foreach ($sideDishs as $sideDish)
-								<div class="card">
-									<div class="card-body">
-									<img class="card-img-top" src="{{ asset('storage/img/'.$sideDish->image) }}" alt="Card image cap" width="237px" height="150px">
-									<h5 class="card-title">{{$sideDish->menu}} <span class="badge badge-secondary">{{$sideDish->date}}</span> </h5>
+								<div class="col-4">
+									<div class="bg-light">
+										<div class="my-3">
+											<h6 class="display-5">{{$sideDish->menu}}</h6>
+											<h6 class="card-subtitle mb-2 text-muted"><bold>DATE : </bold>{{$sideDish->date}}</h6>
+										</div>
+										<div class="bg-white" style="border-radius: 21px 21px 0 0;">
+											<img class="card-img-top" src="{{ asset('storage/img/'.$sideDish->image) }}" width="300" height="200" alt="Card image cap">
+										</div>
 									</div>
 								</div>
 							@endforeach 
 						</div>
-						{!! $sideDishs->links() !!}
+						<div class="text-center">
+							<button type="button" class="btn btn-light">View More</button>
+						</div>
 					</div>
 				</section>
 				<!-- Menu Type display  -->
-				<section class="pt-5 bg-light" id="side-school-event-section">
+				<section class="pt-5 pb-5 bg-light" id="side-school-event-section">
 					<div>
 						<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
 							<li class="nav-item p-3">
@@ -106,19 +113,24 @@
 									</div> 
 								</div>
 							</div>
-							<div class="card-columns">
-								@foreach ($schoolLunchs as $schoolLunch)
-									<div class="card">
-										<div class="card-body">
-										<img class="card-img-top" src="{{ asset('storage/img/'.$schoolLunch->image) }}" alt="Card image cap" width="237px" height="150px">
-										<h5 class="card-title">{{$schoolLunch->menu}} <span class="badge badge-secondary">{{$schoolLunch->date}}</span> </h5>
-										<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$schoolLunch->price}} MMK </h6>
-										<p class="card-text">{{$schoolLunch->description}}</p>
+							<div class="row pb-4">
+							@foreach ($schoolLunchs as $schoolLunch)
+								<div class="col-4">
+									<div class="bg-light">
+										<div class="my-3">
+											<h6 class="display-5">{{$schoolLunch->menu}}</h6>
+											<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$schoolLunch->price}} MMK </h6>
+										</div>
+										<div class="bg-white" style="width: 100%;border-radius: 21px 21px 0 0;">
+											<img class="card-img-top" src="{{ asset('storage/img/'.$schoolLunch->image) }}" height="250" alt="Card image cap">
 										</div>
 									</div>
-								@endforeach 
+								</div>
+							@endforeach 
 							</div>
-							{!! $schoolLunchs->links() !!}
+							<div class="text-center">
+								<button type="button" class="btn btn-light">View More</button>
+							</div>
 						</div>
 						<!-- Company Lunch -->
 						<div class="tab-pane fade show" id="company" role="tabpanel" aria-labelledby="company-tab">	
@@ -129,19 +141,24 @@
 									</div> 
 								</div>
 							</div>
-							<div class="card-columns">
+							<div class="row pb-4">
 								@foreach ($companyLunchs as $companyLunch)
-									<div class="card">
-										<div class="card-body">
-										<img class="card-img-top" src="{{ asset('storage/img/'.$companyLunch->image) }}" alt="Card image cap" width="237px" height="150px">
-										<h5 class="card-title">{{$companyLunch->menu}} <span class="badge badge-secondary">{{$companyLunch->date}}</span> </h5>
-										<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$companyLunch->price}} MMK </h6>
-										<p class="card-text">{{$companyLunch->description}}</p>
+									<div class="col-4">
+										<div class="bg-light">
+											<div class="my-3">
+												<h6 class="display-5">{{$companyLunch->menu}}</h6>
+												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$companyLunch->price}} MMK </h6>
+											</div>
+											<div class="bg-white" style="width: 100%;border-radius: 21px 21px 0 0;">
+												<img class="card-img-top" src="{{ asset('storage/img/'.$companyLunch->image) }}" height="250" alt="Card image cap">
+											</div>
 										</div>
 									</div>
 								@endforeach 
 							</div>
-							{!! $companyLunchs->links() !!}
+							<div class="text-center">
+								<button type="button" class="btn btn-light">View More</button>
+							</div>
 						</div>
 						<!-- Event Lunch -->
 						<div class="tab-pane fade show" id="eventlunch" role="tabpanel" aria-labelledby="eventlunch-tab">	
@@ -152,19 +169,24 @@
 									</div> 
 								</div>
 							</div>
-							<div class="card-columns">
+							<div class="row pb-4">
 								@foreach ($events as $event)
-									<div class="card">
-										<div class="card-body">
-										<img class="card-img-top" src="{{ asset('storage/img/'.$event->image) }}" alt="Card image cap" width="237px" height="150px">
-										<h5 class="card-title">{{$event->menu}} <span class="badge badge-secondary">{{$event->date}}</span> </h5>
-										<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$event->price}} MMK </h6>
-										<p class="card-text">{{$event->description}}</p>
+									<div class="col-4">
+										<div class="bg-light">
+											<div class="my-3">
+												<h6 class="display-5">{{$event->menu}}</h6>
+												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$event->price}} MMK </h6>
+											</div>
+											<div class="bg-white" style="width: 100%;border-radius: 21px 21px 0 0;">
+												<img class="card-img-top" src="{{ asset('storage/img/'.$event->image) }}" height="250" alt="Card image cap">
+											</div>
 										</div>
 									</div>
 								@endforeach 
 							</div>
-							{!! $events->links() !!}
+							<div class="text-center">
+								<button type="button" class="btn btn-light">View More</button>
+							</div>
 						</div>
 					</div>
 				</section>
