@@ -62,9 +62,11 @@ class AttendeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Attendee $attendee)
+
     {
-        $book_attendee = Course::find(1)->attendees()->find($attendee);
-        return view('admin.attendees.show',compact('book_attendee'));
+        $attendee_list = Attendee::with('courses')->find($attendee);
+        dd($attendee_list->toarray());
+        return view('admin.attendees.show',compact('attendee_list'));
     }
 
     /**

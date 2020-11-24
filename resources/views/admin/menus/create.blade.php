@@ -20,28 +20,28 @@
         <div class="card-body row">
             <div class="col-7">
                 <div class="row">
-                    <div class="col-md-5 pr-1">
+                    <div class="col-md-6 pr-1">
                         <div class="form-group mb-0">
                             <label>Menu (Menu Name)</label>
                             <input type="text" class="form-control" name="menu" placeholder="Menu">
                         </div>
                     </div>
-                    <div class="col-md-3 px-1">
+                    <div class="col-md-6">
                         <label>Date</label>
-                        <input type="text" name="date" class="form-control" placeholder="day/month/year"> 
-                    </div>
-                    <div class="col-md-4 pl-1">
-                        <div class="form-group mb-0">
-                            <label>Price</label>
-                            <input type="text" class="form-control" placeholder="price of menu" name="price">
-                        </div>
+                        <input type="date" name="date" class="form-control" placeholder="day/month/year"> 
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="form-group mb-0">
                             <label>Description</label>
-                            <textarea class="form-control" placeholder="Menu Description" name="description"></textarea>
+                            <textarea class="form-control" placeholder="Menu Description" name="description" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                        <div class="form-group mb-0">
+                            <label>Price</label>
+                            <input type="text" class="form-control" placeholder="price of menu" name="price">
                         </div>
                     </div>
                 </div>

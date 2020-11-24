@@ -8,14 +8,16 @@
     <div class="card-body row">
         <div class="col-7">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-light"><span class="font-weight-bold">Name : </span> {{ $book_attendee->user_name }}</li>
-                <li class="list-group-item bg-light"><span class="font-weight-bold">Phone :</span> {{ $book_attendee->phone }}</li>
-                <li class="list-group-item bg-light"><span class="font-weight-bold">Email  :</span> {{ $book_attendee->email }}</li>
-                <li class="list-group-item bg-light"><span class="font-weight-bold">Address :</span> {{ $book_attendee->address }}</li>
-                <li class="list-group-item bg-light"><span class="font-weight-bold">Date  :</span> {{ $book_attendee->date }}</li>
-                <li class="list-group-item bg-light"><span class="font-weight-bold">Numbers of students :</span> {{ $book_attendee->qty }}</li>
-                <li class="list-group-item bg-light"><span class="font-weight-bold">course name :</span> {{ $book_attendee->pivot->course_id }}</li> 
-                <li class="list-group-item bg-light"><span class="font-weight-bold">Message  :</span> {{ $book_attendee->messages }}</li></li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Name : </span> {{ $attendee_list->user_name }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Phone :</span> {{ $attendee_list->phone }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Email  :</span> {{ $attendee_list->email }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Address :</span> {{ $attendee_list->address }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Date  :</span> {{ $attendee_list->date }}</li>
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Numbers of students :</span> {{ $attendee_list->qty }}</li>
+                @foreach ($attendee_list->courses as $course)
+                <li class="list-group-item bg-light"><span class="font-weight-bold">course name :</span> {{ $course->course}}</li> 
+                @endforeach
+                <li class="list-group-item bg-light"><span class="font-weight-bold">Message  :</span> {{ $attendee_list->messages }}</li></li>
             </ul>
         </div>
         <div class="col-5">
