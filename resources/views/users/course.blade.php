@@ -56,7 +56,7 @@
 													<h5 class="card-title">{{$course->course}}</h5>
 													<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 													<p class="card-text">{{$course->description}}</p>
-													<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+													<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
 												</div>
 											</div>
 										</div>
@@ -88,7 +88,7 @@
 												<h5 class="card-title">{{$course->course}}</h5>
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p class="card-text">{{$course->description}}</p>
-												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
 											</div>
 										</div>
 									</div>
@@ -120,7 +120,7 @@
 												<h5 class="card-title">{{$course->course}}</h5>
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p class="card-text">{{$course->description}}</p>
-												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
 											</div>
 										</div>
 									</div>
