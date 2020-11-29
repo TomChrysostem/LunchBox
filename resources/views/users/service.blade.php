@@ -65,13 +65,18 @@
 				<!-- side dish menu display -->
 				<section>
 					<div class="jumbotron bg-light">
+						
+								<h4 class="col-md-12 heading-section text-center ftco-animate">おかずメニュー</h4>
+							
 						<div class="row pb-4">
 							@foreach ($sideDishs as $sideDish)
 								<div class="col-4">
 									<div class="bg-light">
 										<div class="my-3">
-											<h6 class="display-5">{{$sideDish->menu}}</h6>
-											<h6 class="card-subtitle mb-2 text-muted"><bold>DATE : </bold>{{$sideDish->date}}</h6>
+											<h5 class="display-5">{{$sideDish->menu}}</h5>
+											<a type="button" href="" class="btn btn-primary btn-sm my-2" data-toggle="modal" data-target="#detail">
+												detail
+											</a>
 										</div>
 										<div class="bg-white" style="border-radius: 21px 21px 0 0;">
 											<img class="card-img-top" src="{{ asset('storage/img/'.$sideDish->image) }}" width="300" height="200" alt="Card image cap">
@@ -190,6 +195,8 @@
 						</div>
 					</div>
 				</section>
+
+				
 			</div>
 		</main>
 	@endsection

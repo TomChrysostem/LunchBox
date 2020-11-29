@@ -71,11 +71,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 heading-section ftco-animate">
-						<h2 class="mb-5">従業タイプ</h2>
+						<h2 class="mb-5">授業タイプ</h2>
 						<div class="media block-6 services text-center d-block pt-md-5 mt-md-5">
 							<img src="images/one-class.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">個人従業</h3>
+								<h3 class="heading mb-3">個人授業</h3>
 								<p class="mb-5">我々のシェフパレード料理教室では自分が作っているものに愛し、それをあなたに教えるのを望んでいる最高のシェフによって率いられています。</p>
 								<hr>
 							</div>
@@ -85,7 +85,7 @@
 						<div class="media block-6 services text-center d-block mt-lg-5 pt-md-5 pt-lg-4">
 							<img src="images/group-class.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">グループ従業</h3>
+								<h3 class="heading mb-3">グループ授業</h3>
 								<p class="mb-5">グループ従業にには、楽しさ、笑い、おいしい料理に満ちたユニークな体験を提供します。</p>
 								<hr>
 							</div>
@@ -95,7 +95,7 @@
 						<div class="media block-6 services text-center d-block">
 							<img src="images/cookingtraining.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">シェフトレーニング従業</h3>
+								<h3 class="heading mb-3">シェフトレーニング授業</h3>
 								<p class="mb-5">料理に興味のある皆様は経験豊富な教師から、あらゆる種類の料理や特定の分野について学ぶことができます。</p>
 								<hr>
 							</div>
@@ -150,8 +150,8 @@
 						</p>
 					</div>
 					<div class="col-md-6 mt-5 map-container">
-						<iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-									style="border:0" allowfullscreen></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.982638071507!2d96.12463931486857!3d16.827217388416525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c195fe99d49fad%3A0xb8c5ec33377eb319!2zU2h3ZSBIdGFuIFBpbiBDb25kbyDhgJvhgL3hgL7hgLHhgJHhgJThgLrhgLjhgJXhgIThgLog4YCA4YC94YCU4YC64YCS4YCt4YCv!5e0!3m2!1sen!2smm!4v1606229755424!5m2!1sen!2smm" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+								
 					</div>				
 				</div>
 			</div>
@@ -226,5 +226,7 @@
 				</div>
 			</div>
 		</section>
+
+
 
 	@endsection
