@@ -53,6 +53,7 @@
 				<div class="row justify-content-center py-4">
 					<p class="mb-3 mx-3"><a href="{{ route('user.service') }}" class="btn btn-info px-4 py-3">詳しく見る</a></p>
 				</div>
+			</div>
 		</section>
 
 		<section class="ftco-intro img" id="about-section" style="background-image: url(images/wall3.jpg);">
@@ -226,5 +227,4 @@
 				</div>
 			</div>
 		</section>
-
 	@endsection

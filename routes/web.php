@@ -36,5 +36,7 @@ Route::get('/service', 'UserController@menus')->name('user.service');
 Route::get('/apply/{id}', 'UserController@applyCourse')->name('user.apply');
 Route::post('/booking', 'UserController@bookCourse')->name('user.booking');
 Route::get('/order/{id}', 'UserController@orderMenu')->name('user.order');
+Route::get('/view-course', 'UserController@courseDetail')->name('user.view-course');
+Route::get('/view-menu', 'UserController@menuDetail')->name('user.view-menu');
 Route::post('/serve', 'UserController@bookMenu')->name('user.serve');
 Route::get('/home', 'HomeController@index')->name('home');

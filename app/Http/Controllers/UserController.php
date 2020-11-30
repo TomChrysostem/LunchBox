@@ -22,7 +22,9 @@ class UserController extends Controller
         //dd($courses->toarray());
         // $myanmarCourses = Course::with(['category' => function ($query) {
         //     $query->where('category', 'like', '%Burmese%');
+
         // }])->get();
+        // dd($myanmarCourses->toarray());
         // $italyCourses = Course::with(array('category' => function($query) 
         // {
         //     $query->where('category.category', 'Italian');
@@ -31,8 +33,9 @@ class UserController extends Controller
         // {
         //     $query->where('category.category', 'Japanese');
         // }))->latest()->paginate(3);
-        //dd($myanmarCourses->toarray());
-        return view('users.course',compact('courses')) ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        //return view('users.course.course',compact(''));
+        return view('users.course.course',compact('courses')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     /**
      * Display the apply form.
@@ -44,7 +47,7 @@ class UserController extends Controller
     {
         $course_id = $request->route('id');
         $course =  Course::find($course_id );
-        return view('users.apply',compact('course'));
+        return view('users.course.apply',compact('course'));
 
     }
     /**
@@ -84,15 +87,15 @@ class UserController extends Controller
         //dd($sideDishs->toarray());
         //$menus = Menu::latest()->paginate(5);
         //dd($mainDishs->toarray());
-        return view('users.service',compact('sideDishs','mainDishs','schoolLunchs','companyLunchs','events')) ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('users.menu.service',compact('sideDishs','mainDishs','schoolLunchs','companyLunchs','events')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function orderMenu(Request $request, Menu $menu) 
     {
         $menuid = $request->route('id');
-        $menu = Menu::find($menuid );
+        $menu = Menu::find($menuid);
         //dd($menu->toarray());
-        return view('users.order',compact('menu'));
+        return view('users.menu.order',compact('menu'));
     }
 
     public function bookMenu(Request $request) 
@@ -101,5 +104,13 @@ class UserController extends Controller
          
         Order::create($request->all());
         return redirect('/service');
+    }
+    public function courseDetail(Request $request , Course $course) {
+        $course_id = $request->route('id');
+        $course = Course::find($course_id);
+        return view('users.course.view');
+    }
+    public function menuDetail() {
+        return view('users.menu.view');
     }
 }

@@ -74,7 +74,7 @@
 											<h6 class="card-subtitle mb-2 text-muted"><bold>DATE : </bold>{{$sideDish->date}}</h6>
 										</div>
 										<div class="bg-white" style="border-radius: 21px 21px 0 0;">
-											<img class="card-img-top" src="{{ asset('storage/img/'.$sideDish->image) }}" width="300" height="200" alt="Card image cap">
+											<img class="card-img-top" src="{{ asset('storage/img/'.$sideDish->image) }}" class="img-responsive" width="100%">
 										</div>
 									</div>
 								</div>
@@ -122,7 +122,7 @@
 											<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$schoolLunch->price}} MMK </h6>
 										</div>
 										<div class="bg-white" style="width: 100%;border-radius: 21px 21px 0 0;">
-											<img class="card-img-top" src="{{ asset('storage/img/'.$schoolLunch->image) }}" height="250" alt="Card image cap">
+											<img class="card-img-top" src="{{ asset('storage/img/'.$schoolLunch->image) }}"  class="img-responsive" width="100%">
 										</div>
 									</div>
 								</div>
@@ -150,7 +150,7 @@
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$companyLunch->price}} MMK </h6>
 											</div>
 											<div class="bg-white" style="width: 100%;border-radius: 21px 21px 0 0;">
-												<img class="card-img-top" src="{{ asset('storage/img/'.$companyLunch->image) }}" height="250" alt="Card image cap">
+												<img class="card-img-top" src="{{ asset('storage/img/'.$companyLunch->image) }}"  class="img-responsive" width="100%">
 											</div>
 										</div>
 									</div>
@@ -178,7 +178,7 @@
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$event->price}} MMK </h6>
 											</div>
 											<div class="bg-white" style="width: 100%;border-radius: 21px 21px 0 0;">
-												<img class="card-img-top" src="{{ asset('storage/img/'.$event->image) }}" height="250" alt="Card image cap">
+												<img class="card-img-top" src="{{ asset('storage/img/'.$event->image) }}"  class="img-responsive" width="100%">
 											</div>
 										</div>
 									</div>
