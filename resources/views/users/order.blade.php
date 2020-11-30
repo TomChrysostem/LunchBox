@@ -16,11 +16,11 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th>Date</th>
-								<th>Menu</th>
-								<th>Name</th>
-								<th>Description</th>
-								<th>Price</th>
+								<th>日にち</th>
+								<th>メニュー</th>
+								<th>注文名</th>
+								<th>形容</th>
+								<th>値段</th>
 								<th>Kcal</th>
 							</tr>
 						</thead>

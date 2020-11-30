@@ -40,7 +40,7 @@
 									{{Session::get('success')}}
 								</div>
 							@endif
-							<h3 class="text-center pb-2">注文フォーム</h3>
+							<h3 class="text-center pb-2">登録フォーム</h3>
 							@csrf
 							<div class="form-group">
 								<input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="氏名">
@@ -67,7 +67,7 @@
 								@endif
 							</div>
 							<div class="form-group">
-								<textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="配達先の住所"></textarea>
+								<textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="住所"></textarea>
 									@if ($errors->has('address'))
 									<div class="error text-danger">
 										{{ $errors->first('address') }}
@@ -75,21 +75,43 @@
 									@endif
 							</div>
 							<div class="form-group">
-								<input type="date" name="date" class="form-control" placeholder="配達して欲しい日にち"/> 
+								<input type="date" name="date" class="form-control" placeholder="レッスン受けたい日にち"/> 
 									@if ($errors->has('date'))
 									<div class="error text-danger">
 										{{ $errors->first('date') }}
 									</div>
 									@endif
 							</div>
-							<div class="form-group">               
-								<input type="text" name="qty" id="qty" class="form-control mb-4" placeholder="注文数">
+							<!--<div class="form-group">  
+									<!--<label>人数</label>             
+								<input type="text" name="qty" id="qty" class="form-control mb-4" placeholder="人数">
+									<select　class="form-control mb-4 custom-select" name="qty">
+										<option value="">一つ選んでください</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+									</select>-->
+									<label>人数</label>
+									<select class="form-control mb-4 custom-select mb-4" name="qty" id="qty">
+										<option value="" disabled>一つ選んでください</option>
+										<option value="1" selected>1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+									</select>
 									@if ($errors->has('qty'))
 									<div class="error text-danger">
 										{{ $errors->first('qty') }}
 									</div>
 									@endif
-							</div>
+							<!--</div>-->
 							<div class="form-group">               
 								<input type="text" class="form-control mb-4" value="{{ $course->id }}" name="course_id" hidden>  
 							</div>
