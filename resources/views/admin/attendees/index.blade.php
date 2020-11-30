@@ -24,7 +24,6 @@
                         <th>Address</th>
                         <th>Date</th>
                         <th>Attendees QTY</th>
-                        <th>Course</th>
                         <th>Messages</th>
                         <th>Actions</th>
                     </thead>
@@ -40,7 +39,7 @@
                             <td>{{ $attendee->qty }}</td>
                             @foreach ($attendee->courses as $course)
                             <td>{{ $course->course}}</td>
-                            @endforeach               
+                            @endforeach            
                             <td>{{ $attendee->messages }}</td>
                             <td>
                             <form action="{{ route('attendees.destroy',$attendee->id) }}" method="POST">
