@@ -108,7 +108,8 @@ class UserController extends Controller
     public function courseDetail(Request $request , Course $course) {
         $course_id = $request->route('id');
         $course = Course::find($course_id);
-        return view('users.course.view');
+        //dd($course->toarray());
+        return view('users.course.view',compact('course'));
     }
     public function menuDetail() {
         return view('users.menu.view');

@@ -57,6 +57,7 @@
 													<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 													<p class="card-text">{{$course->description}}</p>
 													<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+													<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
 												</div>
 											</div>
 										</div>
@@ -64,7 +65,7 @@
 								@endif
 							@endforeach 
 							<div class="text-center">
-								<a type="button" href="{{ route('user.view-course') }}" class="btn btn-light">View More</a>
+								<!-- <a type="button" href="" class="btn btn-light">View More</a> -->
 							</div>
 						</div>
 						<div class="tab-pane fade show" id="myanmar" role="tabpanel" aria-labelledby="myanmar-tab">
@@ -89,6 +90,8 @@
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p class="card-text">{{$course->description}}</p>
 												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+												<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
+
 											</div>
 										</div>
 									</div>
@@ -96,7 +99,7 @@
 								@endif
 							@endforeach 
 							<div class="text-center">
-								<a type="button" href="{{ route('user.view-course') }}" class="btn btn-light">View More</a>
+								<!-- <a type="button" href="" class="btn btn-light">View More</a> -->
 							</div>
 						</div>
 						<div class="tab-pane fade show" id="italy" role="tabpanel" aria-labelledby="italy-tab">
@@ -121,6 +124,7 @@
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p class="card-text">{{$course->description}}</p>
 												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+												<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
 											</div>
 										</div>
 									</div>
@@ -128,7 +132,7 @@
 								@endif
 							@endforeach 
 							<div class="text-center">
-								<a type="button" href="{{ route('user.view-course') }}" class="btn btn-light">View More</a>
+								<!-- <a type="button" href="" class="btn btn-light">View More</a> -->
 							</div>
 						</div>
 					</div>
