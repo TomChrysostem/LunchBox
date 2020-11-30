@@ -23,7 +23,9 @@
         <div class="col-5">
             <!--Mask with wave-->
             <div class="view overlay">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(1).jpg" class="img-fluid" alt="Sample image with waves effect.">
+            @foreach ($attendee_list->courses as $course)
+                <img src="{{ asset('storage/img/'.$course->image) }}" class="img-fluid" alt="Sample image with waves effect.">
+            @endforeach
                 <a>
                 <div class="mask waves-effect waves-light rgba-white-slight"></div>
                 </a>
