@@ -91,7 +91,7 @@
 									@endif
 							</div>
 							<div class="form-group">               
-								<input type="text" class="form-control mb-4" value="{{ $course->id }}" hidden>  
+								<input type="text" class="form-control mb-4" value="{{ $course->id }}" name="course_id" hidden>  
 							</div>
 							<div class="form-group">
 								<textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="messages" id="messages"
