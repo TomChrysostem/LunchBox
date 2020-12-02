@@ -74,8 +74,8 @@
 						<div class="media block-6 services text-center d-block pt-md-5 mt-md-5">
 							<img src="images/one-class.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">個人授業</h3>
-								<p class="mb-5">我々のシェフパレード料理教室では自分が作っているものに愛し、それをあなたに教えるのを望んでいる最高のシェフによって率いられています。</p>
+								<h3 class="heading mb-3">個人レッスン</h3>
+								<p class="mb-5">一品ずつきめ細かにお教えいたします。また、ご希望に応じてメニューもアレンジさせていただきます。</p>
 								<hr>
 							</div>
 						</div>
@@ -84,8 +84,8 @@
 						<div class="media block-6 services text-center d-block mt-lg-5 pt-md-5 pt-lg-4">
 							<img src="images/group-class.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">グループ授業</h3>
-								<p class="mb-5">グループ従業にには、楽しさ、笑い、おいしい料理に満ちたユニークな体験を提供します。</p>
+								<h3 class="heading mb-3">グループレッスン</h3>
+								<p class="mb-5">一緒に楽しく作りながら 出来上がった後は、皆さんで試食していただけます。*お友達グループでのお申込みの場合はご希望がございましたらメニューのアレンジもお受けいたします</p>
 								<hr>
 							</div>
 						</div>      
@@ -94,7 +94,7 @@
 						<div class="media block-6 services text-center d-block">
 							<img src="images/cookingtraining.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">シェフトレーニング授業</h3>
+								<h3 class="heading mb-3">シェフトレーニングレッスン</h3>
 								<p class="mb-5">料理に興味のある皆様は経験豊富な教師から、あらゆる種類の料理や特定の分野について学ぶことができます。</p>
 								<hr>
 							</div>
