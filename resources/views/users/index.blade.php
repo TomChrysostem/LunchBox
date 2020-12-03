@@ -193,7 +193,9 @@
 									</div>
 									<div>
 										<h3 class="mb-3">住所</h3>
-										<p>198 West 21th Street, Suite 721 New York NY 10016</p>
+										<p>Shwe Htan Pin Condminium No 7F,8F</p>
+										<p>No.23 Shwe Htan  Pin St.（No .3 Block）</p>
+										<p>Hlaing Township,Yangon</p>
 									</div>
 								</div>
 							</div>
