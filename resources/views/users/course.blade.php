@@ -40,7 +40,7 @@
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
 										<h3 class="heading my-3">日本料理</h3>
-										<p>もしあなたは経験豊富な和食教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+										<p>伝統料理や郷土料理、 皆さんのお好きな洋食までレパートリーをそろえております。</p>
 									</div> 
 								</div>
 							</div>
@@ -72,7 +72,7 @@
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
 										<h3 class="heading my-3">ミャンマー料理</h3>
-										<p>もしあなたは経験豊富な和食教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+										<p>油、塩分、辛味、スパイスなどを抑えて健康的にアレンジしております。</p>
 									</div> 
 								</div>
 							</div>
@@ -104,7 +104,7 @@
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
 										<h3 class="heading my-3">イタリア料理</h3>
-										<p>もしあなたは経験豊富な和食教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+										<p>ベーシックな普段使いのメニューから、ちょっとしたパーティーなどでも映えるメニューも取りそろえております。</p>
 									</div> 
 								</div>
 							</div>
