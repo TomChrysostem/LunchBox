@@ -13,8 +13,8 @@
 			<div class="container">
 				<div class="row justify-content-center pt-5">
 					<div class="col-md-12 heading-section text-center ftco-animate">
-						<h2 class="mb-4">我々のメニュー</h2>
-						<p>お客様に素晴らしい料理を提供させていただきます</p>
+						<h2 class="mb-4">メニュー</h2>
+						<p>お客様に健康で安全なバラエティーに冨んだメニューを提供させていただきます</p>
 					</div>
 				</div>
 				<section class="pt-5 bg-light" id="lunchbox-section">
@@ -32,32 +32,32 @@
 								<h3>今月のお弁当メニュー</h3>
 							</div>
 						</div>
-						<div class="col-md-12">
-							<table class="table table-hover table-fixed justify-content-center">
+						<div class="col-md-12 table-responsive">
+							<table class="table table-hover">
 								<thead>
 									<tr>
-										<th scope="row" class="px-2">Date</th>
-										<th class="px-2">Name</th>
-										<th class="px-2">Description</th>
-										<th class="px-2">Price</th>
-										<th class="px-2">Kcal</th>
-										<th class="px-2">Action</th>
+										<th class="px-2">日にち</th>
+										<th class="px-2">メニュー</th>
+										<th class="px-2">写真</th>
+										<th class="px-2">説明</th>
+										<th class="px-2">値段</th>
+										<th class="px-2">注文</th>
 									</tr>
 								</thead>
-								<tbody>
+							
 								@foreach ($mainDishs as $mainDish)
 									<tr>
-										<th scope="row" class="px-2">{{ $mainDish->date }}</th>
-										<td class="px-2 text-center">{{ $mainDish->menu }}</td>
-										<td class="px-2 text-center">{{ $mainDish->description }}</td>
-										<td class="px-2 text-center">{{ $mainDish->price }}-MMK</td>
-										<td class="px-2 text-center">{{ $mainDish->kcal }}-Kcal</td>
-										<td class="px-2 text-center">
-											<a href="{{ route('user.order',$mainDish->id) }}" class="btn btn-success btn-sm my-2">order</a>
+										<th class="px-2">{{ $mainDish->date }}</th>
+										<td class="px-2">{{ $mainDish->menu }}</td>
+										<td class="px-2"><img class="img-fluid img-thumbnail" src="{{ asset('storage/img/'.$mainDish->image) }}" alt="Card image cap" width="200" height="100"></td>
+										<td style="word-break:break-all;" class="px-2">{{ $mainDish->description }}</td>
+										<td class="px-2">{{ $mainDish->price }}-MMK</td>
+										<td class="px-2">
+											<a href="{{ route('user.order',$mainDish->id) }}" class="btn btn-success btn-sm my-2">注文</a>
 										</td>
 									</tr>
 								@endforeach
-								</tbody>
+								
 							</table>
 							{!! $mainDishs->links() !!}
 						</div>
@@ -94,17 +94,18 @@
 				<section class="pt-5 pb-5 bg-light" id="side-school-event-section">
 					<div>
 						<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+
+							<!-- <li class="nav-item p-3">
+								<a type="button" class="btn btn btn-outline-secondary" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company"
+								aria-selected="false">スタッフのお弁当</a>
+							</li>-->
 							<li class="nav-item p-3">
 								<a type="button" class="btn btn btn-outline-secondary active" id="school-tab" data-toggle="tab" href="#school" role="tab" aria-controls="school"
-								aria-selected="true">School Lunch</a>
-							</li>
-							<li class="nav-item p-3">
-								<a type="button" class="btn btn btn-outline-secondary" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company"
-								aria-selected="false">Company Food</a>
+								aria-selected="true">給食</a>
 							</li>
 							<li class="nav-item p-3">
 								<a type="button" class="btn btn btn-outline-secondary" id="eventlunch-tab" data-toggle="tab" href="#eventlunch" role="tab" aria-controls="eventlunch"
-								aria-selected="false">Events Food</a>
+								aria-selected="false">イベント＆パーティーフード</a>
 							</li>
 						</ul>
 					</div>
@@ -114,7 +115,7 @@
 							<div class="row justify-content-center mt-3">
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
-										<p> School - Lunch Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, </p>
+										<p>お子様の心身の健全な発達を目的とした 彩り豊かでバランスの良い食事を提供いたします。 </p>
 									</div> 
 								</div>
 							</div>
@@ -137,12 +138,12 @@
 								<button type="button" class="btn btn-light">View More</button>
 							</div>
 						</div>
-						<!-- Company Lunch -->
+						<!-- Company Lunch 
 						<div class="tab-pane fade show" id="company" role="tabpanel" aria-labelledby="company-tab">	
 							<div class="row justify-content-center mt-3">
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
-										<p>Company Lunch Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, </p>
+										<p>生活習慣病などの予防の為の 栄誉バランスのとれた 食事を提供いたします。 </p>
 									</div> 
 								</div>
 							</div>
@@ -164,13 +165,13 @@
 							<div class="text-center">
 								<button type="button" class="btn btn-light">View More</button>
 							</div>
-						</div>
+						</div>-->
 						<!-- Event Lunch -->
 						<div class="tab-pane fade show" id="eventlunch" role="tabpanel" aria-labelledby="eventlunch-tab">	
 							<div class="row justify-content-center mt-3">
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
-										<p>Event Lunch Let us provide the food for your next event. We promise your guests or clients will be delighted! We cater for corporate events, weddings, </p>
+										<p>各種イベントや、お誕生日や冠婚葬祭など内容に応じたメニューを提供いたします。（ご予算や目的など、ご相談に応じてアレンジさせていただきます） </p>
 									</div> 
 								</div>
 							</div>

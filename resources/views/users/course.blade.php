@@ -14,7 +14,7 @@
 				<div class="row justify-content-center pt-5">
 					<div class="col-md-12 heading-section text-center ftco-animate">
 						<h2 class="mb-4">コース</h2>
-						<p>もしあなたは経験豊富な教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+						<p>あなたのご希望のコースをお選びください。</p>
 					</div>
 				</div>
 				<section class="pt-5 pb-3 bg-light">
@@ -55,7 +55,7 @@
 												<div class="col-6">
 													<h5 class="card-title">{{$course->course}}</h5>
 													<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
-													<p class="card-text">{{$course->description}}</p>
+													<p style="word-break:break-all;" class="card-text">{{$course->description}}</p>
 													<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
 												</div>
 											</div>

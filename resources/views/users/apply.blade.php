@@ -6,7 +6,7 @@
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-md-9 text-center">
-								<h2>Lunchbox Services</h2>
+								<h2>Cooking Class</h2>
 							</div>
 						</div>
 					</div>

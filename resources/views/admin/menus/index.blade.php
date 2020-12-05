@@ -22,7 +22,7 @@
                     <thead>
                         <th>ID</th>
                         <th>Menu</th>
-                        <th>Description</th>
+                        <!--<th>Description</th>-->
                         <th>Price</th>
                         <th>Date</th>
                         <th>Kcal</th>
@@ -35,7 +35,7 @@
                         <tr>
                             <td>{{ ++$i }}</td>
                             <td>{{ $menu->menu }}</td>
-                            <td>{{ $menu->description }}</td>
+                            <!--<td style="word-break:break-all;">{{ $menu->description }}</td>-->
                             <td>{{ $menu->price }}</td>
                             <td>{{ $menu->date }}</td>
                             <td>{{ $menu->kcal }}</td>
