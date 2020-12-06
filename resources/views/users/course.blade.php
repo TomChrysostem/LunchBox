@@ -1,4 +1,4 @@
-@extends('users.layout')
+@extends('users.navbar')
 	@section('content')
 		<main>
 			<div class="ftco-intro img" id="about-section" style="background-image: url(images/cookingclass.jpg);">
