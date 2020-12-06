@@ -1,5 +1,4 @@
 @extends('users.layout')
-
 	@section('content') 
 		<section class="hero-wrap js-fullheight" style="background-image: url('images/wall2.jpg');" data-section="home" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
@@ -11,7 +10,6 @@
 				</div>
 			</div>
 		</section>
-		
 		<section class="pt-5 bg-light" id="services-section">
 			<div class="container">
 				<div class="row justify-content-center">
@@ -52,8 +50,8 @@
 				<div class="row justify-content-center py-4">
 					<p class="mb-3 mx-3"><a href="{{ route('user.service') }}" class="btn btn-info px-4 py-3">詳しく見る</a></p>
 				</div>
+			</div>
 		</section>
-
 		<section class="ftco-intro img" id="about-section" style="background-image: url(images/wall3.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
@@ -65,7 +63,6 @@
 				</div>
 			</div>   
 		</section>
-		
 		<section class="ftco-section ftco-services-2 bg-light" id="workflow-section">
 			<div class="container">
 				<div class="row">
@@ -106,7 +103,6 @@
 				</div>
 			</div>
 		</section>
-		
 		<section class="pt-5" id="agent-section">
 			<div class="container">
 				<div class="col-md-12 heading-section text-center ftco-animate">
@@ -149,13 +145,11 @@
 							Shwe Htan Pin 僧院に着きます。その道をもうちょっと歩くと　左側に　Shwe Htan Pin Condo があります。バス停からShwe Htan Pin Condoまで２・３分で行けます。。レーダン市場の近くにありますので、新鮮な旬のお野菜やフルーツなども来る途中にお買い物など楽しんでください。</p>
 					</div>
 					<div class="col-md-6 mt-5 map-container">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.982638071507!2d96.12463931486857!3d16.827217388416525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c195fe99d49fad%3A0xb8c5ec33377eb319!2zU2h3ZSBIdGFuIFBpbiBDb25kbyDhgJvhgL3hgL7hgLHhgJHhgJThgLrhgLjhgJXhgIThgLog4YCA4YC94YCU4YC64YCS4YCt4YCv!5e0!3m2!1sen!2smm!4v1606229755424!5m2!1sen!2smm" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-								
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.982638071507!2d96.12463931486857!3d16.827217388416525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c195fe99d49fad%3A0xb8c5ec33377eb319!2zU2h3ZSBIdGFuIFBpbiBDb25kbyDhgJvhgL3hgL7hgLHhgJHhgJThgLrhgLjhgJXhgIThgLog4YCA4YC94YCU4YC64YCS4YCt4YCv!5e0!3m2!1sen!2smm!4v1606229755424!5m2!1sen!2smm" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>	
 					</div>				
 				</div>
 			</div>
 		</section>
-
 		<section class="pt-5 contact-section ftco-no-pb" id="contact-section">
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-3">
@@ -227,7 +221,4 @@
 				</div>
 			</div>
 		</section>
-
-
-
 	@endsection

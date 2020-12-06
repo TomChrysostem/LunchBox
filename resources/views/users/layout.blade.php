@@ -48,7 +48,7 @@
 					</ul>
 				</div>
 			</div>
-		</nav>
+		</nav>		
 		<main>
 			@yield('content')
 		</main>

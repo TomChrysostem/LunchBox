@@ -50,13 +50,14 @@
 										<div class="card-body">
 											<div class="row">
 												<div class="col-4">
-													<img class="card-img-top" src="{{ asset('storage/img/'.$course->image) }}" alt="Card image cap" width="237px" height="200px">
+													<img class="card-img-top" src="{{ asset('storage/img/'.$course->image) }}" class="img-responsive" width="100%">
 												</div>
 												<div class="col-6">
 													<h5 class="card-title">{{$course->course}}</h5>
 													<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 													<p style="word-break:break-all;" class="card-text">{{$course->description}}</p>
 													<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
+													<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
 												</div>
 											</div>
 										</div>
@@ -64,7 +65,7 @@
 								@endif
 							@endforeach 
 							<div class="text-center">
-								<button type="button" class="btn btn-light">View More</button>
+								<!-- <a type="button" href="" class="btn btn-light">View More</a> -->
 							</div>
 						</div>
 						<div class="tab-pane fade show" id="myanmar" role="tabpanel" aria-labelledby="myanmar-tab">
@@ -82,13 +83,14 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-4">
-												<img class="card-img-top" src="{{ asset('storage/img/'.$course->image) }}" alt="Card image cap" width="237px" height="200px">
+												<img class="card-img-top" src="{{ asset('storage/img/'.$course->image) }}" class="img-responsive" width="100%">
 											</div>
 											<div class="col-6">
 												<h5 class="card-title">{{$course->course}}</h5>
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p class="card-text">{{$course->description}}</p>
 												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
+												<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
 											</div>
 										</div>
 									</div>
@@ -96,7 +98,7 @@
 								@endif
 							@endforeach 
 							<div class="text-center">
-								<button type="button" class="btn btn-light">View More</button>
+								<!-- <a type="button" href="" class="btn btn-light">View More</a> -->
 							</div>
 						</div>
 						<div class="tab-pane fade show" id="italy" role="tabpanel" aria-labelledby="italy-tab">
@@ -114,13 +116,14 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-4">
-												<img class="card-img-top" src="{{ asset('storage/img/'.$course->image) }}" alt="Card image cap" width="237px" height="200px">
+												<img class="card-img-top" src="{{ asset('storage/img/'.$course->image) }}" class="img-responsive" width="100%">
 											</div>
 											<div class="col-6">
 												<h5 class="card-title">{{$course->course}}</h5>
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p class="card-text">{{$course->description}}</p>
 												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
+												<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
 											</div>
 										</div>
 									</div>
@@ -128,7 +131,7 @@
 								@endif
 							@endforeach 
 							<div class="text-center">
-								<button type="button" class="btn btn-light">View More</button>
+								<!-- <a type="button" href="" class="btn btn-light">View More</a> -->
 							</div>
 						</div>
 					</div>
