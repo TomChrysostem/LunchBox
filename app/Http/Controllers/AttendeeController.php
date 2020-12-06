@@ -64,8 +64,8 @@ class AttendeeController extends Controller
     public function show(Attendee $attendee)
 
     {
-        $attendee_list = Attendee::with('courses')->find($attendee);
-        dd($attendee_list->toarray());
+        $attendee_list = Attendee::with('courses')->find(24);
+        //dd($attendee_list->toarray());
         return view('admin.attendees.show',compact('attendee_list'));
     }
 

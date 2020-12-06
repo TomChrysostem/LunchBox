@@ -40,15 +40,13 @@
 				<a class="navbar-brand" href="index.html">AWA FOOD SERVICE</a>
 				<div class="collapse navbar-collapse" id="ftco-nav">
 					<ul class="navbar-nav nav ml-auto">
-						<li class="nav-item"><a href="#home-section" class="nav-link"><span>ホーム</span></a></li>
-						<li class="nav-item"><a href="#services-section" class="nav-link"><span>お弁当サービス</span></a></li>
-						<li class="nav-item"><a href="#about-section" class="nav-link"><span>料理コース</span></a></li>
-						<li class="nav-item"><a href="#agent-section" class="nav-link"><span>ご案内</span></a></li>
-						<li class="nav-item"><a href="#contact-section" class="nav-link"><span>問い合わせ</span></a></li>
+						<li class="nav-item"><a href="{{ route('user.home') }}" class="nav-link"><span>ホーム</span></a></li>
+						<li class="nav-item"><a href="{{ route('user.service') }}" class="nav-link"><span>お弁当サービス</span></a></li>
+						<li class="nav-item"><a href="{{ route('user.course') }}" class="nav-link"><span>ご案内</span></a></li>
 					</ul>
 				</div>
 			</div>
-		</nav>		
+		</nav>
 		<main>
 			@yield('content')
 		</main>

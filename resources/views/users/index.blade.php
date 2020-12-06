@@ -1,5 +1,4 @@
 @extends('users.layout')
-
 	@section('content') 
 		<section class="hero-wrap js-fullheight" style="background-image: url('images/wall2.jpg');" data-section="home" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
@@ -11,13 +10,12 @@
 				</div>
 			</div>
 		</section>
-		
 		<section class="pt-5 bg-light" id="services-section">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-12 heading-section text-center ftco-animate">
 						<h2 class="mb-4">お弁当サービス</h2>
-						<p>お客様に素晴らしい料理を提供させていただきます</p>
+						<p>お客様に健康的で安全な食事を提供させていただきます。</p>
 					</div>
 				</div>
 				<div class="row">
@@ -26,7 +24,7 @@
 							<img src="images/school-lunch.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
 							<div class="media-body">
 								<h3 class="heading my-3">給食</h3>
-								<p>栄養価が高くて満足の学校給食のために、最高の食材を使って提供しております。</p>
+								<p>お子様の心身の健全な発達を目的とした 彩り豊かでバランスの良い食事を提供いたします。</p>
 							</div>
 						</div>      
 					</div>
@@ -35,7 +33,7 @@
 							<img src="images/staff lunch.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
 							<div class="media-body">
 								<h3 class="heading my-3">スタッフのお弁当</h3>
-								<p>皆様のスタッフを活性化するために健康的であり、栄養に焦点してあるお弁当を提供したいと思っております。</p>
+								<p>生活習慣病などの予防の為の 栄誉バランスのとれた 食事を提供いたします。</p>
 							</div>
 						</div>      
 					</div>
@@ -44,8 +42,7 @@
 							<img src="images/event food.jpg" class="img-fluid rounded-circle" alt="Colorlib Template">
 							<div class="media-body">
 								<h3 class="heading my-3">イベント＆パーティーフード</h3>
-								<p>皆様の次のイベントのために食べ物を提供しましょう。我々はは皆様のゲストやクライアントが喜ぶことを約束します！企業のイベント、結婚式、
-							誕生日、チャリティーイベント、などの食べ物ならお任せ下さい。</p>
+								<p>各種イベントや、お誕生日や冠婚葬祭など内容に応じたメニューを提供いたします。（ご予算や目的など、ご相談に応じてアレンジさせていただきます）</p>
 							</div>
 						</div>      
 					</div>
@@ -55,7 +52,6 @@
 				</div>
 			</div>
 		</section>
-
 		<section class="ftco-intro img" id="about-section" style="background-image: url(images/wall3.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
@@ -67,17 +63,16 @@
 				</div>
 			</div>   
 		</section>
-		
 		<section class="ftco-section ftco-services-2 bg-light" id="workflow-section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 heading-section ftco-animate">
-						<h2 class="mb-5">従業タイプ</h2>
+						<h2 class="mb-5">授業タイプ</h2>
 						<div class="media block-6 services text-center d-block pt-md-5 mt-md-5">
 							<img src="images/one-class.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">個人従業</h3>
-								<p class="mb-5">我々のシェフパレード料理教室では自分が作っているものに愛し、それをあなたに教えるのを望んでいる最高のシェフによって率いられています。</p>
+								<h3 class="heading mb-3">個人レッスン</h3>
+								<p class="mb-5">一品ずつきめ細かにお教えいたします。また、ご希望に応じてメニューもアレンジさせていただきます。</p>
 								<hr>
 							</div>
 						</div>
@@ -86,8 +81,8 @@
 						<div class="media block-6 services text-center d-block mt-lg-5 pt-md-5 pt-lg-4">
 							<img src="images/group-class.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">グループ従業</h3>
-								<p class="mb-5">グループ従業にには、楽しさ、笑い、おいしい料理に満ちたユニークな体験を提供します。</p>
+								<h3 class="heading mb-3">グループレッスン</h3>
+								<p class="mb-5">一緒に楽しく作りながら 出来上がった後は、皆さんで試食していただけます。*お友達グループでのお申込みの場合はご希望がございましたらメニューのアレンジもお受けいたします</p>
 								<hr>
 							</div>
 						</div>      
@@ -96,7 +91,7 @@
 						<div class="media block-6 services text-center d-block">
 							<img src="images/cookingtraining.jpg" class="img-fluid" alt="Colorlib Template">
 							<div class="media-body p-md-3">
-								<h3 class="heading mb-3">シェフトレーニング従業</h3>
+								<h3 class="heading mb-3">シェフトレーニングレッスン</h3>
 								<p class="mb-5">料理に興味のある皆様は経験豊富な教師から、あらゆる種類の料理や特定の分野について学ぶことができます。</p>
 								<hr>
 							</div>
@@ -108,7 +103,6 @@
 				</div>
 			</div>
 		</section>
-		
 		<section class="pt-5" id="agent-section">
 			<div class="container">
 				<div class="col-md-12 heading-section text-center ftco-animate">
@@ -147,17 +141,15 @@
 					<div class="col-md-6 mt-5">
 						<h3 class="h3-responsive font-weight-bold">アクセス</h3>
 						<p class="text-xl-left">
-							我々の学校は　Kamaryut 地区にあります。近くに　Hlaydan 市場があります。など。。。。
-						</p>
+						レダン-チャウンチェバス停から来る場合、Hledan- Center 側に少し歩いて、左側に道があります。その道を真っすぐ行ったら
+							Shwe Htan Pin 僧院に着きます。その道をもうちょっと歩くと　左側に　Shwe Htan Pin Condo があります。バス停からShwe Htan Pin Condoまで２・３分で行けます。。レーダン市場の近くにありますので、新鮮な旬のお野菜やフルーツなども来る途中にお買い物など楽しんでください。</p>
 					</div>
 					<div class="col-md-6 mt-5 map-container">
-						<iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-									style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.982638071507!2d96.12463931486857!3d16.827217388416525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c195fe99d49fad%3A0xb8c5ec33377eb319!2zU2h3ZSBIdGFuIFBpbiBDb25kbyDhgJvhgL3hgL7hgLHhgJHhgJThgLrhgLjhgJXhgIThgLog4YCA4YC94YCU4YC64YCS4YCt4YCv!5e0!3m2!1sen!2smm!4v1606229755424!5m2!1sen!2smm" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>	
 					</div>				
 				</div>
 			</div>
 		</section>
-
 		<section class="pt-5 contact-section ftco-no-pb" id="contact-section">
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-3">
@@ -195,7 +187,9 @@
 									</div>
 									<div>
 										<h3 class="mb-3">住所</h3>
-										<p>198 West 21th Street, Suite 721 New York NY 10016</p>
+										<p>Shwe Htan Pin Condminium No 7F,8F</p>
+										<p>No.23 Shwe Htan  Pin St.（No .3 Block）</p>
+										<p>Hlaing Township,Yangon</p>
 									</div>
 								</div>
 							</div>
@@ -207,8 +201,8 @@
 									<div>
 										<h3 class="mb-3">連絡先</h3>
 										<p><a href="tel://1234567920">+ 1235 2355 98</a></p>
-										<p><a href="#">Mon to Fri- 9:00 - 5:00</a></p>
-										<p><a href="#">Sat - 9: 00 - 12:00</a></p>
+										<p><a href="#">Mon to Fri- 9:00 - 18:00</a></p>
+										<p><a href="#">Sat - 9: 00 - 15:00</a></p>
 									</div>
 								</div>
 							</div>

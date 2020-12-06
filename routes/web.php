@@ -15,10 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('users.index');
-});
-
-
-
+})->name('user.home');
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
     Route::resource('courses','CourseController');
@@ -30,7 +27,6 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 });
 Route::resource('admin','AdminController')->middleware('auth');
 Auth::routes();
-
 Route::get('/course', 'UserController@courses')->name('user.course');
 Route::get('/service', 'UserController@menus')->name('user.service');
 Route::get('/apply/{id}', 'UserController@applyCourse')->name('user.apply');

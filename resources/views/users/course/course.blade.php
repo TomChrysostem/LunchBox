@@ -1,4 +1,4 @@
-@extends('users.layout')
+@extends('users.navbar')
 	@section('content')
 		<main>
 			<div class="ftco-intro img" id="about-section" style="background-image: url(images/cookingclass.jpg);">
@@ -14,7 +14,7 @@
 				<div class="row justify-content-center pt-5">
 					<div class="col-md-12 heading-section text-center ftco-animate">
 						<h2 class="mb-4">コース</h2>
-						<p>もしあなたは経験豊富な教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+						<p>あなたのご希望のコースをお選びください。</p>
 					</div>
 				</div>
 				<section class="pt-5 pb-3 bg-light">
@@ -40,7 +40,7 @@
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
 										<h3 class="heading my-3">日本料理</h3>
-										<p>もしあなたは経験豊富な和食教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+										<p>伝統料理や郷土料理、 皆さんのお好きな洋食までレパートリーをそろえております。</p>
 									</div> 
 								</div>
 							</div>
@@ -55,8 +55,8 @@
 												<div class="col-6">
 													<h5 class="card-title">{{$course->course}}</h5>
 													<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
-													<p class="card-text">{{$course->description}}</p>
-													<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+													<p style="word-break:break-all;" class="card-text">{{$course->description}}</p>
+													<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
 													<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
 												</div>
 											</div>
@@ -73,7 +73,7 @@
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
 										<h3 class="heading my-3">ミャンマー料理</h3>
-										<p>もしあなたは経験豊富な和食教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+										<p>油、塩分、辛味、スパイスなどを抑えて健康的にアレンジしております。</p>
 									</div> 
 								</div>
 							</div>
@@ -89,9 +89,8 @@
 												<h5 class="card-title">{{$course->course}}</h5>
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p class="card-text">{{$course->description}}</p>
-												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
 												<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
-
 											</div>
 										</div>
 									</div>
@@ -107,7 +106,7 @@
 								<div class="align-self-stretch ftco-animate mx-3">
 									<div class="media-body">
 										<h3 class="heading my-3">イタリア料理</h3>
-										<p>もしあなたは経験豊富な和食教師の料理コースを探しているなら、ここはあなたに満足させられると思います。</p>
+										<p>ベーシックな普段使いのメニューから、ちょっとしたパーティーなどでも映えるメニューも取りそろえております。</p>
 									</div> 
 								</div>
 							</div>
@@ -123,7 +122,7 @@
 												<h5 class="card-title">{{$course->course}}</h5>
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p class="card-text">{{$course->description}}</p>
-												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">Book Course</a>
+												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
 												<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">View Course</a>
 											</div>
 										</div>
