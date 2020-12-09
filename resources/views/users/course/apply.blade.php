@@ -16,17 +16,22 @@
 					<div class="row d-flex contact-info mb-5 mt-3">
 						<div class="col-md-12 ftco-animate">
 							<div class="box p-4 bg-light d-flex">
-								<div class="card text-white">
-									<img class="card-img" src="{{ asset('storage/img/'.$course->image) }}" alt="Card image" width="100%"/>
-									<div class="card-img-overlay">
-										<div class="pt-5 mt-5">
-											<h4 class="card-title"><span class="badge badge-secondary">{{$course->course}}</span></h4>
-											<h6 class="card-subtitle mb-2"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
-											<p class="card-text">{{$course->description}}</p>
-											<p class="card-text">Last updated 3 mins ago</p>
-										</div>
-									</div>
+
+								<div class="card">
+									<img class="card card-img" src="{{ asset('storage/img/'.$course->image) }}" alt="Card image" width="70%"/>
+								
+										
+											
+											<div class="text-center d-flex align-items-center">
+												<h3 class="card-title pt-2"><strong>{{$course->course}}</strong></h3>
+												<!--<h5>Price: {{$course->price}} MMK </h5>-->
+											</div>
+																					
+									
 								</div>
+
+
+
 							</div>
 						</div>
 						<div class="col-md-12 ftco-animate">
