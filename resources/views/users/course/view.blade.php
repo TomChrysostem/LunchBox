@@ -1,4 +1,4 @@
-@extends('users.layout')
+@extends('users.navbar')
 
 	@section('content') 
 	<main>
@@ -18,15 +18,15 @@
 						<img src="{{ asset('storage/img/'.$course->image) }}" class="img-responsive" width="100%"/>
 					</div>
 					<div class="col-8">
-						<h5 class="card-title">Course : {{$course->course}} <span class="badge badge-secondary">{{$course->category->category}}</span></h5>
+						<h5 class="card-title">コース : {{$course->course}} <span class="badge badge-secondary">{{$course->category->category}}</span></h5>
 						<p class="card-text">{{$course->description}}</p>
 						<h6 class="card-subtitle mb-2 text-muted">
 						<div class="d-flex flex-row">
-							<div class="p-2"><bold>PRICE : </bold>{{$course->price}}</div>
+							<div class="p-2"><bold>コース料金 : </bold>{{$course->price}}ーMMK</div>
 						</div>
 						<div class="d-flex flex-row">
-							<div class="p-2">QTY : {{$course->qty}}</div>
-							<div class="p-2">PERIOD : {{$course->period}}</div>
+							<div class="p-2">人数 : {{$course->qty}}</div>
+							<div class="p-2">回数: {{$course->period}}</div>
 						</div>
 					</div>
 				</div>

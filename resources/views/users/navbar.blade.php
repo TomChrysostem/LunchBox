@@ -24,11 +24,11 @@
 						<div class="row d-flex">
 							<div class="col-md pr-4 d-flex topper align-items-center">
 								<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-								<span class="text">+ 1235 2355 98</span>
+								<span class="text">+ 95 9792655994</span>
 							</div>
 							<div class="col-md pr-4 d-flex topper align-items-center">
 								<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-								<span class="text">youremail@email.com</span>
+								<span class="text">awa.yoko.hayami@gmail.com</span>
 							</div>
 						</div>
 					</div>
@@ -42,7 +42,7 @@
 					<ul class="navbar-nav nav ml-auto">
 						<li class="nav-item"><a href="{{ route('user.home') }}" class="nav-link"><span>ホーム</span></a></li>
 						<li class="nav-item"><a href="{{ route('user.service') }}" class="nav-link"><span>お弁当サービス</span></a></li>
-						<li class="nav-item"><a href="{{ route('user.course') }}" class="nav-link"><span>ご案内</span></a></li>
+						<li class="nav-item"><a href="{{ route('user.course') }}" class="nav-link"><span>料理コース</span></a></li>
 					</ul>
 				</div>
 			</div>

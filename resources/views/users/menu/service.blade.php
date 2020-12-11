@@ -28,7 +28,7 @@
 
 					<div class="row justify-content-center py-3">
 						<div class="col-md-12 heading-section text-center ftco-animate">
-							<h3>今月のお弁当メニュー</h3>
+							<h4>今月のお弁当メニュー</h4>
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -76,13 +76,13 @@
 									<div class="bg-white" style="border-radius: 21px 21px 0 0;">
 										<img class="card-img-top" src="{{ asset('storage/img/'.$sideDish->image) }}" width="300" height="200" alt="Card image cap">
 									</div>
-									<a type="button" class="btn btn-outline-secondary mt-2">detail</a>
+									<a type="button" class="btn btn-outline-secondary mt-2">内容</a>
 								</div>
 							</div>
 						@endforeach 
 					</div>
 					<div class="text-center">
-						<button type="button" class="btn btn-light">View More</button>
+						<button type="button" class="btn btn-light">もっと見る</button>
 					</div>
 				</div>
 			</section>
@@ -126,7 +126,7 @@
 						@endforeach 
 						</div>
 						<div class="text-center">
-							<button type="button" class="btn btn-light">View More</button>
+							<button type="button" class="btn btn-light">もっと見る</button>
 						</div>
 					</div>
 					<!-- Company Lunch 
@@ -182,7 +182,7 @@
 							@endforeach 
 						</div>
 						<div class="text-center">
-							<button type="button" class="btn btn-light">View More</button>
+							<a href="" type="button" class="btn btn-light">もっと見る</a>
 						</div>
 					</div>
 				</div>
