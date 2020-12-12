@@ -36,3 +36,7 @@ Route::get('/view-course/{id}', 'UserController@courseDetail')->name('user.view-
 Route::get('/view-menu/{id}', 'UserController@menuDetail')->name('user.view-menu');
 Route::post('/serve', 'UserController@bookMenu')->name('user.serve');
 Route::get('/home', 'HomeController@index')->name('home');
+
+//contact form
+Route::get('/contact', 'ContactController@show')->name('user.contact.index');
+Route::post('/contact', 'ContactController@mailContactForm');

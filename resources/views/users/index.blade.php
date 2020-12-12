@@ -150,7 +150,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="pt-5 contact-section ftco-no-pb" id="contact-section">
+		<!--<section class="pt-5 contact-section ftco-no-pb" id="contact-section">
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-3">
 					<div class="col-md-7 heading-section text-center ftco-animate">
@@ -160,18 +160,19 @@
 				</div>
 				<div class="row block-9">
 					<div class="col-md-7 order-md-last d-flex ftco-animate">
-						<form action="#" class="bg-light p-4 p-md-5 contact-form">
+						<form action="" class="bg-light p-4 p-md-5 contact-form" method="POST">
+						@csrf
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="氏名">
+								<input type="text" name="name" class="form-control" placeholder="氏名">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="メール">
+								<input type="text" name="email" class="form-control" placeholder="メール">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="件名">
+								<input type="text" name="subject" class="form-control" placeholder="件名">
 							</div>
 							<div class="form-group">
-								<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="問い合わせしたいことをこちらに書いて下さい。"></textarea>
+								<textarea name="message_body" id="message_body" cols="30" rows="7" class="form-control" placeholder="問い合わせしたいことをこちらに書いて下さい。"></textarea>
 							</div>
 							<div class="form-group">
 								<input type="submit" value="メッセージを送る" class="btn btn-primary py-3 px-5">
@@ -220,5 +221,5 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>-->
 	@endsection

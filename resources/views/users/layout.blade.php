@@ -44,7 +44,7 @@
 						<li class="nav-item"><a href="#services-section" class="nav-link"><span>お弁当サービス</span></a></li>
 						<li class="nav-item"><a href="#about-section" class="nav-link"><span>料理コース</span></a></li>
 						<li class="nav-item"><a href="#agent-section" class="nav-link"><span>ご案内</span></a></li>
-						<li class="nav-item"><a href="#contact-section" class="nav-link"><span>問い合わせ</span></a></li>
+						<li class="nav-item"><a href="{{ route('user.contact.index') }}" class="nav-link"><span>問い合わせ</span></a></li>
 					</ul>
 				</div>
 			</div>
