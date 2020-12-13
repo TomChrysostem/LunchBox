@@ -160,18 +160,19 @@
 				</div>
 				<div class="row block-9">
 					<div class="col-md-7 order-md-last d-flex ftco-animate">
-						<form action="#" class="bg-light p-4 p-md-5 contact-form">
+						<form action="{{ route('user.contact-us') }}" class="bg-light p-4 p-md-5 contact-form" method="post">
+							@csrf
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="氏名">
+								<input type="text" class="form-control" name="name" placeholder="氏名">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="メール">
+								<input type="text" class="form-control" name="email" placeholder="メール">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="件名">
+								<input type="text" class="form-control" name="subject" placeholder="件名">
 							</div>
 							<div class="form-group">
-								<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="問い合わせしたいことをこちらに書いて下さい。"></textarea>
+								<textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="問い合わせしたいことをこちらに書いて下さい。"></textarea>
 							</div>
 							<div class="form-group">
 								<input type="submit" value="メッセージを送る" class="btn btn-primary py-3 px-5">
