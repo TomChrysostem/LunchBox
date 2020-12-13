@@ -25,7 +25,6 @@
                         <th>Date</th>
                         <th>Attendees QTY</th>
                         <th>Course</th>
-                        <!--<th>Messages</th>-->
                         <th>Actions</th>
                     </thead>
                     <tbody>
@@ -41,13 +40,12 @@
                             @foreach ($attendee->courses as $course)
                             <td>{{ $course->course}}</td>
                             @endforeach            
-                            <!--<td>{{ $attendee->messages }}</td>-->
                             <td>
                             <form action="{{ route('attendees.destroy',$attendee->id) }}" method="POST">
-                                <a class="btn btn-success btn-fill mr-1" href="{{ route('attendees.show',$attendee->id) }}"><i class="fas fa-eye"></i></a>
+                                <a class="btn btn-success btn-round mr-1" href="{{ route('attendees.show',$attendee->id) }}"><i class="fas fa-eye"></i></a>
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-fill"><i class="fas fa-trash-alt"></i></button>
+                                <button type="submit" class="btn btn-danger btn-round"><i class="fas fa-trash-alt"></i></button>
                             </form>
                             </td>
                         </tr>   

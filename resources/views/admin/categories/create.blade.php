@@ -7,7 +7,7 @@
             <h2>Add New Category</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('categories.index') }}"> Back</a>
+            <a class="btn btn-primary btn-round" href="{{ route('categories.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -39,8 +39,8 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a type="button" class="btn btn-success btn-fill"  href="{{ route('categories.index') }}">Back</a>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <a type="button" class="btn btn-success btn-round"  href="{{ route('categories.index') }}">Back</a>
+            <button type="submit" class="btn btn-primary btn-round">Add</button>
         </div>
     </div>
 </form>

@@ -16,8 +16,7 @@ class AdminController extends Controller
     public function index()
     {
         $courses = Course::latest()->paginate(5);
-        // $services = Service::latest()->paginate(5);
-        return view('admin.index',compact('courses'))
+        return view('admin.courses.index',compact('courses'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

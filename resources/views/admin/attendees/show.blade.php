@@ -26,15 +26,12 @@
             @foreach ($attendee_list->courses as $course)
                 <img src="{{ asset('storage/img/'.$course->image) }}" class="img-fluid" alt="Sample image with waves effect.">
             @endforeach
-                <a>
-                <div class="mask waves-effect waves-light rgba-white-slight"></div>
-                </a>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12 text-center p-3">
-            <a type="button" class="btn btn-success btn-fill" href="{{ route('attendees.index') }}">Back</a>
+            <a type="button" class="btn btn-success btn-round" href="{{ route('attendees.index') }}">Back</a>
         </div>
     </div>
 </div>
