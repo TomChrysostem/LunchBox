@@ -16,9 +16,9 @@ class ContactUs extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($mail_detail)
     {
-        //
+        $this->mail_detail = $mail_detail;
     }
 
     /**
@@ -28,6 +28,6 @@ class ContactUs extends Mailable
      */
     public function build()
     {
-        return $this->view('users.index');
+        return $this->view('contact_email');
     }
 }
