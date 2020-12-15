@@ -11,11 +11,21 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 10; $i++) { 
-            DB::table('categories')->insert([
-              'category' => Str::random(10),
-              'description' => Str::random(10),
-            ]); 
+        $categories = array(
+            array('Japanese','Japanese'),
+            array('Burmese','Burmese'),
+            array('Italian','Italian')
+           
+        );
+        for ($i=0; $i < count($categories); $i++) {
+            $category = [
+                'category'      => $categories[$i][0],
+                'description'      => $categories[$i][1],
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ];
+            DB::table('categories')->insert($category);
         }
     }
 }
