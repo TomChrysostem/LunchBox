@@ -12,7 +12,7 @@ use App\Models\Order;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the courses.
      *
      * @return \Illuminate\Http\Response
      */
@@ -33,8 +33,6 @@ class UserController extends Controller
         // {
         //     $query->where('category.category', 'Japanese');
         // }))->latest()->paginate(3);
-
-        //return view('users.course.course',compact(''));
         return view('users.course.course',compact('courses')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     /**
@@ -51,7 +49,7 @@ class UserController extends Controller
 
     }
     /**
-     * Store a newly created resource in storage.
+     * Store a book course.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -60,10 +58,7 @@ class UserController extends Controller
     {
         
         $attendee = new Attendee();
-
         $course_id = $request->input('course_id');
-        //dd($course_id);
-        
         $attendee->user_name = $request->input('user_name');
         $attendee->phone = $request->input('phone');
         $attendee->email = $request->input('email');
@@ -77,6 +72,11 @@ class UserController extends Controller
         return redirect('/course');
     }
 
+    /**
+     * Display menu according to category
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function menus() 
     {
         $sideDishs = Menu::where('dish_type','Side dish')->orderBy('date', 'asc')->latest()->paginate(3);
@@ -84,33 +84,45 @@ class UserController extends Controller
         $schoolLunchs = Menu::where('menu_type','School lunch')->orderBy('date', 'asc')->latest()->paginate(3);
         $companyLunchs = Menu::where('menu_type','Company lunch')->orderBy('date', 'asc')->latest()->paginate(3);
         $events = Menu::where('menu_type','Events')->orderBy('date', 'asc')->latest()->paginate(3);
-        //dd($sideDishs->toarray());
-        //$menus = Menu::latest()->paginate(5);
-        //dd($mainDishs->toarray());
         return view('users.menu.service',compact('sideDishs','mainDishs','schoolLunchs','companyLunchs','events')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-
+    /**
+     * Order menu.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function orderMenu(Request $request, Menu $menu) 
     {
         $menuid = $request->route('id');
         $menu = Menu::find($menuid);
-        //dd($menu->toarray());
         return view('users.menu.order',compact('menu'));
     }
-
+    /**
+     * show order menu in admin side.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function bookMenu(Request $request) 
     {
-        //return $request;
-         
         Order::create($request->all());
         return redirect('/service');
     }
+    /**
+     * show course detail.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function courseDetail(Request $request , Course $course) {
         $course_id = $request->route('id');
         $course = Course::find($course_id);
         //dd($course->toarray());
         return view('users.course.view',compact('course'));
     }
+    /**
+     * show menu detail.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function menuDetail() {
         return view('users.menu.view');
     }
