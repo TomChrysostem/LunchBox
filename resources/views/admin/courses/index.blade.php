@@ -21,8 +21,7 @@
                         <th>Description</th>
                         <th>Category</th>
                         <th>Price</th>
-                        <th>Qty</th>
-                        <th>Period</th>
+                        <th>Created</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
@@ -33,8 +32,7 @@
                             <td><p class="text-truncate" style="max-width: 300px;">{{ $course->description }}</p></td>
                             <td>{{ $course->category->category }}</td>
                             <td>{{ $course->price }}</td>
-                            <td>{{ $course->qty }}</td>
-                            <td>{{ $course->period }}</td>
+                            <td>{{ $course->created_at}}</td>
                             <td>
                             <form action="{{ route('courses.destroy',$course->id) }}" method="POST">
                                 <a class="btn btn-success btn-round mr-1" href="{{ route('courses.show',$course->id) }}"><i class="fas fa-eye"></i></a>
