@@ -78,7 +78,7 @@
                         <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image"/>
                         <div class="drag-text">
                             <div class="align-middle">
-                                <button class="btn btn-secondary btn-fill" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
+                                <button class="btn btn-secondary btn-round" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
                             </div>
                         </div>
                     </div>
@@ -88,16 +88,13 @@
                             <button type="button" onclick="removeUpload()" class="btn btn-danger">remove</button>
                         </div>
                     </div>
-                    <!-- <div class="button-container mr-auto ml-auto">
-                        <button class="btn btn-secondary btn-fill mt-1" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
-                    </div> -->
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12 text-center p-3">
-                <a type="button" class="btn btn-success btn-fill" href="{{ route('menus.index') }}">Back</a>
-                <button type="submit" class="btn btn-info btn-fill">Add Menu</button>
+                <a type="button" class="btn btn-success btn-round" href="{{ route('menus.index') }}">Back</a>
+                <button type="submit" class="btn btn-info btn-round">Add Menu</button>
             </div>
         </div>
     </form>

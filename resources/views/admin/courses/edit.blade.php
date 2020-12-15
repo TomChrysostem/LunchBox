@@ -85,7 +85,7 @@
                         <div class="drag-text">
                             <div class="align-middle">
                                 <!-- <h5>Drag and drop a file or select add Image</h5> -->
-                                <button class="btn btn-secondary btn-fill" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
+                                <button class="btn btn-secondary btn-round" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
                             </div>
                         </div>
                     </div>
@@ -100,8 +100,8 @@
         </div>
         <div class="row">
             <div class="col-12 text-center p-3">
-                <a type="button" class="btn btn-success btn-fill" href="{{ route('courses.index') }}">Back</a>
-                <button type="submit" class="btn btn-info btn-fill">Update Course</button>
+                <a type="button" class="btn btn-success btn-round" href="{{ route('courses.index') }}">Back</a>
+                <button type="submit" class="btn btn-info btn-round">Update Course</button>
             </div>
         </div>
     </form>

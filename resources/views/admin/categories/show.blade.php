@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="col-12 text-center p-3">
-            <a type="button" class="btn btn-success btn-fill"  href="{{ route('categories.index') }}">Back</a>
+            <a type="button" class="btn btn-success btn-round"  href="{{ route('categories.index') }}">Back</a>
         </div>
     </div>
 </div>

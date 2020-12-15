@@ -14,7 +14,7 @@
                     <h4 class="card-title">Menu Lists</h4>
                 </div>
                 <div class="float-right">
-                    <a type="button" class="btn btn-warning btn-fill" href="{{ route('menus.create') }}">Add</a>
+                    <a type="button" class="btn btn-info btn-round" href="{{ route('menus.create') }}">Add</a>
                 </div>
             </div>
             <div class="card-body table-full-width table-responsive">
@@ -22,12 +22,9 @@
                     <thead>
                         <th>ID</th>
                         <th>Menu</th>
-                        <!--<th>Description</th>-->
+                        <th>Description</th>
                         <th>Price</th>
                         <th>Date</th>
-                        <th>Kcal</th>
-                        <th>Menu type</th>
-                        <th>Dish type</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
@@ -35,19 +32,16 @@
                         <tr>
                             <td>{{ ++$i }}</td>
                             <td>{{ $menu->menu }}</td>
-                            <!--<td style="word-break:break-all;">{{ $menu->description }}</td>-->
+                            <td><p class="text-truncate" style="max-width: 300px;">{{ $menu->description }}</p></td>
                             <td>{{ $menu->price }}</td>
                             <td>{{ $menu->date }}</td>
-                            <td>{{ $menu->kcal }}</td>
-                            <td>{{ $menu->menu_type }}</td>
-                            <td>{{ $menu->dish_type }}</td>
                             <td>
                             <form action="{{ route('menus.destroy',$menu->id) }}" method="POST">
-                                <a class="btn btn-success btn-fill mr-1" href="{{ route('menus.show',$menu->id) }}"><i class="fas fa-eye"></i></a>
-                                <a class="btn btn-primary btn-fill mr-1" href="{{ route('menus.edit',$menu->id) }}"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-success btn-round mr-1" href="{{ route('menus.show',$menu->id) }}"><i class="fas fa-eye"></i></a>
+                                <a class="btn btn-primary btn-round mr-1" href="{{ route('menus.edit',$menu->id) }}"><i class="fas fa-edit"></i></a>
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger btn-fill" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                <button class="btn btn-danger btn-round" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>
                             </td>
                         </tr>
