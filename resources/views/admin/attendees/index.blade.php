@@ -24,7 +24,7 @@
                         <th>Address</th>
                         <th>Course</th>
                         <th>Date</th>
-                        <th>Attendees QTY</th>
+                        <th>QTY</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
