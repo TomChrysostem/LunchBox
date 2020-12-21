@@ -201,7 +201,7 @@
 									</div>
 									<div>
 										<h3 class="mb-3">連絡先</h3>
-										<p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+										<p><a href="tel://+ 95 9792655994">+ 95 9792655994</a></p>
 										<p><a href="#">Mon to Fri- 9:00 - 18:00</a></p>
 										<p><a href="#">Sat - 9: 00 - 15:00</a></p>
 									</div>
@@ -214,7 +214,7 @@
 									</div>
 									<div>
 										<h3 class="mb-3">メールアドレス</h3>
-										<p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+										<p><a href="mailto:awa.yoko.hayami@gmail.com">awa.yoko.hayami@gmail.com</a></p>
 									</div>
 								</div>
 							</div>
