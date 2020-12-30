@@ -29,7 +29,7 @@ class ContactController extends Controller
             'message' => $input['message'],
         ), function($message) use ($request){
             $message->from($request->email);
-            $message->to('toeyadanar.tya@gmail.com', 'Admin')->subject($request->get('subject'));
+            $message->to('awa.yoko.hayami@gmail.com', 'Admin')->subject($request->get('subject'));
         });
 
         return redirect()->back()->with(['success' => 'Contact Form Submit Successfully']);
