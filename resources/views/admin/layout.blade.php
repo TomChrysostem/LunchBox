@@ -20,31 +20,37 @@
                     </a>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item active">
+                    <li class="{{ (request()->is('admin')) ? 'active nav-item' : 'nav-item' }}">
+                        <a class="nav-link" href="{{ route('admin.index') }}">
+                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="{{ (request()->segment(2) == 'courses') ? 'active nav-item' : 'nav-item' }}">
                         <a class="nav-link" href="{{ route('courses.index') }}">
-                            <i class="nc-icon nc-notes"></i>
+                            <i class="nc-icon nc-paper-2"></i>
                             <p>Course List</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ (request()->segment(2) == 'categories') ? 'active nav-item' : 'nav-item' }}">
                         <a class="nav-link" href="{{ route('categories.index') }}">
-                            <i class="nc-icon nc-notes"></i>
+                            <i class="nc-icon nc-bullet-list-67"></i>
                             <p>Category List</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ (request()->segment(2) == 'menus') ? 'active nav-item' : 'nav-item' }}">
                         <a class="nav-link" href="{{ route('menus.index') }}">
                             <i class="nc-icon nc-bullet-list-67"></i>
                             <p>Menu List</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ (request()->segment(2) == 'orders') ? 'active nav-item' : 'nav-item' }}">
                         <a class="nav-link" href="{{ route('orders.index') }}">
                             <i class="nc-icon nc-cart-simple"></i>
                             <p>Order List</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ (request()->segment(2) == 'attendees') ? 'active nav-item' : 'nav-item' }}">
                         <a class="nav-link" href="{{ route('attendees.index') }}">
                             <i class="nc-icon nc-badge"></i>
                             <p>Student List</p>
@@ -64,34 +70,6 @@
                         <span class="navbar-toggler-bar burger-lines"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <!-- <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-palette"></i>
-                                    <span class="d-lg-none">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-planet"></i>
-                                    <span class="notification">5</span>
-                                    <span class="d-lg-none">Notification</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Notification 1</a>
-                                    <a class="dropdown-item" href="#">Notification 2</a>
-                                    <a class="dropdown-item" href="#">Notification 3</a>
-                                    <a class="dropdown-item" href="#">Notification 4</a>
-                                    <a class="dropdown-item" href="#">Another notification</a>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nc-icon nc-zoom-split"></i>
-                                    <span class="d-lg-block">&nbsp;Search</span>
-                                </a>
-                            </li>
-                        </ul> -->
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a class="nav-link"  href="{{ route('logout') }}"
