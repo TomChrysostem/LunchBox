@@ -80,17 +80,17 @@
             <div class="col-5">
                 <!--Mask with wave-->
                 <div class="view overlay pt-3 pr-3">
-                    <div class="image-upload-wrap">
+                    <div class="image-upload-wrap" style="display: none;">
                         <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image" />
                         <div class="drag-text">
                             <div class="align-middle">
                                 <!-- <h5>Drag and drop a file or select add Image</h5> -->
-                                <button class="btn btn-secondary btn-round" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
+                                <button class="btn btn-secondary btn-fill" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
                             </div>
                         </div>
                     </div>
-                    <div class="file-upload-content">
-                        <img class="file-upload-image rounded" src="#" alt="your image" />
+                    <div class="file-upload-content" style="display: block;">
+                        <img class="file-upload-image rounded" src="{{ asset('storage/img/'.$course->image) }}" alt="your image" />
                         <div class="image-title-wrap">
                             <button type="button" onclick="removeUpload()" class="btn btn-danger">remove</button>
                         </div>
