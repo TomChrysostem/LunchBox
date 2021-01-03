@@ -1,6 +1,6 @@
 @extends('users.navbar')
 	@section('content')
-	<div class="ftco-intro img" id="about-section" style="background-image:url('{{ asset('images/lunchbox1.jpg') }}')">
+	<div class="ftco-intro img" id="about-section" style="background-image: url(images/cookingclass.jpg);">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-9 text-center">
