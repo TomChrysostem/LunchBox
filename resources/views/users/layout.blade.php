@@ -37,7 +37,7 @@
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">AWA FOOD SERVICE</a>
+				<a class="navbar-brand" href="{{ route('user.home') }}">AWA FOOD SERVICE</a>
 				<div class="collapse navbar-collapse" id="ftco-nav">
 					<ul class="navbar-nav nav ml-auto">
 						<li class="nav-item"><a href="#home-section" class="nav-link"><span>ホーム</span></a></li>

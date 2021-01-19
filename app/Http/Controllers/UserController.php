@@ -80,7 +80,7 @@ class UserController extends Controller
     public function menus() 
     {
         $sideDishs = Menu::where('dish_type','Side dish')->orderBy('date', 'asc')->latest()->paginate(3);
-        $mainDishs = Menu::where('dish_type','Main dish')->orderBy('date', 'asc')->latest()->paginate(3);
+        $mainDishs = Menu::where('dish_type','Main dish')->orderBy('date', 'asc')->get();
         $schoolLunchs = Menu::where('menu_type','School lunch')->orderBy('date', 'asc')->latest()->paginate(3);
         $companyLunchs = Menu::where('menu_type','Company lunch')->orderBy('date', 'asc')->latest()->paginate(3);
         $events = Menu::where('menu_type','Events')->orderBy('date', 'asc')->latest()->paginate(3);
@@ -123,7 +123,10 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function menuDetail() {
-        return view('users.menu.view');
+    public function menuDetail(Request $request) {
+        //dd($request);
+        //$menu_id = $request->route(40);
+        $menu = Menu::find(40);
+        return view('users.menu.view',compact('menu'));
     }
 }
