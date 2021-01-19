@@ -33,7 +33,7 @@ Route::get('apply/{id}', 'UserController@applyCourse')->name('user.apply');
 Route::post('booking', 'UserController@bookCourse')->name('user.booking');
 Route::get('order/{id}', 'UserController@orderMenu')->name('user.order');
 Route::get('view-course/{id}', 'UserController@courseDetail')->name('user.view-course');
-Route::get('view-menu/{id}', 'UserController@menuDetail')->name('user.view-menu');
+Route::post('view-menu', 'UserController@menuDetail')->name('user.view-menu');
 Route::post('serve', 'UserController@bookMenu')->name('user.serve');
 Route::post('contact-us', 'ContactController@saveContact')->name('user.contact-us');
 Route::get('home', 'HomeController@index')->name('home');
