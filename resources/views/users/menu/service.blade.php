@@ -31,7 +31,7 @@
 							<h4>今月のお弁当メニュー</h4>
 						</div>
 					</div>
-					<div class="col-12 d-sm-none d-md-block">
+					<div class="col-12 d-none d-sm-block">
 						<table class="table table-bordered">
 							<thead>
 								<tr>
@@ -61,7 +61,7 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="d-none d-sm-block d-md-none">
+					<div class="d-block d-sm-none">
 						@foreach ($mainDishs as $mainDish)
 						<div class="col-12 mb-2">
 							<div class="row border">
