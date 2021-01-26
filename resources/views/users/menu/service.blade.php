@@ -31,7 +31,7 @@
 							<h4>今月のお弁当メニュー</h4>
 						</div>
 					</div>
-					<div class="col-md-12">
+					<div class="col-12 d-sm-none d-md-block">
 						<table class="table table-bordered">
 							<thead>
 								<tr>
@@ -61,6 +61,40 @@
 							</tbody>
 						</table>
 					</div>
+					<div class="d-none d-sm-block d-md-none">
+						@foreach ($mainDishs as $mainDish)
+						<div class="col-12 mb-2">
+							<div class="row border">
+								<div class="col-3 bg-dark">日にち</div>
+								<div class="col-9">{{ $mainDish->date }}</div>
+							</div>
+							<div class="row border">
+								<div class="col-3 bg-dark">メニュー</div>
+								<div class="col-9">{{ $mainDish->menu }}</div>
+							</div>
+							<div class="row border">
+								<div class="col-3 bg-dark">写真</div>
+								<div class="col-9">										
+									<img class="img-fluid img-thumbnail" src="{{ asset('storage/img/'.$mainDish->image) }}" alt="Card image cap" width="200" height="100">
+								</div>
+							</div>
+							<div class="row border">
+								<div class="col-3 bg-dark">説明</div>
+								<div class="col-9">{{ $mainDish->description }}</div>
+							</div>
+							<div class="row border">
+								<div class="col-3 bg-dark">値段</div>
+								<div class="col-9">{{ $mainDish->price }}-MMK</div>
+							</div>
+							<div class="row border">
+								<div class="col-3 bg-dark">注文</div>
+								<div class="col-9">
+									<a href="{{ route('user.order',$mainDish->id) }}" class="btn btn-success btn-sm my-2">注文</a>
+								</div>
+							</div>
+						</div>
+						@endforeach
+					<div>
 			</section>
 			<!-- side dish menu display -->
 			<section>
