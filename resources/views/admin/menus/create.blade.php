@@ -57,6 +57,7 @@
                                 <option>School lunch</option>
                                 <option>Company lunch</option>
                                 <option>Events</option>
+                                <option>Dinner</option>
                             </select>
                         </div>
                     </div>

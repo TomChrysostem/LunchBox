@@ -32,17 +32,18 @@
                         <tr>
                             <td>{{ ++$i }}</td>
                             <td>{{ $menu->menu }}</td>
+                            
                             <td><p class="text-truncate" style="max-width: 300px;">{{ $menu->description }}</p></td>
                             <td>{{ $menu->price }}</td>
                             <td>{{ $menu->date }}</td>
                             <td>
-                            <form action="{{ route('menus.destroy',$menu->id) }}" method="POST">
-                                <a class="btn btn-success btn-round mr-1" href="{{ route('menus.show',$menu->id) }}"><i class="fas fa-eye"></i></a>
-                                <a class="btn btn-primary btn-round mr-1" href="{{ route('menus.edit',$menu->id) }}"><i class="fas fa-edit"></i></a>
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger btn-round" type="submit"><i class="fas fa-trash-alt"></i></button>
-                            </form>
+                                <form action="{{ route('menus.destroy',$menu->id) }}" method="POST">
+                                    <a class="btn btn-success btn-round mr-1" href="{{ route('menus.show',$menu->id) }}"><i class="fas fa-eye"></i></a>
+                                    <a class="btn btn-primary btn-round mr-1" href="{{ route('menus.edit',$menu->id) }}"><i class="fas fa-edit"></i></a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-round" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
