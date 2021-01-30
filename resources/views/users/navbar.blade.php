@@ -15,10 +15,12 @@
 		<link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/fontawesome.min.js" integrity="sha512-pafh0hrrT9ZPZl/jx0cwyp7N2+ozgQf+YK94jSupHHLD2lcEYTLxEju4mW/2sbn4qFEfxJGZyIX/yJiQvgglpw==" crossorigin="anonymous"></script>
 	</head>
 	<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 		<div class="py-1 bg-black top">
