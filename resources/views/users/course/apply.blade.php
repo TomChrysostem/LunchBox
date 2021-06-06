@@ -28,14 +28,14 @@
 							<div class="col-md-12 ftco-animate">
 								<div class="box p-2 px-3 bg-light d-flex">
 									<div>
-										<p class="text-justified">ご注文は メールで: <a class="text-info">awa.yoko.hayami@gmail.com</a> または電話で: <a class="text-info">09792655994</a> または<a class="text-info"> 注文フォームで</a>お願い申し上げます。</p>
+										<p class="text-justified">If you want to make course reservation, please fill in the reservation form and press reserve button.</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12 ftco-animate">
 								<div class="box p-2 px-3 bg-light d-flex">
 									<div>
-										<p  class="text-danger">＊＊＊副食も注文したい場合、または食物アレルギーがある場合は、メッセージボックスに記入してください。ありがとうございます。</p>
+										<p  class="text-danger">＊＊＊If you have food allergy, please fill the name of the food which causes allergy in the message box.</p>
 									</div>
 								</div>
 							</div>
@@ -45,9 +45,9 @@
 										<span class="icon-phone2"></span>
 									</div>
 									<div>
-										<h3 class="mb-3">お問い合わせ先. 営業時間：</h3>
-										<p><a href="#">月曜日～金曜日- 9:00 - 5:00</a></p>
-										<p><a href="#">土曜日 - 9: 00 - 12:00</a></p>
+										<h3 class="mb-3">Business Hour：</h3>
+										<p><a href="#">Mon～Fri- 9:00 a.m - 5:00 p.m</a></p>
+										<p><a href="#">Sat - 9: 00 a.m - 12:00 p.m</a></p>
 									</div>
 								</div>
 							</div>
@@ -61,10 +61,10 @@
 									{{Session::get('success')}}
 								</div>
 							@endif
-							<h3 class="text-center pb-2">登録フォーム</h3>
+							<h3 class="text-center pb-2">Reservation Form</h3>
 							@csrf
 							<div class="form-group">
-								<input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="氏名">
+								<input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="user_name" id="user_name" placeholder="氏名 / Name">
 								@if ($errors->has('user_name'))
 								<div class="error text-danger">
 									{{ $errors->first('user_name') }}
@@ -72,7 +72,7 @@
 								@endif
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="メール">
+								<input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="メール / E-mail">
 								@if ($errors->has('email'))
 								<div class="error text-danger">
 									{{ $errors->first('email') }}
@@ -80,7 +80,7 @@
 								@endif
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="連絡先番号">
+								<input type="text" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone" placeholder="連絡先番号 / Phone Number">
 								@if ($errors->has('phone'))
 								<div class="error text-danger">
 									{{ $errors->first('phone') }}
@@ -88,7 +88,7 @@
 								@endif
 							</div>
 							<div class="form-group">
-								<textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="住所"></textarea>
+								<textarea class="form-control {{ $errors->has('subject') ? 'error' : '' }}" rows="2" name="address" id="address" placeholder="住所 / Address"></textarea>
 									@if ($errors->has('address'))
 									<div class="error text-danger">
 										{{ $errors->first('address') }}
@@ -96,7 +96,7 @@
 									@endif
 							</div>
 							<div class="form-group">
-								<input type="date" name="date" class="form-control" placeholder="レッスン受けたい日にち"/> 
+								<input type="date" name="date" class="form-control" placeholder="レッスン受けたい日にち / Desired Date"/> 
 									@if ($errors->has('date'))
 									<div class="error text-danger">
 										{{ $errors->first('date') }}
@@ -104,9 +104,9 @@
 									@endif
 							</div>
 							<div class="form-group">
-								<label>人数</label>
+								<label>Number of people</label>
 								<select class="form-control mb-4 custom-select mb-4" name="qty" id="qty">
-									<option value="" disabled>一つ選んでください</option>
+									<option value="" disabled>Please select one item</option>
 									<option value="1" selected>1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -126,7 +126,7 @@
 							</div>
 							<div class="form-group">
 								<textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="messages" id="messages"
-								cols="30" rows="7" placeholder="メッセージボックス"></textarea>
+								cols="30" rows="7" placeholder="Your message to your teacher"></textarea>
 									@if ($errors->has('messages'))
 									<div class="error text-danger">
 										{{ $errors->first('messages') }}
@@ -134,7 +134,7 @@
 									@endif
 							</div>
 
-							<button type="submit" class="btn btn-primary py-3 px-5">予約する</button>
+							<button type="submit" class="btn btn-primary py-3 px-5">Reserve</button>
 						</form>
 					</div>
 				</div>

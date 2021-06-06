@@ -141,11 +141,11 @@
 					<div class="col-md-6 mt-5">
 						<h3 class="h3-responsive font-weight-bold">アクセス</h3>
 						<p class="text-xl-left">
-						レダン-チャウンチェバス停から来る場合、Hledan- Center 側に少し歩いて、左側に道があります。その道を真っすぐ行ったら
-							Shwe Htan Pin 僧院に着きます。その道をもうちょっと歩くと　左側に　Shwe Htan Pin Condo があります。バス停からShwe Htan Pin Condoまで２・３分で行けます。。レーダン市場の近くにありますので、新鮮な旬のお野菜やフルーツなども来る途中にお買い物など楽しんでください。</p>
+						レダン-バス停から来る場合、Hledan- Center 側に少し歩いて、右側に　Zayar Thiri 道があります。その道を真っすぐ行ったら
+						　左側に　Mya Yeik Condminium があります。バス停から Mya Yeik Condminium まで 4・5 分で行けます。</p>
 					</div>
 					<div class="col-md-6 mt-5 map-container">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.982638071507!2d96.12463931486857!3d16.827217388416525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c195fe99d49fad%3A0xb8c5ec33377eb319!2zU2h3ZSBIdGFuIFBpbiBDb25kbyDhgJvhgL3hgL7hgLHhgJHhgJThgLrhgLjhgJXhgIThgLog4YCA4YC94YCU4YC64YCS4YCt4YCv!5e0!3m2!1sen!2smm!4v1606229755424!5m2!1sen!2smm" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>	
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15275.845995859692!2d96.1281802!3d16.828266!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8378dc7569aab97b!2sMya%20Yeik%20Condo!5e0!3m2!1sen!2ssg!4v1622999908439!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>	
 					</div>				
 				</div>
 			</div>
@@ -188,9 +188,9 @@
 									</div>
 									<div>
 										<h3 class="mb-3">住所</h3>
-										<p>Shwe Htan Pin Condminium No 7F,8F</p>
-										<p>No.23 Shwe Htan  Pin St.（No .3 Block）</p>
-										<p>Hlaing Township,Yangon</p>
+										<p>Building-18, Mya Yeik Condminium 6-B</p>
+										<p>Zayar Thiri Street, 1st Quarter,</p>
+										<p>Kamaryut Township,Yangon</p>
 									</div>
 								</div>
 							</div>

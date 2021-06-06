@@ -12,8 +12,8 @@
 		<div class="container">
 			<div class="row justify-content-center pt-5">
 				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h2 class="mb-4">コース</h2>
-					<p>あなたのご希望のコースをお選びください。</p>
+					<h2 class="mb-4">Courses</h2>
+					<h4>Choose your desired courses.</h4>
 				</div>
 			</div>
 			<section class="pt-5 pb-3 bg-light">
@@ -21,15 +21,15 @@
 					<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
 						<li class="nav-item p-3">
 							<a type="button" class="btn btn btn-outline-secondary active" id="japan-tab" data-toggle="tab" href="#japan" role="tab" aria-controls="school"
-							aria-selected="true">日本料理</a>
+							aria-selected="true">Japanese Cuisine</a>
 						</li>
 						<li class="nav-item p-3">
-							<a type="button" class="btn btn btn-outline-secondary" id="myanmar-tab" data-toggle="tab" href="#myanmar" role="tab" aria-controls="company"
-							aria-selected="false">ミャンマー料理</a>
+							<a type="button" class="btn btn btn-outline-secondary" id="diet-tab" data-toggle="tab" href="#diet" role="tab" aria-controls="company"
+							aria-selected="false">Diet and Healthy Recipes</a>
 						</li>
 						<li class="nav-item p-3">
 							<a type="button" class="btn btn btn-outline-secondary" id="italy-tab" data-toggle="tab" href="#italy" role="tab" aria-controls="eventlunch"
-							aria-selected="false">イタリア料理</a>
+							aria-selected="false">Italian Cuisine</a>
 						</li>
 					</ul>
 				</div>
@@ -38,8 +38,8 @@
 						<div class="row justify-content-center mt-3">
 							<div class="align-self-stretch ftco-animate mx-3">
 								<div class="media-body">
-									<h3 class="heading my-3">日本料理</h3>
-									<p>伝統料理や郷土料理、 皆さんのお好きな洋食までレパートリーをそろえております。</p>
+									<h3 class="heading my-3">Japanese Cuisine</h3>
+									<p>If you are new to Japanese cooking, this is the course for you!</p>
 								</div> 
 							</div>
 						</div>
@@ -55,8 +55,8 @@
 												<h5 class="card-title">{{$course->course}}</h5>
 												<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 												<p style="word-break:break-all;" class="card-text">{{$course->description}}</p>
-												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
-												<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">コース内容</a>
+												<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">course reserve</a>
+												<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">Course information</a>
 											</div>
 										</div>
 									</div>
@@ -67,17 +67,17 @@
 							<!-- <a type="button" href="" class="btn btn-light">View More</a> -->
 						</div>
 					</div>
-					<div class="tab-pane fade show" id="myanmar" role="tabpanel" aria-labelledby="myanmar-tab">
+					<div class="tab-pane fade show" id="diet" role="tabpanel" aria-labelledby="diet-tab">
 						<div class="row justify-content-center mt-3">
 							<div class="align-self-stretch ftco-animate mx-3">
 								<div class="media-body">
-									<h3 class="heading my-3">ミャンマー料理</h3>
-									<p>油、塩分、辛味、スパイスなどを抑えて健康的にアレンジしております。</p>
+									<h3 class="heading my-3">Diet and Healthy Recipes</h3>
+									<p>More than just the recipes, we teach you the basics of nutrition, as well as practical tips such as food portioning that will help you lead a successful healthy lifestyle!</p>
 								</div> 
 							</div>
 						</div>
 						@foreach ($courses as $course)
-							@if ($course->category->category == 'Burmese')
+							@if ($course->category->category == 'Diet')
 							<div class="card mb-2">
 								<div class="card-body">
 									<div class="row">
@@ -88,8 +88,8 @@
 											<h5 class="card-title">{{$course->course}}</h5>
 											<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 											<p class="card-text">{{$course->description}}</p>
-											<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
-											<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">コース内容</a>
+											<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">course reserve</a>
+											<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">Course information</a>
 										</div>
 									</div>
 								</div>
@@ -104,8 +104,8 @@
 						<div class="row justify-content-center mt-3">
 							<div class="align-self-stretch ftco-animate mx-3">
 								<div class="media-body">
-									<h3 class="heading my-3">イタリア料理</h3>
-									<p>ベーシックな普段使いのメニューから、ちょっとしたパーティーなどでも映えるメニューも取りそろえております。</p>
+									<h3 class="heading my-3">Italian Cuisine</h3>
+									<p>Spoil yourself with an authentic Italian cooking experience in our Italian Cooking Class.</p>
 								</div> 
 							</div>
 						</div>
@@ -121,8 +121,8 @@
 											<h5 class="card-title">{{$course->course}}</h5>
 											<h6 class="card-subtitle mb-2 text-muted"><bold>PRICE : </bold>{{$course->price}} MMK </h6>
 											<p class="card-text">{{$course->description}}</p>
-											<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">予約する</a>
-											<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">コース内容</a>
+											<a href="{{ route('user.apply',$course->id) }}" type="button" class="btn btn-outline-secondary">course reserve</a>
+											<a href="{{ route('user.view-course',$course->id) }}" type="button" class="btn btn-outline-secondary">Course information</a>
 										</div>
 									</div>
 								</div>
