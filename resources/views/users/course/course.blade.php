@@ -76,6 +76,7 @@
 								</div> 
 							</div>
 						</div>
+						<!--course text-->
 						@foreach ($courses as $course)
 							@if ($course->category->category == 'Diet')
 							<div class="card mb-2">
