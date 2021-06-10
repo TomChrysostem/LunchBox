@@ -79,12 +79,12 @@ class UserController extends Controller
      */
     public function menus() 
     {
-        $sideDishs = Menu::where('dish_type','Side dish')->orderBy('date', 'asc')->latest()->paginate(3);
+        $sideDishs = Menu::where('dish_type','Side dish')->orderBy('date', 'asc')->get();
         $mainDishs = Menu::where('dish_type','Main dish')->orderBy('date', 'asc')->get();
         $schoolLunchs = Menu::where('menu_type','School lunch')->orderBy('date', 'asc')->latest()->paginate(3);
         $companyLunchs = Menu::where('menu_type','Company lunch')->orderBy('date', 'asc')->latest()->paginate(3);
-        $events = Menu::where('menu_type','Events')->orderBy('date', 'asc')->latest()->paginate(3);
-        return view('users.menu.service',compact('sideDishs','mainDishs','schoolLunchs','companyLunchs','events')) ->with('i', (request()->input('page', 1) - 1) * 5);
+        $dinners = Menu::where('menu_type','Dinner')->orderBy('date', 'asc')->get();
+        return view('users.menu.service',compact('sideDishs','mainDishs','schoolLunchs','companyLunchs','dinners')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     /**
      * Order menu.

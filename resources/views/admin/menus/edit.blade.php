@@ -56,10 +56,11 @@
                     <div class="col-md-4">
                         <div class="form-group mb-0">
                             <label>Menu type</label>
-                            <select class="form-control" name="menu_type" value="{{$menu->menu_type}}">
+                            <select class="form-control" name="menu_type">
                                 <option>School lunch</option>
                                 <option>Company lunch</option>
                                 <option>Events</option>
+                                <option>Dinner</option>
                             </select>
                         </div>
                     </div>
