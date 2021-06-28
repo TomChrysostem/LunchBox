@@ -148,7 +148,7 @@
 											<div class="bg-white" style="border-radius: 21px 21px 0 0;">
 												<img class="card-img-top" src="{{ asset('storage/img/'.$sideDish->image) }}" width="300" height="200" alt="Card image cap">
 											</div>
-											<a type="button" data-toggle="modal" data-target="#menudetail" onclick="showDtails('{{$sideDish->id }}')" class="btn btn-outline-secondary mt-2">内容</a>
+											<!-- <a type="button" data-toggle="modal" data-target="#menudetail" onclick="showDtails('{{$sideDish->id }}')" class="btn btn-outline-secondary mt-2">内容</a> -->
 										</div>
 									</div>
 								@endforeach 

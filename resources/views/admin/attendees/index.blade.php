@@ -51,9 +51,12 @@
                         </tr>   
                     @endforeach                     
                     </tbody>
-                   
                 </table>
-                {!! $attendees->links() !!}
+                <div class="col-12">
+                    <div class="mx-auto" style="width: 200px;">
+                        {!! $attendees->links() !!} 
+                    </div>
+                </div>  
             </div>
         </div>
     </div>
