@@ -49,7 +49,11 @@
                     @endforeach
                     </tbody>
                 </table>
-                {!! $menus->links() !!}
+                <div class="col-12">
+                    <div class="mx-auto" style="width: 200px;">
+                        {!! $menus->links() !!} 
+                    </div>
+                </div>  
             </div>
         </div>
     </div>

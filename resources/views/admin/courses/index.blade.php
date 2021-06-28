@@ -43,9 +43,14 @@
                             </form>
                             </td>
                         </tr>
-                    @endforeach   
+                    @endforeach
                     </tbody>
                 </table>
+                <div class="col-12">
+                    <div class="mx-auto" style="width: 200px;">
+                        {!! $courses->links() !!} 
+                    </div>
+                </div>  
             </div>
         </div>
     </div>

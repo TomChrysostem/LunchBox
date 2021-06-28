@@ -44,9 +44,13 @@
                             </td>
                         </tr>
                     @endforeach
-                    {!! $categories->links() !!}
                     </tbody>
                 </table>
+                <div class="col-12">
+                    <div class="mx-auto" style="width: 200px;">
+                        {!! $categories->links() !!} 
+                    </div>
+                </div>  
             </div>
         </div>
     </div>
