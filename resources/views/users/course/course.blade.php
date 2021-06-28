@@ -44,7 +44,7 @@
 							</div>
 						</div>
 						@foreach ($courses as $course)
-							@if ($course->category->category == 'Japanese')
+							@if ($course->category->category=='Japanese')
 								<div class="card mb-2">
 									<div class="card-body">
 										<div class="row">
@@ -78,7 +78,7 @@
 						</div>
 						<!--course text-->
 						@foreach ($courses as $course)
-							@if ($course->category->category == 'Diet')
+							@if ($course->category->category=='Diet')
 							<div class="card mb-2">
 								<div class="card-body">
 									<div class="row">
@@ -111,7 +111,7 @@
 							</div>
 						</div>
 						@foreach ($courses as $course)
-							@if ($course->category->category == 'Italian')
+							@if ($course->category->category=='Italian')
 							<div class="card mb-2">
 								<div class="card-body">
 									<div class="row">

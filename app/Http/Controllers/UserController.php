@@ -18,13 +18,13 @@ class UserController extends Controller
      */
     public function courses()
     {
-        $courses = Course::with('category')->latest()->paginate(5);
+        $courses = Course::with('category')->orderBy('id', 'desc')->get();
         //dd($courses->toarray());
-        // $myanmarCourses = Course::with(['category' => function ($query) {
-        //     $query->where('category', 'like', '%Burmese%');
+        // $Diet = Course::with(['category' => function ($query) {
+        //     $query->where('category', 'like', '%Diet%');
 
         // }])->get();
-        // dd($myanmarCourses->toarray());
+        //dd($courses->toarray());
         // $italyCourses = Course::with(array('category' => function($query) 
         // {
         //     $query->where('category.category', 'Italian');
@@ -33,7 +33,7 @@ class UserController extends Controller
         // {
         //     $query->where('category.category', 'Japanese');
         // }))->latest()->paginate(3);
-        return view('users.course.course',compact('courses')) ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('users.course.course',compact('courses'));
     }
     /**
      * Display the apply form.
